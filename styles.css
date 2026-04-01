@@ -3458,3 +3458,35 @@ body{
 html{
   scroll-behavior:smooth;
 }
+
+
+/* ===== BUSINESS READY v25 THEME ===== */
+:root{
+  --primary:#0b3d2e !important;
+  --accent:#d4a017 !important;
+  --bg:#ffffff !important;
+}
+
+body{
+  background:#ffffff !important;
+}
+
+.topbar{
+  background:#0b3d2e !important;
+}
+
+.primary-btn{
+  background:#0b3d2e !important;
+}
+
+.primary-btn:hover{
+  background:#145c45 !important;
+}
+
+.brand h1{
+  background:linear-gradient(90deg,#0b3d2e,#d4a017) !important;
+}
+
+.footer{
+  background:#0b3d2e !important;
+}

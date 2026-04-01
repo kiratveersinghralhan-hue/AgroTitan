@@ -1014,3 +1014,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderThankyouPage();
   initAssistantPage();
 });
+
+
+function sendWhatsAppOrder(productName){
+  const number = "919216107700";
+  const message = encodeURIComponent("Hello, I want to order: " + productName);
+  window.open("https://wa.me/" + number + "?text=" + message, "_blank");
+}
