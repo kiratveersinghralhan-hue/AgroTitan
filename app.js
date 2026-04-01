@@ -853,6 +853,49 @@ function closeMobileDrawer() {
   document.body.classList.remove("drawer-open");
 }
 
+
+function initAssistantPage(){
+  const messagesEl = document.getElementById("chatMessages");
+  const form = document.getElementById("chatForm");
+  const input = document.getElementById("chatInput");
+  if(!messagesEl || !form || !input) return;
+
+  const initial = [
+    {role:"bot", text:`Hello, I am the AgroTitan AI Assistant. Ask me about part compatibility, New Hira 985 models, pricing range, or contact details.`}
+  ];
+
+  function renderChat(list){
+    messagesEl.innerHTML = list.map(item => `
+      <div class="chat-row ${item.role}">
+        <div class="bubble">${item.text}</div>
+      </div>
+    `).join("");
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function reply(q){
+    const t = q.toLowerCase();
+    if(t.includes("new hira")) return "We support New Hira 985 Standard and 985 Deluxe machines. You can browse parts by selector on the products page.";
+    if(t.includes("contact") || t.includes("phone") || t.includes("call")) return "Call 9216107700 or 9217000077. Shop address: Patiala Road opposite reliance pump.";
+    if(t.includes("price")) return "Our listed spare parts range from entry-level items to premium assemblies. Open the products page to compare current prices.";
+    if(t.includes("whatsapp")) return "Use the Ask on WhatsApp button or message 9216107700 for fast order help.";
+    return "I can help with machine models, part suggestions, contact details and pricing guidance. Try asking about New Hira 985, contact details, or price range.";
+  }
+
+  const chats = [...initial];
+  renderChat(chats);
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if(!q) return;
+    chats.push({role:"user", text:q});
+    chats.push({role:"bot", text:reply(q)});
+    input.value = "";
+    renderChat(chats);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   fillSharedContent();
   enhanceHeader();
@@ -868,4 +911,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCartPage();
   renderCheckoutPage();
   renderThankyouPage();
+  initAssistantPage();
 });

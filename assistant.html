@@ -4,54 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Assistant | AgroTitan Spares</title>
-  <meta name="description" content="AI assistant page for AgroTitan Spares.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="AI assistant page for AgroTitan Spares. Ask about combine harvester spare parts, model compatibility and contact details.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="AgroTitan Spares">
-  <meta name="keywords" content="combine harvester spare parts, cutter bar parts, straw reaper parts, New Hira 985 parts, AgroTitan Spares, Patiala farm parts, combine spare parts Punjab">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AgroTitan Spares">
-  <meta property="og:image" content="agrotitan-logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta name="keywords" content="AI assistant combine harvester spare parts, AgroTitan assistant, New Hira parts help">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div data-site-header></div>
-  <main class="section light">
-    <div class="wrap">
-      <div class="section-head">
+<body class="assistant-page">
+  <div class="topbar">Premium combine harvester, cutter bar, and straw reaper spare parts support • Call <span data-phone-primary></span></div>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="agrotitan-logo.png" alt="AgroTitan Spares logo">
         <div>
-          <h2>AgroTitan AI Assistant</h2>
-          <p>Separate premium page for smart support. Ask about models, brands, pricing, contact details and part suggestions.</p>
+          <h1 data-shop-name>AgroTitan Spares</h1>
+          <p data-tagline>Powering Your Harvest with Trusted Parts</p>
         </div>
-      </div>
-      <div class="chat-layout">
-        <div id="chatMessages" class="chat-messages"></div>
-        <form id="chatForm" class="chat-form">
-          <input id="chatInput" type="text" placeholder="Ask: part for New Hira 985 Deluxe">
-          <button type="submit">Send</button>
-        </form>
-      </div>
-      <div class="ai-card-grid">
-        <div class="ai-tip">
-          <h3>Try these questions</h3>
-          <p>Part for New Hira 985 Standard</p>
-          <p>Contact details</p>
-          <p>Price range</p>
-          <p>WhatsApp order help</p>
-        </div>
-        <div class="ai-tip">
-          <h3>How it works</h3>
-          <p>This chatbot is built into the website as a smart assistant demo. It helps customers navigate products and contact you faster.</p>
-          <div class="card-actions">
-            <a class="button-link" href="products.html">Browse Products</a>
-            <a class="button-link ghost" href="https://wa.me/919216107700" target="_blank" rel="noopener">Ask on WhatsApp</a>
-          </div>
-        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="badge-btn" href="products.html">Selector</a>
+        <a class="badge-btn" href="cart.html">Cart <span data-cart-count>0</span></a>
       </div>
     </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-title">
+      <div>
+        <h3>AgroTitan AI Assistant</h3>
+        <p>Smart support for part matching, model compatibility, pricing guidance and contact help.</p>
+      </div>
+    </div>
+
+    <div class="assistant-grid">
+      <section class="chat-shell">
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-composer">
+          <form id="chatForm">
+            <input id="chatInput" type="text" placeholder="Ask: part for New Hira 985 Deluxe">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <aside class="ai-card">
+        <h3>Try these questions</h3>
+        <ul class="quick-list">
+          <li>Part for New Hira 985 Standard</li>
+          <li>Contact details</li>
+          <li>Price range</li>
+          <li>WhatsApp order help</li>
+        </ul>
+      </aside>
+
+      <aside class="ai-card">
+        <h3>How it works</h3>
+        <p>This smart assistant helps customers navigate products faster. It can answer about brands, models, pricing range, contact details and suggested parts.</p>
+        <div class="hero-cta">
+          <a class="primary-btn" href="products.html">Browse Products</a>
+          <a class="ghost-btn" href="https://wa.me/919216107700" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        </div>
+      </aside>
+    </div>
   </main>
-  <div data-site-footer></div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3 data-shop-name>AgroTitan Spares</h3>
+        <p>Trusted spare parts destination for combine harvesters, cutter bars, and straw reapers. Fast support for compatibility, pricing, and order assistance.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Owner: Jatinder Singh</p>
+        <p>Phone: 9216107700, 9217000077</p>
+        <p>Address: Patiala Road opposite reliance pump.</p>
+      </div>
+    </div>
+  </footer>
+
   <script src="products-data.js"></script>
   <script src="app.js"></script>
 </body>
