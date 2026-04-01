@@ -3490,3 +3490,59 @@ body{
 .footer{
   background:#0b3d2e !important;
 }
+
+
+/* ===== v27 PREMIUM MULTI-COLOR THEME ===== */
+:root{
+  --bg:#0f172a !important;
+  --panel:#111827 !important;
+  --text:#e5e7eb !important;
+  --accent1:#6366f1 !important; /* indigo */
+  --accent2:#ec4899 !important; /* pink */
+  --accent3:#f59e0b !important; /* gold */
+}
+
+body{
+  background: radial-gradient(circle at top,#1f2937,#020617) !important;
+  color:var(--text) !important;
+}
+
+.topbar{
+  background:linear-gradient(90deg,#6366f1,#ec4899,#f59e0b) !important;
+  color:white !important;
+}
+
+.header .nav{
+  background:rgba(17,24,39,0.8) !important;
+  backdrop-filter:blur(12px);
+}
+
+.brand h1{
+  background:linear-gradient(90deg,#6366f1,#ec4899,#f59e0b) !important;
+}
+
+.card,.product-card{
+  background:#111827 !important;
+  border:1px solid rgba(255,255,255,0.08) !important;
+}
+
+.primary-btn{
+  background:linear-gradient(90deg,#6366f1,#ec4899) !important;
+  color:white !important;
+}
+
+.primary-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(236,72,153,0.4);
+}
+
+.footer{
+  background:#020617 !important;
+}
+
+/* stats cards FIX */
+.stat{
+  background:linear-gradient(135deg,#1f2937,#020617) !important;
+  color:white !important;
+  border:1px solid rgba(255,255,255,0.1);
+}
