@@ -1272,3 +1272,115 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(fixSelectorLayoutsV41, 80);
   setTimeout(fixSelectorLayoutsV41, 400);
 });
+
+
+/* ===== v44 premium conversion upgrade ===== */
+function runGlobalSearch(){
+  const value = (document.getElementById("globalPartsSearch")?.value || "").trim();
+  if(!value) { location.href = "products.html"; return; }
+  location.href = "products.html?search=" + encodeURIComponent(value);
+}
+function runCatalogSearch(){
+  const value = (document.getElementById("catalogSearchBar")?.value || "").trim();
+  const sf = document.getElementById("searchFilter");
+  if(sf) sf.value = value;
+  renderProductsPage();
+}
+
+function createQuickViewModal(){
+  let modal = document.getElementById("quickViewModal");
+  if(modal) return modal;
+  modal = document.createElement("div");
+  modal.id = "quickViewModal";
+  modal.className = "quickview-modal";
+  modal.innerHTML = `
+    <div class="quickview-card">
+      <button class="quickview-close" type="button" aria-label="Close">×</button>
+      <div id="quickViewContent"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  modal.querySelector(".quickview-close").addEventListener("click", closeQuickView);
+  modal.addEventListener("click", (e) => { if(e.target === modal) closeQuickView(); });
+  return modal;
+}
+function openQuickView(id){
+  const p = getProduct(id);
+  if(!p) return;
+  const modal = createQuickViewModal();
+  const content = modal.querySelector("#quickViewContent");
+  content.innerHTML = `
+    <div class="quickview-grid">
+      <div class="quickview-image"><img src="${p.image}" alt="${tProduct(p, "name")}" referrerpolicy="no-referrer"></div>
+      <div class="quickview-content">
+        <div class="ribbon">${p.brand}</div>
+        <h3>${tProduct(p, "name")}</h3>
+        <div class="quickview-price">${formatPrice(p.price)} <span class="old-price" style="margin-left:8px">${formatPrice(p.oldPrice)}</span></div>
+        <div class="quickview-meta">
+          <span>${p.model}</span>
+          <span>${p.machineType}</span>
+          <span>${p.partNo}</span>
+          <span>${p.category}</span>
+        </div>
+        <p>${tProduct(p, "description")}</p>
+        <div class="quickview-actions">
+          <button class="primary-btn" onclick="addToCart('${p.id}');closeQuickView()">Add to Cart</button>
+          <a class="ghost-btn" href="product.html?id=${p.id}">View Details</a>
+          <a class="ghost-btn" data-whatsapp-link href="https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent('Hello, I want details for ' + p.name + ' (' + p.partNo + ')')}" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  `;
+  modal.classList.add("show");
+}
+function closeQuickView(){
+  const modal = document.getElementById("quickViewModal");
+  if(modal) modal.classList.remove("show");
+}
+
+function enhanceProductCardsV44(){
+  document.querySelectorAll(".product-card .actions, .product-card .product-actions").forEach(actions => {
+    if(actions.querySelector(".quick-view-btn")) return;
+    const detailLink = actions.querySelector('a[href*="product.html"], button[onclick*="product.html"]');
+    let id = null;
+    const card = actions.closest(".product-card");
+    if(card){
+      const viewLink = card.querySelector('a[href*="product.html?id="]');
+      if(viewLink){
+        const m = viewLink.getAttribute("href").match(/id=([^&]+)/);
+        if(m) id = m[1];
+      }
+      if(!id){
+        const addBtn = actions.querySelector('[onclick*="addToCart"]');
+        if(addBtn){
+          const m = addBtn.getAttribute("onclick").match(/addToCart\('([^']+)'/);
+          if(m) id = m[1];
+        }
+      }
+    }
+    if(!id) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "small-btn secondary quick-view-btn";
+    btn.textContent = "Quick View";
+    btn.addEventListener("click", () => openQuickView(id));
+    actions.appendChild(btn);
+  });
+}
+
+function applySearchQueryFromURLV44(){
+  const q = new URLSearchParams(location.search);
+  const s = q.get("search");
+  const input = document.getElementById("searchFilter");
+  const catalogInput = document.getElementById("catalogSearchBar");
+  if(s){
+    if(input) input.value = s;
+    if(catalogInput) catalogInput.value = s;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(applySearchQueryFromURLV44, 80);
+  setTimeout(enhanceProductCardsV44, 120);
+  setTimeout(enhanceProductCardsV44, 500);
+});
