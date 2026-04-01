@@ -950,13 +950,13 @@ function initIntroLogo(){
       intro.style.opacity = "0";
       intro.style.visibility = "hidden";
       intro.style.pointerEvents = "none";
-      setTimeout(() => { intro.style.display = "none"; }, 250);
+      setTimeout(() => {
+        if(intro && intro.parentNode) intro.remove();
+      }, 500);
     }
   };
-  window.addEventListener("load", () => {
-    setTimeout(hideIntro, 2200);
-  });
-  setTimeout(hideIntro, 3200);
+  window.addEventListener("load", () => setTimeout(hideIntro, 1900));
+  setTimeout(hideIntro, 2600);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
