@@ -994,6 +994,7 @@ function updateHomepageStats(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("showroom-ready");
   fillSharedContent();
   initScrollTopButton();
   initIntroLogo();

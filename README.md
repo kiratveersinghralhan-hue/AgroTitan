@@ -67,3 +67,5 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Updated to a softer premium sage-cream color palette.
 - Replaced homepage video with direct royalty-free combine harvester footage.
 - Fixed counters to use actual live values for products, stock, brands and cart, and animate when visible or when cart changes.
+
+- Added a top-level showroom visual system with cinematic gradients, luxury glass header, premium hover cards, and floating action rail.
