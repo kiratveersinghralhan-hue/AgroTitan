@@ -3986,3 +3986,489 @@ body{
     margin-top:4px;
   }
 }
+
+
+/* ===== v31 premium yellow theme ===== */
+:root{
+  --theme-yellow-1:#f4c542;
+  --theme-yellow-2:#d9a11e;
+  --theme-charcoal:#1f2430;
+  --theme-deep:#10151f;
+  --theme-cream:#fff8e8;
+  --theme-soft:#f6ead0;
+}
+
+/* Main site mood */
+body{
+  background:
+    radial-gradient(circle at top left, rgba(244,197,66,.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(217,161,30,.10), transparent 20%),
+    linear-gradient(180deg,#141923 0%, #0f141d 42%, #1a1408 100%) !important;
+  color:#f8f4ea !important;
+}
+
+/* Premium top bar */
+.topbar{
+  background:linear-gradient(90deg,#2a2f3a 0%, #f4c542 55%, #d9a11e 100%) !important;
+  color:#fffdfa !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.16) !important;
+}
+
+/* Header shell */
+.header .nav{
+  background:linear-gradient(135deg, rgba(26,30,38,.94), rgba(34,28,16,.92)) !important;
+  border:1px solid rgba(244,197,66,.16) !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+/* Company name */
+.brand h1{
+  color:#fff7df !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.38) !important;
+}
+.brand h1::after{
+  background:linear-gradient(90deg,#f4c542,#d9a11e) !important;
+}
+
+/* Cards */
+.card,.product-card,.detail-card,.detail-media,.filters.card,.about-card,.contact-card,.summary-card,.cart-item,.chat-shell,.ai-card{
+  background:linear-gradient(180deg, rgba(23,27,35,.96), rgba(16,20,28,.98)) !important;
+  border:1px solid rgba(244,197,66,.10) !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.24) !important;
+}
+
+/* Kicker / pills */
+.kicker,.hero .kicker{
+  background:linear-gradient(90deg, rgba(244,197,66,.12), rgba(255,248,232,.06)) !important;
+  color:#f7d97a !important;
+  border:1px solid rgba(244,197,66,.14) !important;
+}
+.pill{
+  background:rgba(255,248,232,.92) !important;
+  color:#4d4636 !important;
+  border:1px solid rgba(244,197,66,.18) !important;
+}
+
+/* Buttons */
+.primary-btn{
+  background:linear-gradient(90deg,#f4c542,#d9a11e) !important;
+  color:#1f2430 !important;
+  box-shadow:0 14px 28px rgba(217,161,30,.24) !important;
+}
+.primary-btn:hover{
+  box-shadow:0 18px 34px rgba(217,161,30,.30) !important;
+}
+.ghost-btn,.badge-btn{
+  background:linear-gradient(180deg, rgba(255,248,232,.96), rgba(245,235,212,.92)) !important;
+  color:#312d22 !important;
+  border:1px solid rgba(244,197,66,.14) !important;
+}
+.nav-actions .badge-btn[data-static-cart-btn],
+.menu-toggle-btn,
+.showroom-action,
+#scrollTopBtn{
+  background:linear-gradient(135deg,#2a2f3a,#1a1f2a) !important;
+  color:#f7d97a !important;
+  border:1px solid rgba(244,197,66,.14) !important;
+  box-shadow:0 14px 28px rgba(0,0,0,.24) !important;
+}
+
+/* Text */
+.section-title h3,
+.hero-copy h2,
+.product-body h4,
+.detail-card h2{
+  color:#fff8e8 !important;
+}
+.product-body p,
+.hero p,
+.about-card p,
+.contact-card p,
+.detail-card p,
+.section-title p,
+.muted{
+  color:#d0c5ac !important;
+}
+
+/* Stats */
+.stat{
+  background:
+    radial-gradient(circle at top right, rgba(244,197,66,.16), transparent 30%),
+    linear-gradient(180deg, rgba(34,38,49,.96), rgba(15,18,24,.98)) !important;
+  border:1px solid rgba(244,197,66,.12) !important;
+}
+.stat .num{ color:#fff6de !important; }
+.stat .label{ color:#e0c981 !important; }
+
+/* Footer */
+.footer{
+  background:linear-gradient(180deg,#17130b,#09080a 100%) !important;
+  border-top:1px solid rgba(244,197,66,.10) !important;
+}
+.footer *{
+  color:#f8f3e8 !important;
+}
+
+/* Language modal */
+.lang-card{
+  background:linear-gradient(180deg,#1d222d,#131821) !important;
+  border:1px solid rgba(244,197,66,.12) !important;
+}
+.lang-head h2{ color:#fff6de !important; }
+.lang-head p{ color:#d7c9a3 !important; }
+.lang-btn,.lang-option{
+  background:linear-gradient(180deg,#fff9ee,#f5ead2) !important;
+  color:#2a2f3a !important;
+  border:1px solid rgba(244,197,66,.12) !important;
+}
+.lang-option-text strong,
+.lang-option strong{
+  color:#2a2f3a !important;
+}
+.lang-option-text small{
+  color:#6d6756 !important;
+}
+.lang-helper{
+  background:rgba(255,248,232,.95) !important;
+  color:#4c4636 !important;
+}
+
+/* Video and selector */
+.hero-media{
+  border:1px solid rgba(244,197,66,.10) !important;
+}
+.selector, .filters.card{
+  border-color: rgba(244,197,66,.10) !important;
+}
+
+/* Mobile polish */
+@media (max-width:720px){
+  .brand h1{
+    font-size:24px !important;
+  }
+}
+
+
+/* ===== v32 richer yellow + glass AGROTITAN ===== */
+:root{
+  --theme-yellow-1:#ffd24a !important;
+  --theme-yellow-2:#f4c542 !important;
+  --theme-yellow-3:#e0aa1f !important;
+  --theme-amber:#ffdf7a !important;
+}
+
+/* Increase yellow ratio across the whole site */
+body{
+  background:
+    radial-gradient(circle at top left, rgba(255,210,74,.18), transparent 26%),
+    radial-gradient(circle at top right, rgba(244,197,66,.14), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(224,170,31,.12), transparent 24%),
+    linear-gradient(180deg,#1b1610 0%, #16120d 40%, #21180b 100%) !important;
+}
+.topbar{
+  background:linear-gradient(90deg,#8a6114 0%, #ffd24a 42%, #f4c542 68%, #d89d12 100%) !important;
+}
+.header .nav{
+  background:
+    linear-gradient(135deg, rgba(46,35,15,.92), rgba(31,24,12,.94)) !important;
+  border:1px solid rgba(255,210,74,.22) !important;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,248,220,.08),
+    0 0 0 1px rgba(255,210,74,.05) !important;
+}
+.card,.product-card,.detail-card,.detail-media,.filters.card,.about-card,.contact-card,.summary-card,.cart-item,.chat-shell,.ai-card{
+  background:
+    linear-gradient(180deg, rgba(34,27,14,.96), rgba(18,15,10,.98)) !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+}
+.kicker,.hero .kicker{
+  background:linear-gradient(90deg, rgba(255,210,74,.16), rgba(255,248,232,.08)) !important;
+  color:#ffe6a0 !important;
+  border:1px solid rgba(255,210,74,.18) !important;
+}
+.primary-btn{
+  background:linear-gradient(90deg,#ffd24a,#f4c542,#e0aa1f) !important;
+  color:#241d10 !important;
+  box-shadow:0 14px 28px rgba(224,170,31,.30) !important;
+}
+.ghost-btn,.badge-btn{
+  background:linear-gradient(180deg, rgba(255,246,223,.98), rgba(248,232,186,.94)) !important;
+  color:#332a17 !important;
+  border:1px solid rgba(255,210,74,.16) !important;
+}
+.nav-actions .badge-btn[data-static-cart-btn],
+.menu-toggle-btn,
+.showroom-action,
+#scrollTopBtn{
+  background:linear-gradient(135deg,#4d3912,#2a2110) !important;
+  color:#ffd24a !important;
+  border:1px solid rgba(255,210,74,.20) !important;
+}
+.stat{
+  background:
+    radial-gradient(circle at top right, rgba(255,210,74,.18), transparent 30%),
+    linear-gradient(180deg, rgba(45,34,16,.96), rgba(18,14,9,.98)) !important;
+  border:1px solid rgba(255,210,74,.16) !important;
+}
+.stat .num{ color:#fff1c8 !important; }
+.stat .label{ color:#ffd87a !important; }
+.footer{
+  background:linear-gradient(180deg,#20170a,#090704 100%) !important;
+  border-top:1px solid rgba(255,210,74,.10) !important;
+}
+
+/* Glass / animated company name */
+.brand h1{
+  position:relative !important;
+  color:transparent !important;
+  background:
+    linear-gradient(120deg,
+      rgba(255,246,223,.92) 0%,
+      rgba(255,210,74,.96) 22%,
+      rgba(255,248,232,1) 36%,
+      rgba(244,197,66,.98) 52%,
+      rgba(255,246,223,.95) 68%,
+      rgba(224,170,31,.92) 82%,
+      rgba(255,248,232,.98) 100%) !important;
+  background-size:250% auto !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.10),
+    0 8px 24px rgba(224,170,31,.12) !important;
+  letter-spacing:.6px !important;
+  animation: agrotitanGoldFlow 5s linear infinite !important;
+}
+.brand h1::before{
+  content:"";
+  position:absolute;
+  inset:-4px -8px;
+  border-radius:18px;
+  background:
+    linear-gradient(120deg,
+      rgba(255,210,74,.08),
+      rgba(255,248,232,.02) 40%,
+      rgba(255,210,74,.10) 60%,
+      rgba(255,248,232,.03));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border:1px solid rgba(255,210,74,.10);
+  z-index:-1;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 10px 20px rgba(0,0,0,.08);
+}
+.brand h1::after{
+  width:70px !important;
+  height:3px !important;
+  margin-top:8px !important;
+  background:linear-gradient(90deg,#ffd24a,#fff0b8,#e0aa1f) !important;
+  box-shadow:0 0 14px rgba(255,210,74,.22) !important;
+}
+@keyframes agrotitanGoldFlow{
+  0%{background-position:0% center}
+  100%{background-position:250% center}
+}
+
+@media (max-width:720px){
+  .brand h1{
+    font-size:24px !important;
+  }
+  .brand h1::before{
+    inset:-3px -6px;
+    border-radius:14px;
+  }
+  .brand h1::after{
+    width:52px !important;
+    margin-top:6px !important;
+  }
+}
+
+
+/* ===== v34 premium popup + product text + video fix ===== */
+
+/* overall richer premium gold depth while keeping current yellow theme */
+body{
+  background:
+    radial-gradient(circle at top left, rgba(255,210,74,.18), transparent 24%),
+    radial-gradient(circle at top right, rgba(244,197,66,.12), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(224,170,31,.10), transparent 22%),
+    linear-gradient(180deg,#161109 0%, #130f0a 42%, #1b1409 100%) !important;
+}
+.header .nav{
+  box-shadow:
+    0 20px 44px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,248,220,.10),
+    0 0 0 1px rgba(255,210,74,.05) !important;
+}
+.card,.product-card,.detail-card,.detail-media,.filters.card,.about-card,.contact-card,.summary-card,.cart-item,.chat-shell,.ai-card{
+  box-shadow:
+    0 20px 42px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,248,220,.04) !important;
+}
+
+/* language popup premium + balanced */
+.lang-modal{
+  background:rgba(5,4,2,.72) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+.lang-card{
+  background:
+    radial-gradient(circle at top right, rgba(255,210,74,.10), transparent 28%),
+    linear-gradient(180deg,#1c150b,#120e09 100%) !important;
+  border:1px solid rgba(255,210,74,.16) !important;
+  border-radius:30px !important;
+  box-shadow:0 24px 50px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,248,220,.06) !important;
+}
+.lang-head{
+  padding:28px 28px 18px !important;
+}
+.lang-head h2{
+  font-size:clamp(34px,5vw,54px) !important;
+  line-height:1.02 !important;
+  letter-spacing:-.03em !important;
+  color:#fff4d1 !important;
+  margin:0 0 10px !important;
+}
+.lang-head p{
+  font-size:clamp(18px,2.4vw,24px) !important;
+  line-height:1.45 !important;
+  color:#dcc89b !important;
+  margin:0 !important;
+}
+.lang-options,
+.lang-list{
+  gap:16px !important;
+  padding:0 28px 24px !important;
+}
+.lang-btn,.lang-option{
+  min-height:96px !important;
+  border-radius:24px !important;
+  background:linear-gradient(180deg,#fff8ea,#f3e6c6) !important;
+  border:1px solid rgba(255,210,74,.18) !important;
+  box-shadow:0 14px 26px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.65) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:22px 20px !important;
+}
+.lang-btn:hover,.lang-option:hover{
+  transform:translateY(-1px) scale(1.01) !important;
+}
+.lang-btn span,
+.lang-option strong,
+.lang-option-text strong{
+  font-size:clamp(26px,3vw,34px) !important;
+  font-weight:800 !important;
+  color:#1f2430 !important;
+}
+.lang-option-text small{
+  font-size:clamp(14px,1.7vw,18px) !important;
+  color:#6d6756 !important;
+}
+.lang-helper{
+  margin:0 28px 28px !important;
+  background:linear-gradient(180deg,#fff8ea,#f3e6c6) !important;
+  color:#4b4334 !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  border-radius:22px !important;
+  padding:20px 22px !important;
+  font-size:clamp(18px,2vw,22px) !important;
+  line-height:1.45 !important;
+}
+.flag{
+  font-size:26px !important;
+  margin-right:16px !important;
+}
+@media (max-width:720px){
+  .lang-card{ border-radius:28px !important; }
+  .lang-head{ padding:24px 22px 16px !important; }
+  .lang-options,.lang-list{ padding:0 22px 18px !important; gap:14px !important; }
+  .lang-btn,.lang-option{
+    min-height:86px !important;
+    border-radius:22px !important;
+    padding:18px 16px !important;
+  }
+  .lang-btn span,
+  .lang-option strong,
+  .lang-option-text strong{
+    font-size:18px !important;
+  }
+  .lang-helper{
+    margin:0 22px 22px !important;
+    padding:16px 18px !important;
+    font-size:16px !important;
+  }
+  .flag{
+    font-size:22px !important;
+    margin-right:12px !important;
+  }
+}
+
+/* product tags and text visibility */
+.product-card .thumb{
+  background:#ffffff !important;
+}
+.product-body{
+  padding:22px !important;
+}
+.product-body h4{
+  color:#fff6de !important;
+  font-size:clamp(22px,2.4vw,30px) !important;
+  line-height:1.18 !important;
+  margin:14px 0 14px !important;
+}
+.product-body p{
+  color:#ddd0b3 !important;
+  font-size:18px !important;
+  line-height:1.6 !important;
+}
+.product-card .rating,
+.product-card .price,
+.product-card .old-price,
+.product-card .meta,
+.product-card strong{
+  color:#fff1cb !important;
+}
+.product-card .badge,
+.product-card .tag,
+.product-card .meta span,
+.product-tags .pill{
+  background:linear-gradient(180deg,#fff8ea,#f4e7c5) !important;
+  color:#453b27 !important;
+  border:1px solid rgba(255,210,74,.15) !important;
+}
+.product-actions .ghost-btn,
+.product-actions .badge-btn{
+  color:#2d2618 !important;
+}
+.product-actions .primary-btn{
+  color:#241d10 !important;
+}
+
+/* detail page text visibility */
+.detail-card h2{ color:#fff6de !important; }
+.detail-card p{ color:#ddd0b3 !important; }
+.detail-card .meta span{
+  color:#f0ddb1 !important;
+  background:rgba(255,210,74,.08) !important;
+  border:1px solid rgba(255,210,74,.12) !important;
+}
+
+/* hero / buttons richer premium */
+.hero-copy h2{ color:#fff8e8 !important; }
+.hero p{ color:#d8ccb0 !important; }
+.primary-btn{
+  letter-spacing:.2px !important;
+}
+.ghost-btn{
+  color:#2f281a !important;
+}
+
+/* floating buttons more refined */
+.showroom-action,
+#scrollTopBtn{
+  box-shadow:0 18px 36px rgba(0,0,0,.28), 0 0 0 1px rgba(255,210,74,.08) inset !important;
+}
