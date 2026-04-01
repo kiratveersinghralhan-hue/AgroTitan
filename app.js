@@ -1417,3 +1417,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('a[href^="tel:"][style*="position:fixed"]').forEach(el => el.remove());
   }
 });
+
+
+/* ===== v52 contact overlay safeguard ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 720 && document.querySelector('.contact-page-v51')) {
+    document.body.classList.add('contact-mobile-fix');
+  }
+});
