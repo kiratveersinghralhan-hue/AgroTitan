@@ -3292,3 +3292,64 @@ body{
   visibility:visible;
   transform:translateY(0);
 }
+
+
+/* ===== v22.1 softer palette override ===== */
+:root{
+  --bg:#f6f3ec !important;
+  --panel:#fffdfa !important;
+  --soft:#edf2ec !important;
+  --soft-2:#dde8df !important;
+  --text:#25312b !important;
+  --muted:#65756b !important;
+  --gold:#b48a45 !important;
+  --green:#3b6b57 !important;
+  --green-2:#284b3d !important;
+  --border:rgba(37,49,43,.08) !important;
+  --shadow:0 16px 36px rgba(37,49,43,.08) !important;
+}
+body{
+  background:linear-gradient(180deg,#f7f4ee,#f2ece2 50%,#ece4d5 100%) !important;
+  color:var(--text) !important;
+}
+.topbar{
+  background:linear-gradient(90deg,#496f5d,#be9852) !important;
+  color:#fffef8 !important;
+}
+.header .nav{
+  background:rgba(255,251,244,.94) !important;
+  border:1px solid rgba(37,49,43,.08) !important;
+  box-shadow:0 12px 30px rgba(37,49,43,.08) !important;
+}
+.primary-btn{
+  background:linear-gradient(180deg,#3b6b57,#2a4f40) !important;
+  color:#fff !important;
+}
+.ghost-btn,
+.badge-btn{
+  background:#f4efe6 !important;
+  color:#31423a !important;
+  border:1px solid rgba(49,66,58,.10) !important;
+}
+.nav-actions .badge-btn[data-static-cart-btn],
+.menu-toggle-btn{
+  background:linear-gradient(180deg,#3b6b57,#2a4f40) !important;
+  color:#fff !important;
+}
+.menu a{ color:#5c6c63 !important; }
+.menu a:hover,.menu a.active{
+  background:#edf3ee !important;
+  color:#223029 !important;
+}
+.brand h1{
+  background:linear-gradient(90deg,#2c523f,#b58a43,#2c523f) !important;
+  background-size:200% auto !important;
+}
+.kicker,.hero .kicker{
+  background:rgba(59,107,87,.10) !important;
+  color:#2d5744 !important;
+  border:1px solid rgba(59,107,87,.14) !important;
+}
+.footer{
+  background:linear-gradient(180deg,#253a31,#1c2d26 100%) !important;
+}

@@ -63,3 +63,7 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Added a floating scroll-to-top button.
 - Replaced homepage video with the requested Pixabay combine-harvester farm video source.
 - Homepage dynamic stats now reflect actual product count, stock units, cart items and brands, and update when cart changes.
+
+- Updated to a softer premium sage-cream color palette.
+- Replaced homepage video with direct royalty-free combine harvester footage.
+- Fixed counters to use actual live values for products, stock, brands and cart, and animate when visible or when cart changes.

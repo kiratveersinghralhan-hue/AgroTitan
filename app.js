@@ -21,8 +21,6 @@ function saveState(){
   localStorage.setItem("agrotitan_wishlist", JSON.stringify(state.wishlist));
   updateBadges();
   updateHomepageStats();
-  updateHomepageStats();
-  animateCounters();
 }
 
 
@@ -126,28 +124,37 @@ function setActiveMenu(){
 }
 
 
-function animateCounters(){
-  const items = document.querySelectorAll("[data-count-to]");
-  if(!items.length) return;
-  const runCounter = (el) => {
-    const target = Number(String(el.getAttribute("data-count-to") || "0").replace(/[^0-9.]/g,"")) || 0;
-    const startVal = Number(String(el.textContent || "0").replace(/[^0-9.]/g,"")) || 0;
-    const start = performance.now();
-    const duration = 900;
-    function step(now){
-      const progress = Math.min((now - start)/duration, 1);
-      const value = Math.floor(startVal + (target - startVal) * progress);
-      el.textContent = value.toLocaleString("en-IN");
-      if(progress < 1) requestAnimationFrame(step);
-      else el.dataset.done = "1";
+
+function animateCounterElement(el, startVal, target){
+  const start = performance.now();
+  const duration = 1000;
+  function step(now){
+    const progress = Math.min((now - start) / duration, 1);
+    const value = Math.floor(startVal + (target - startVal) * progress);
+    el.textContent = value.toLocaleString("en-IN");
+    if(progress < 1) requestAnimationFrame(step);
+    else {
+      el.dataset.done = "1";
+      el.setAttribute("data-prev", String(target));
     }
-    requestAnimationFrame(step);
-  };
+  }
+  requestAnimationFrame(step);
+}
+
+function animateCounters(){
+  const items = document.querySelectorAll("[data-count-key]");
+  if(!items.length) return;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting && entry.target.dataset.done !== "1"){
-        runCounter(entry.target);
-        observer.unobserve(entry.target);
+      if(entry.isIntersecting){
+        const el = entry.target;
+        el.dataset.visible = "true";
+        const target = Number(el.getAttribute("data-count-to") || "0");
+        const prev = Number(el.getAttribute("data-prev") || "0");
+        if(el.dataset.done !== "1"){
+          animateCounterElement(el, prev, target);
+        }
+        observer.unobserve(el);
       }
     });
   }, {threshold:0.35});
@@ -966,15 +973,21 @@ function initScrollTopButton(){
 
 function updateHomepageStats(){
   const parts = Array.isArray(PRODUCTS) ? PRODUCTS.length : 0;
-  const inStock = Array.isArray(PRODUCTS) ? PRODUCTS.reduce((n,p)=>n + (Number(p.stock)||0),0) : 0;
-  const cartCount = state.cart.reduce((a,b)=>a + b.qty, 0);
-  const brandCount = Array.isArray(PRODUCTS) ? new Set(PRODUCTS.map(p=>p.brand)).size : 0;
-  const map = { parts, stock: inStock, cart: cartCount, brands: brandCount };
-  Object.entries(map).forEach(([key,val]) => {
-    const el = document.querySelector(`[data-count-key="${key}"]`);
-    if(el){
-      el.setAttribute("data-count-to", String(val));
-      el.dataset.done = "0";
+  const stock = Array.isArray(PRODUCTS) ? PRODUCTS.reduce((n,p)=>n + (Number(p.stock)||0),0) : 0;
+  const cart = state.cart.reduce((a,b)=>a + b.qty, 0);
+  const brands = Array.isArray(PRODUCTS) ? new Set(PRODUCTS.map(p=>p.brand)).size : 0;
+  const stats = {parts, stock, cart, brands};
+  document.querySelectorAll("[data-count-key]").forEach(el => {
+    const key = el.getAttribute("data-count-key");
+    const val = Number(stats[key] || 0);
+    const prev = Number(el.getAttribute("data-prev") || "0");
+    el.setAttribute("data-count-to", String(val));
+    el.setAttribute("data-prev", String(prev));
+    el.dataset.done = "0";
+    if(el.dataset.visible === "true"){
+      animateCounterElement(el, prev, val);
+      el.setAttribute("data-prev", String(val));
+    } else {
       el.textContent = "0";
     }
   });
