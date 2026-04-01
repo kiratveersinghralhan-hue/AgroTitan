@@ -947,7 +947,7 @@ function initIntroLogo(){
     setTimeout(() => {
       const intro = document.getElementById("introLogo");
       if(intro) intro.style.display = "none";
-    }, 2850);
+    }, 3200);
   });
 }
 

@@ -2368,3 +2368,163 @@ html, body{
   background: #ffffff !important;
   border: 1px solid rgba(20,30,45,.08) !important;
 }
+
+
+/* ===== Ripple intro + refined header v11 ===== */
+
+/* Intro inspired by reference */
+#introLogo{
+  position:fixed !important;
+  inset:0 !important;
+  background:#04070c !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:24px !important;
+  z-index:9999 !important;
+  animation:introStageOut .75s ease forwards !important;
+  animation-delay:2.55s !important;
+  overflow:hidden !important;
+}
+.intro-mark{
+  position:relative;
+  width:132px;
+  height:132px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.intro-ripple{
+  position:absolute;
+  inset:0;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 0 0 8px rgba(255,255,255,.025), 0 0 42px rgba(72,196,111,.14);
+  opacity:0;
+}
+.ripple-1{animation:introRipple 1.9s ease-out .15s infinite}
+.ripple-2{animation:introRipple 1.9s ease-out .55s infinite}
+.ripple-3{animation:introRipple 1.9s ease-out .95s infinite}
+.intro-logo-wrap{
+  width:92px;
+  height:92px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#ffffff,#eef3ee);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 20px 45px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.8);
+  overflow:hidden;
+  opacity:0;
+  transform:scale(.72);
+  animation:introMarkIn 1s cubic-bezier(.2,.8,.2,1) forwards !important;
+}
+.intro-logo-wrap img{
+  width:72px !important;
+  height:72px !important;
+  object-fit:contain !important;
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,.12));
+}
+.intro-name{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  opacity:0;
+  transform:translateY(12px);
+  animation:introNameIn .8s ease forwards;
+  animation-delay:.45s;
+}
+.intro-word{
+  font-size:clamp(28px,5vw,56px);
+  line-height:1;
+  font-weight:900;
+  color:#ffffff;
+  letter-spacing:.2px;
+}
+.intro-word.light{
+  color:#d7e0ea;
+  font-weight:700;
+}
+@keyframes introRipple{
+  0%{transform:scale(.78);opacity:.66}
+  100%{transform:scale(1.55);opacity:0}
+}
+@keyframes introMarkIn{
+  0%{opacity:0;transform:scale(.72)}
+  60%{opacity:1;transform:scale(1.06)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes introNameIn{
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes introStageOut{
+  to{opacity:0;visibility:hidden}
+}
+@media (max-width:720px){
+  .intro-mark{width:112px;height:112px}
+  .intro-logo-wrap{width:82px;height:82px}
+  .intro-logo-wrap img{width:64px !important;height:64px !important}
+  .intro-name{gap:8px}
+}
+
+/* Refined responsive header */
+.header .nav{
+  width:min(1100px,94vw) !important;
+  border-radius:20px !important;
+}
+.brand img{
+  width:34px !important;
+  height:34px !important;
+}
+.brand h1{
+  font-size:16px !important;
+  font-weight:900 !important;
+}
+.nav-actions .badge-btn,
+.menu-toggle-btn{
+  transition:transform .2s ease, box-shadow .2s ease !important;
+}
+.nav-actions .badge-btn:hover,
+.menu-toggle-btn:hover{
+  transform:translateY(-1px) !important;
+}
+@media (max-width:720px){
+  .header{top:8px !important}
+  .header .nav{
+    width:min(96vw,560px) !important;
+    grid-template-columns:minmax(0,1fr) auto auto auto !important;
+    padding:8px 10px !important;
+    border-radius:18px !important;
+    gap:8px !important;
+  }
+  .brand img{
+    width:30px !important;
+    height:30px !important;
+    flex:0 0 30px !important;
+  }
+  .brand h1{
+    font-size:12px !important;
+  }
+  .nav-actions .badge-btn[data-static-selector-btn]{
+    min-width:70px !important;
+  }
+  .nav-actions .badge-btn[data-static-cart-btn]{
+    min-width:60px !important;
+  }
+  .nav-actions .badge-btn{
+    min-width:60px !important;
+    height:34px !important;
+    padding:0 9px !important;
+    font-size:10px !important;
+    border-radius:11px !important;
+  }
+  .menu-toggle-btn{
+    width:34px !important;
+    min-width:34px !important;
+    height:34px !important;
+    border-radius:11px !important;
+  }
+}
