@@ -3174,3 +3174,121 @@ body.intro-finished #introLogo{
     width:46px !important;
   }
 }
+
+
+/* ===== v22 UI refresh ===== */
+:root{
+  --bg:#f5f1e8 !important;
+  --panel:#fffdf9 !important;
+  --soft:#eef2f0 !important;
+  --soft-2:#e4ebe7 !important;
+  --text:#1f2937 !important;
+  --muted:#5f6f64 !important;
+  --gold:#b98a2f !important;
+  --green:#2f6f52 !important;
+  --green-2:#245940 !important;
+  --border:rgba(31,41,55,.09) !important;
+  --shadow:0 14px 34px rgba(31,41,55,.10) !important;
+}
+body{
+  background:linear-gradient(180deg,#f7f4ee,#f2ede3 45%,#eee7da 100%) !important;
+  color:var(--text) !important;
+}
+.card,
+.detail-card,
+.detail-media,
+.filters.card,
+.contact-card,
+.about-card,
+.summary-card,
+.cart-item,
+.product-card,
+.chat-shell,
+.ai-card{
+  background:var(--panel) !important;
+  border:1px solid var(--border) !important;
+  box-shadow:var(--shadow) !important;
+}
+.topbar{
+  background:linear-gradient(90deg,#406d58,#c7a256) !important;
+  color:#fffaf0 !important;
+}
+.primary-btn{
+  background:linear-gradient(180deg,#315f49,#234534) !important;
+  color:#ffffff !important;
+}
+.ghost-btn,
+.badge-btn{
+  background:#f4efe5 !important;
+  color:#32413c !important;
+  border:1px solid rgba(50,65,60,.10) !important;
+}
+.nav-actions .badge-btn[data-static-cart-btn],
+.menu-toggle-btn{
+  background:linear-gradient(180deg,#355f4c,#264636) !important;
+  color:#fff !important;
+}
+.header .nav{
+  background:rgba(255,252,246,.90) !important;
+  border:1px solid rgba(31,41,55,.08) !important;
+}
+.menu a{
+  color:#52635b !important;
+}
+.menu a:hover,.menu a.active{
+  background:#edf2ef !important;
+  color:#1f2937 !important;
+}
+.brand h1{
+  background:linear-gradient(90deg,#214b36,#ba8d33,#214b36) !important;
+  background-size:200% auto !important;
+}
+.hero .kicker,
+.kicker{
+  background:rgba(47,111,82,.10) !important;
+  color:#245940 !important;
+  border:1px solid rgba(47,111,82,.15) !important;
+}
+.pill{
+  background:#f2ede3 !important;
+  color:#53625b !important;
+  border:1px solid rgba(50,65,60,.08) !important;
+}
+.product-body p,
+.hero p,
+.about-card p,
+.contact-card p,
+.detail-card p{
+  color:var(--muted) !important;
+}
+.footer{
+  background:linear-gradient(180deg,#21352d,#17271f 100%) !important;
+}
+#scrollTopBtn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(180deg,#315f49,#234534);
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 16px 30px rgba(35,69,52,.28);
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:all .25s ease;
+  z-index:999;
+}
+#scrollTopBtn.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}

@@ -58,3 +58,8 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 
 - Reduced the catalog to 70 curated products using cleaner exact-name part listings and more precise part-photo mappings.
 - Updated homepage copy and video for a more realistic dealer-style presentation.
+
+- Refreshed color palette to a softer premium green-beige scheme.
+- Added a floating scroll-to-top button.
+- Replaced homepage video with the requested Pixabay combine-harvester farm video source.
+- Homepage dynamic stats now reflect actual product count, stock units, cart items and brands, and update when cart changes.

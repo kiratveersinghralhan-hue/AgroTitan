@@ -20,6 +20,9 @@ function saveState(){
   localStorage.setItem("agrotitan_cart", JSON.stringify(state.cart));
   localStorage.setItem("agrotitan_wishlist", JSON.stringify(state.wishlist));
   updateBadges();
+  updateHomepageStats();
+  updateHomepageStats();
+  animateCounters();
 }
 
 
@@ -126,44 +129,28 @@ function setActiveMenu(){
 function animateCounters(){
   const items = document.querySelectorAll("[data-count-to]");
   if(!items.length) return;
-
-  items.forEach(el => {
-    el.textContent = "0";
-    el.dataset.done = "0";
-  });
-
   const runCounter = (el) => {
-    if(el.dataset.done === "1") return;
-    el.dataset.done = "1";
-    const targetRaw = el.getAttribute("data-count-to") || "0";
-    const isPlus = targetRaw.includes("+");
-    const clean = targetRaw.replace(/[+,]/g,"");
-    const target = Number(clean) || 0;
+    const target = Number(String(el.getAttribute("data-count-to") || "0").replace(/[^0-9.]/g,"")) || 0;
+    const startVal = Number(String(el.textContent || "0").replace(/[^0-9.]/g,"")) || 0;
     const start = performance.now();
-    const duration = 1400;
-
+    const duration = 900;
     function step(now){
-      const progress = Math.min((now - start) / duration, 1);
-      let value = Math.floor(target * progress);
-      let out = value.toLocaleString("en-IN");
-      if(targetRaw.includes("/")) out = targetRaw;
-      else if(isPlus && progress === 1) out += "+";
-      else if(isPlus && progress < 1) out = value.toLocaleString("en-IN");
-      el.textContent = out;
+      const progress = Math.min((now - start)/duration, 1);
+      const value = Math.floor(startVal + (target - startVal) * progress);
+      el.textContent = value.toLocaleString("en-IN");
       if(progress < 1) requestAnimationFrame(step);
+      else el.dataset.done = "1";
     }
     requestAnimationFrame(step);
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if(entry.isIntersecting && entry.target.dataset.done !== "1"){
         runCounter(entry.target);
         observer.unobserve(entry.target);
       }
     });
-  }, {threshold: 0.45});
-
+  }, {threshold:0.35});
   items.forEach(el => observer.observe(el));
 }
 
@@ -959,13 +946,49 @@ function initIntroLogo(){
   setTimeout(hideIntro, 2400);
 }
 
+
+function initScrollTopButton(){
+  if(document.getElementById("scrollTopBtn")) return;
+  const btn = document.createElement("button");
+  btn.id = "scrollTopBtn";
+  btn.type = "button";
+  btn.setAttribute("aria-label","Scroll to top");
+  btn.innerHTML = "↑";
+  document.body.appendChild(btn);
+  const toggle = () => {
+    if(window.scrollY > 280) btn.classList.add("show");
+    else btn.classList.remove("show");
+  };
+  window.addEventListener("scroll", toggle, {passive:true});
+  toggle();
+  btn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+}
+
+function updateHomepageStats(){
+  const parts = Array.isArray(PRODUCTS) ? PRODUCTS.length : 0;
+  const inStock = Array.isArray(PRODUCTS) ? PRODUCTS.reduce((n,p)=>n + (Number(p.stock)||0),0) : 0;
+  const cartCount = state.cart.reduce((a,b)=>a + b.qty, 0);
+  const brandCount = Array.isArray(PRODUCTS) ? new Set(PRODUCTS.map(p=>p.brand)).size : 0;
+  const map = { parts, stock: inStock, cart: cartCount, brands: brandCount };
+  Object.entries(map).forEach(([key,val]) => {
+    const el = document.querySelector(`[data-count-key="${key}"]`);
+    if(el){
+      el.setAttribute("data-count-to", String(val));
+      el.dataset.done = "0";
+      el.textContent = "0";
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   fillSharedContent();
+  initScrollTopButton();
   initIntroLogo();
   initGlassHeader();
   enhanceHeader();
   initLanguageSelector();
   updateBadges();
+  updateHomepageStats();
   setActiveMenu();
   populateSelectors();
   animateCounters();
