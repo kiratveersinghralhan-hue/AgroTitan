@@ -1022,3 +1022,50 @@ function sendWhatsAppOrder(productName){
   const message = encodeURIComponent("Hello, I want to order: " + productName);
   window.open("https://wa.me/" + number + "?text=" + message, "_blank");
 }
+
+
+function createOtherLanguagesModal(){
+  let modal = document.getElementById("otherLanguagesModal");
+  if(modal) return modal;
+  modal = document.createElement("div");
+  modal.id = "otherLanguagesModal";
+  modal.className = "other-lang-modal";
+  modal.innerHTML = `
+    <div class="other-lang-card">
+      <div class="other-lang-head">
+        <h3>More languages</h3>
+        <p>These options currently guide users to broader translation choices.</p>
+      </div>
+      <div class="other-lang-list">
+        <button class="other-lang-item">Arabic</button>
+        <button class="other-lang-item">Spanish</button>
+        <button class="other-lang-item">French</button>
+        <button class="other-lang-item">German</button>
+        <button class="other-lang-item">Italian</button>
+        <button class="other-lang-item">Portuguese</button>
+      </div>
+      <button class="other-lang-close" type="button">Back</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  modal.querySelector(".other-lang-close").addEventListener("click", closeOtherLanguagesModal);
+  modal.querySelectorAll(".other-lang-item").forEach(btn => {
+    btn.addEventListener("click", () => {
+      alert("For now, English remains the default site language. You can add more languages later in the catalog translations.");
+      closeOtherLanguagesModal();
+    });
+  });
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal) closeOtherLanguagesModal();
+  });
+  return modal;
+}
+
+function openOtherLanguagesModal(){
+  createOtherLanguagesModal().classList.add("show");
+}
+
+function closeOtherLanguagesModal(){
+  const modal = document.getElementById("otherLanguagesModal");
+  if(modal) modal.classList.remove("show");
+}
