@@ -3798,3 +3798,145 @@ body{
     font-size:20px;
   }
 }
+
+
+/* ===== v29 PROFESSIONAL REFRESH ===== */
+:root{
+  --lux-bg-1:#0c1324;
+  --lux-bg-2:#131b31;
+  --lux-bg-3:#1c2740;
+  --lux-accent-1:#0f766e;   /* teal */
+  --lux-accent-2:#c9a34b;   /* champagne gold */
+  --lux-accent-3:#e8dfcf;   /* ivory */
+  --lux-accent-4:#7f8ea3;   /* slate */
+}
+
+/* Replace loud pink/indigo look with professional navy-teal-gold */
+body{
+  background:
+    radial-gradient(circle at 12% 10%, rgba(15,118,110,.12), transparent 24%),
+    radial-gradient(circle at 80% 18%, rgba(201,163,75,.10), transparent 20%),
+    linear-gradient(180deg, var(--lux-bg-1), var(--lux-bg-2) 46%, #09101d 100%) !important;
+  color:#edf2f7 !important;
+}
+.topbar{
+  background:linear-gradient(90deg,#173347,#0f766e,#c9a34b) !important;
+  color:#fffdf8 !important;
+}
+.header .nav{
+  background:linear-gradient(135deg, rgba(9,16,29,.90), rgba(19,27,49,.86)) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+.brand h1{
+  background:linear-gradient(90deg,#ffffff,#dce8ea,#f2dfb3) !important;
+  background-size:180% auto !important;
+  color:transparent !important;
+}
+.card,.product-card,.detail-card,.detail-media,.filters.card,.about-card,.contact-card,.summary-card,.cart-item,.chat-shell,.ai-card{
+  background:linear-gradient(180deg, rgba(12,18,34,.96), rgba(10,14,25,.98)) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+}
+.primary-btn{
+  background:linear-gradient(90deg,#0f766e,#1d8b7f) !important;
+  box-shadow:0 14px 28px rgba(15,118,110,.22) !important;
+}
+.primary-btn:hover{
+  box-shadow:0 18px 34px rgba(15,118,110,.28) !important;
+}
+.ghost-btn,.badge-btn{
+  background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06)) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  color:#eef3fb !important;
+}
+.kicker,.hero .kicker{
+  background:linear-gradient(90deg, rgba(15,118,110,.14), rgba(201,163,75,.10)) !important;
+  border:1px solid rgba(201,163,75,.16) !important;
+  color:#f4ecd8 !important;
+}
+.stat{
+  background:
+    radial-gradient(circle at top right, rgba(201,163,75,.14), transparent 30%),
+    linear-gradient(180deg, rgba(18,27,49,.96), rgba(8,12,23,.98)) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+}
+.stat .num{ color:#ffffff !important; }
+.stat .label{ color:#d8dfec !important; }
+.footer{
+  background:linear-gradient(180deg,#0a0f1c,#04070d 100%) !important;
+}
+
+/* Language popup visibility fix */
+.lang-modal{
+  background:rgba(4,8,15,.72) !important;
+}
+.lang-card{
+  background:linear-gradient(180deg,#0f1a31,#0b1324) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+}
+.lang-head h2{
+  color:#ffffff !important;
+}
+.lang-head p{
+  color:#cfd8e6 !important;
+}
+.lang-btn,
+.lang-option{
+  background:rgba(255,255,255,.96) !important;
+  color:#162031 !important;
+  border:1px solid rgba(22,32,49,.08) !important;
+}
+.lang-btn span,
+.lang-option strong,
+.lang-option-text strong{
+  color:#162031 !important;
+}
+.lang-option-text small{
+  color:#4b5563 !important;
+}
+.lang-helper{
+  background:rgba(255,255,255,.94) !important;
+  color:#334155 !important;
+  border-radius:18px !important;
+  padding:14px 16px !important;
+}
+.flag{
+  filter:none !important;
+}
+
+/* Clean, softer edges instead of harsh blocks */
+.header .nav,
+.card,.product-card,.detail-card,.detail-media,.filters.card,.about-card,.contact-card,.summary-card,.cart-item,.chat-shell,.ai-card,.hero-copy,.hero-media,.stat{
+  border-radius:26px !important;
+}
+.primary-btn,.ghost-btn,.badge-btn,.showroom-action,#scrollTopBtn{
+  border-radius:999px !important;
+}
+.menu-toggle-btn{
+  border-radius:18px !important;
+}
+
+/* Video wrapper polish */
+.hero-media{
+  overflow:hidden !important;
+}
+.hero-media video,.hero-media iframe{
+  width:100% !important;
+  min-height:420px;
+  background:#050915 !important;
+  object-fit:cover !important;
+}
+.video-fallback-note{
+  color:#d8dfec !important;
+}
+@media (max-width:720px){
+  .header .nav{
+    border-radius:22px !important;
+  }
+  .card,.product-card,.detail-card,.detail-media,.filters.card,.about-card,.contact-card,.summary-card,.cart-item,.chat-shell,.ai-card,.hero-copy,.hero-media,.stat{
+    border-radius:24px !important;
+  }
+  .hero-media video,.hero-media iframe{
+    min-height:280px;
+  }
+}
