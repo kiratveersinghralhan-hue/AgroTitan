@@ -1134,3 +1134,123 @@ function closeOtherLanguagesModal(){
   const modal = document.getElementById("otherLanguagesModal");
   if(modal) modal.classList.remove("show");
 }
+
+
+/* ===== v39 robust language/header fixes ===== */
+function createWorldLanguagesModalV39(){
+  let modal = document.getElementById("worldLanguagesModalV39");
+  if(modal) return modal;
+  const languages = [
+    ["en","English","Built-in website language"],
+    ["hi","Hindi","Built-in website language"],
+    ["pa","Punjabi","Built-in website language"],
+    ["ar","Arabic","Browser translation"],
+    ["nl","Dutch","Browser translation"],
+    ["fr","French","Browser translation"],
+    ["de","German","Browser translation"],
+    ["it","Italian","Browser translation"],
+    ["ja","Japanese","Browser translation"],
+    ["ko","Korean","Browser translation"],
+    ["pt","Portuguese","Browser translation"],
+    ["ru","Russian","Browser translation"],
+    ["es","Spanish","Browser translation"],
+    ["tr","Turkish","Browser translation"],
+    ["zh-CN","Chinese","Browser translation"]
+  ];
+  modal = document.createElement("div");
+  modal.id = "worldLanguagesModalV39";
+  modal.className = "world-lang-modal";
+  modal.innerHTML = `
+    <div class="world-lang-card">
+      <div class="world-lang-head">
+        <h3>Choose your language</h3>
+        <p>Select a built-in language or search more world languages.</p>
+      </div>
+      <div class="world-lang-search-wrap">
+        <input class="world-lang-search" id="worldLangSearchV39" type="text" placeholder="Search language">
+      </div>
+      <div class="world-lang-list" id="worldLangListV39">
+        ${languages.map(([code,name,note]) => `
+          <button class="world-lang-item" type="button" data-world-lang-v39="${code}">
+            <span><strong>${name}</strong><small>${note}</small></span><span>›</span>
+          </button>`).join("")}
+      </div>
+      <button class="world-lang-close" type="button">Close</button>
+    </div>`;
+  document.body.appendChild(modal);
+
+  modal.querySelector("#worldLangSearchV39").addEventListener("input", e => {
+    const term = e.target.value.trim().toLowerCase();
+    modal.querySelectorAll("[data-world-lang-v39]").forEach(btn => {
+      btn.style.display = btn.innerText.toLowerCase().includes(term) ? "" : "none";
+    });
+  });
+
+  modal.querySelectorAll("[data-world-lang-v39]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const code = btn.getAttribute("data-world-lang-v39");
+      if (["en","hi","pa"].includes(code)) {
+        applyLanguage(code);
+        sessionStorage.setItem("agrotitan_lang_popup_v3", "seen");
+      } else {
+        const target = encodeURIComponent(window.location.href);
+        window.open(`https://translate.google.com/translate?sl=auto&tl=${code}&u=${target}`, "_blank");
+      }
+      modal.classList.remove("show");
+      closeLanguageModal();
+    });
+  });
+  modal.querySelector(".world-lang-close").addEventListener("click", ()=>modal.classList.remove("show"));
+  modal.addEventListener("click", e => { if(e.target === modal) modal.classList.remove("show"); });
+  return modal;
+}
+function openWorldLanguagesModalV39(){
+  const modal = createWorldLanguagesModalV39();
+  modal.classList.add("show");
+  const input = modal.querySelector("#worldLangSearchV39");
+  if(input) setTimeout(()=>input.focus(),60);
+}
+
+function enhanceHeaderV39(){
+  const actions = document.querySelector(".nav-actions");
+  const nav = document.querySelector(".nav");
+  if (!actions || !nav) return;
+  let wrap = document.getElementById("languageButtonWrapV39");
+  if(!wrap){
+    wrap = document.createElement("div");
+    wrap.className = "lang-menu-wrap";
+    wrap.id = "languageButtonWrapV39";
+    wrap.innerHTML = `<button class="lang-top-btn" id="languageButtonV39" type="button" aria-haspopup="dialog">🌐 Language</button>`;
+    // insert after selector button if possible
+    const selectorBtn = actions.querySelector("[data-static-selector-btn]");
+    if (selectorBtn && selectorBtn.parentNode === actions) {
+      selectorBtn.insertAdjacentElement("afterend", wrap);
+    } else {
+      actions.prepend(wrap);
+    }
+  }
+  const btn = document.getElementById("languageButtonV39");
+  if(btn && !btn.dataset.bound){
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openWorldLanguagesModalV39();
+    });
+  }
+}
+
+function fixPageAfterLoadV39(){
+  enhanceHeaderV39();
+  const oldWrap = document.getElementById("languageButtonWrap");
+  if(oldWrap) oldWrap.remove();
+  // ensure selector form spacing on products page
+  document.querySelectorAll(".filters.card .field").forEach(el => {
+    el.style.display = "block";
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(fixPageAfterLoadV39, 50);
+  setTimeout(fixPageAfterLoadV39, 300);
+});
