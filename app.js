@@ -285,28 +285,7 @@ function renderProductDetail(){
   const id = new URLSearchParams(location.search).get("id");
   const p = getProduct(id) || PRODUCTS[0];
   wrap.innerHTML = `
-      <button class="lang-top-btn" id="languageButton" type="button" aria-haspopup="true" aria-expanded="false">🌐 Language ▾</button>
-      <div class="lang-dropdown" id="languageDropdown">
-        <div class="lang-search-wrap">
-          <input class="lang-search" id="languageSearch" type="text" placeholder="Search language">
-        </div>
-        <div class="lang-options-scroll" id="languageOptions">
-          <button class="lang-option" type="button" data-lang-choice="en"><span class="lang-option-text"><strong>English</strong><small>Default website language</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="hi"><span class="lang-option-text"><strong>हिंदी</strong><small>Hindi language view</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="pa"><span class="lang-option-text"><strong>ਪੰਜਾਬੀ</strong><small>Punjabi language view</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-arabic"><span class="lang-option-text"><strong>Arabic</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-spanish"><span class="lang-option-text"><strong>Spanish</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-french"><span class="lang-option-text"><strong>French</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-german"><span class="lang-option-text"><strong>German</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-italian"><span class="lang-option-text"><strong>Italian</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-portuguese"><span class="lang-option-text"><strong>Portuguese</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-russian"><span class="lang-option-text"><strong>Russian</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-turkish"><span class="lang-option-text"><strong>Turkish</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-japanese"><span class="lang-option-text"><strong>Japanese</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-korean"><span class="lang-option-text"><strong>Korean</strong><small>Browser translation guidance</small></span></button>
-          <button class="lang-option" type="button" data-lang-choice="other-chinese"><span class="lang-option-text"><strong>Chinese</strong><small>Browser translation guidance</small></span></button>
-        </div>
-      </div>
+      <button class="lang-top-btn" id="languageButton" type="button" aria-haspopup="dialog" aria-expanded="false">🌐 Language</button>
     `;
   renderRelated(p.id);
 }
@@ -692,9 +671,10 @@ function createLanguagePopup() {
       </div>
       <div class="lang-body">
         <div class="lang-grid">
-          <button class="lang-btn" data-lang-choice="en">🇬🇧 <span data-i18n="langEnglish">English</span></button>
-          <button class="lang-btn" data-lang-choice="hi">🇮🇳 <span data-i18n="langHindi">Hindi</span></button>
-          <button class="lang-btn" data-lang-choice="pa">🇮🇳 <span data-i18n="langPunjabi">Punjabi</span></button>
+          <button class="lang-btn" data-lang-choice="en"><span class="flag">🇬🇧</span><span data-i18n="langEnglish">English</span></button>
+          <button class="lang-btn" data-lang-choice="hi"><span class="flag">🇮🇳</span><span data-i18n="langHindi">Hindi</span></button>
+          <button class="lang-btn" data-lang-choice="pa"><span class="flag">🇮🇳</span><span data-i18n="langPunjabi">Punjabi</span></button>
+          <button class="lang-btn" data-lang-choice="world"><span class="flag">🌐</span><span>Other languages</span></button>
         </div>
         <div class="lang-helper" data-i18n="langHelp">You can change language anytime from the header Language button.</div>
       </div>
@@ -729,6 +709,91 @@ function closeLanguageDropdown() {
   if (dd) dd.classList.remove("show");
   if (btn) btn.setAttribute("aria-expanded", "false");
 }
+
+function createWorldLanguagesModal(){
+  let modal = document.getElementById("worldLanguagesModal");
+  if(modal) return modal;
+  const languages = [
+    ["en","English","Built-in website language"],
+    ["hi","Hindi","Built-in website language"],
+    ["pa","Punjabi","Built-in website language"],
+    ["ar","Arabic","Browser translation"],
+    ["nl","Dutch","Browser translation"],
+    ["fr","French","Browser translation"],
+    ["de","German","Browser translation"],
+    ["it","Italian","Browser translation"],
+    ["ja","Japanese","Browser translation"],
+    ["ko","Korean","Browser translation"],
+    ["pt","Portuguese","Browser translation"],
+    ["ru","Russian","Browser translation"],
+    ["es","Spanish","Browser translation"],
+    ["tr","Turkish","Browser translation"],
+    ["zh-CN","Chinese","Browser translation"]
+  ];
+  modal = document.createElement("div");
+  modal.id = "worldLanguagesModal";
+  modal.className = "world-lang-modal";
+  modal.innerHTML = `
+    <div class="world-lang-card">
+      <div class="world-lang-head">
+        <h3>Choose your language</h3>
+        <p>Select a built-in language or search more world languages for browser translation.</p>
+      </div>
+      <div class="world-lang-search-wrap">
+        <input class="world-lang-search" id="worldLangSearch" type="text" placeholder="Search language">
+      </div>
+      <div class="world-lang-list" id="worldLangList">
+        ${languages.map(([code,name,note]) => `
+          <button class="world-lang-item" type="button" data-world-lang="${code}">
+            <span><strong>${name}</strong><small>${note}</small></span>
+            <span>›</span>
+          </button>`).join("")}
+      </div>
+      <button class="world-lang-close" type="button">Close</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const search = modal.querySelector("#worldLangSearch");
+  search.addEventListener("input", () => {
+    const term = search.value.trim().toLowerCase();
+    modal.querySelectorAll(".world-lang-item").forEach(btn => {
+      btn.style.display = btn.innerText.toLowerCase().includes(term) ? "" : "none";
+    });
+  });
+
+  modal.querySelectorAll(".world-lang-item").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const code = btn.getAttribute("data-world-lang");
+      if (["en","hi","pa"].includes(code)) {
+        applyLanguage(code);
+        sessionStorage.setItem("agrotitan_lang_popup_v3", "seen");
+      } else {
+        const target = encodeURIComponent(window.location.href);
+        window.open(`https://translate.google.com/translate?sl=auto&tl=${code}&u=${target}`, "_blank");
+      }
+      closeWorldLanguagesModal();
+      closeLanguageModal();
+    });
+  });
+
+  modal.querySelector(".world-lang-close").addEventListener("click", closeWorldLanguagesModal);
+  modal.addEventListener("click", e => {
+    if(e.target === modal) closeWorldLanguagesModal();
+  });
+  return modal;
+}
+function openWorldLanguagesModal(){
+  const modal = createWorldLanguagesModal();
+  modal.classList.add("show");
+  const input = modal.querySelector("#worldLangSearch");
+  if(input) setTimeout(() => input.focus(), 60);
+}
+function closeWorldLanguagesModal(){
+  const modal = document.getElementById("worldLanguagesModal");
+  if(modal) modal.classList.remove("show");
+}
+
 function initLanguageSelector() {
   createLanguagePopup();
   const saved = localStorage.getItem("agrotitan_lang") || "en";
@@ -745,10 +810,11 @@ function initLanguageSelector() {
         applyLanguage(choice);
         sessionStorage.setItem("agrotitan_lang_popup_v3", "seen");
         closeLanguageModal();
-        closeLanguageDropdown();
+      } else if (choice === "world") {
+        openWorldLanguagesModal();
       } else {
-        alert("This site currently has full built-in translation for English, Hindi, and Punjabi. For other languages, please use your browser translation option.");
-        closeLanguageDropdown();
+        const target = encodeURIComponent(window.location.href);
+        window.open(`https://translate.google.com/translate?sl=auto&tl=${choice.replace("other-","")}&u=${target}`, "_blank");
       }
     });
   });
