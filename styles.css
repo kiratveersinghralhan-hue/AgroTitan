@@ -6390,3 +6390,77 @@ img{
   body{padding-bottom:88px;}
   .floating{bottom:92px !important;}
 }
+
+
+/* ===== v45 declutter mobile buttons ===== */
+
+/* remove extra sticky bar entirely */
+.mobile-sticky-bar{ display:none !important; }
+body{ padding-bottom:0 !important; }
+
+/* keep only one compact floating rail on mobile */
+@media (max-width:720px){
+  .floating{
+    right:12px !important;
+    left:auto !important;
+    bottom:84px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:10px !important;
+    align-items:flex-end !important;
+    z-index:520 !important;
+  }
+  .whatsapp-btn,
+  .call-btn{
+    min-width:auto !important;
+    width:auto !important;
+    max-width:160px !important;
+    min-height:48px !important;
+    padding:0 16px !important;
+    border-radius:999px !important;
+    font-size:14px !important;
+    font-weight:900 !important;
+    box-shadow:0 14px 28px rgba(0,0,0,.24) !important;
+  }
+
+  /* hide the older extra floating whatsapp circle on mobile if present */
+  #whatsappFloat{
+    display:none !important;
+  }
+
+  /* move scroll-top above action buttons */
+  #scrollTopBtn{
+    right:16px !important;
+    bottom:196px !important;
+    width:52px !important;
+    height:52px !important;
+    z-index:521 !important;
+  }
+
+  /* give hero search cleaner spacing */
+  .smart-search-bar{
+    margin:10px 0 14px !important;
+  }
+
+  /* on mobile avoid too many CTAs stacked tightly */
+  .hero-cta{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    margin-top:0 !important;
+  }
+  .hero-cta .primary-btn,
+  .hero-cta .ghost-btn{
+    width:100% !important;
+    min-height:54px !important;
+    border-radius:18px !important;
+  }
+}
+
+/* on desktop keep existing layout but prevent collisions */
+.floating{
+  z-index:520;
+}
+#scrollTopBtn{
+  z-index:521;
+}

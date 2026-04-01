@@ -1384,3 +1384,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(enhanceProductCardsV44, 120);
   setTimeout(enhanceProductCardsV44, 500);
 });
+
+
+/* ===== v45 declutter button safeguard ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const sticky = document.querySelector(".mobile-sticky-bar");
+  if (sticky) sticky.remove();
+  const extraWhatsapp = document.getElementById("whatsappFloat");
+  if (window.innerWidth <= 720 && extraWhatsapp) extraWhatsapp.style.display = "none";
+});
