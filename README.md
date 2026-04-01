@@ -1,0 +1,49 @@
+
+# AgroTitan Spares - Final Pro Flat Website
+
+This website is built as a GitHub-compatible static ecommerce-style site for combine harvester spare parts.
+
+## Important
+- All files are in one flat root structure.
+- No subfolders are used.
+- Upload every file directly to the root of your GitHub repository.
+
+## Pages
+- index.html
+- products.html
+- product.html
+- cart.html
+- checkout.html
+- thankyou.html
+- about.html
+- contact.html
+
+## Features
+- Premium design
+- Navigation on every page
+- Home machine selector
+- Product filters with clear labels
+- Animated counters
+- Cart with localStorage
+- Demo checkout
+- WhatsApp and call buttons
+- Shop branding for AgroTitan Spares
+
+## Notes
+- Product images use external image URLs, so internet is required for those images to load.
+- Payment is demo-only for static hosting. For real payment, add a real gateway later.
+
+- Language popup on website open with English, Hindi, Punjabi, and world-languages translate option.
+
+- Clean language popup with header Language button. Removed the visible Google translate bar.
+
+- Added WhatsApp auto-order links.
+- Added voice search on products page.
+- Added trust badges, live activity strip, recently viewed parts, light/dark mode.
+- Added image-based part finder demo.
+- Added separate AI Assistant page.
+
+- Default first-open language is English. After a user changes language, that chosen language becomes their preference.
+- Product names, short texts, and descriptions now support Hindi and Punjabi.
+- Added stronger on-page SEO tags plus robots.txt and sitemap.xml placeholders.
+- Replace YOUR-DOMAIN in robots.txt and sitemap.xml after you set your real website URL.
