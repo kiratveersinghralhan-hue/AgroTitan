@@ -16,7 +16,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/155f0j00uMItFwahHAgE/Knife-Section-for-Claas-Combine-Harvester-Spare-Parts.webp",
     "description": "Hardened steel knife blades for clean crop cutting and lower vibration."
   },
   {
@@ -36,7 +36,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00YzMbcDuEHFov/Combine-Harvester-Forging-Knife-Guard-Section-Reaper-Finger-Spare-Part-Blade.webp",
     "description": "Heavy-duty guard that protects knife sections and supports smooth cutterbar operation."
   },
   {
@@ -56,7 +56,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00YzMbcDuEHFov/Combine-Harvester-Forging-Knife-Guard-Section-Reaper-Finger-Spare-Part-Blade.webp",
     "description": "Precision guard finger for stable crop intake and reduced knife wear."
   },
   {
@@ -76,7 +76,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00YzMbcDuEHFov/Combine-Harvester-Forging-Knife-Guard-Section-Reaper-Finger-Spare-Part-Blade.webp",
     "description": "Spring hold-down clip to maintain correct knife section clearance."
   },
   {
@@ -96,7 +96,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/155f0j00uMItFwahHAgE/Knife-Section-for-Claas-Combine-Harvester-Spare-Parts.webp",
     "description": "Robust knife head for connecting the knife assembly to the drive system."
   },
   {
@@ -116,7 +116,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/155f0j00uMItFwahHAgE/Knife-Section-for-Claas-Combine-Harvester-Spare-Parts.webp",
     "description": "Balanced knife back for steady reciprocating cutter movement."
   },
   {
@@ -136,7 +136,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Complete cutter bar assembly with sections, guards and mounting points."
   },
   {
@@ -156,7 +156,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Header divider point for smooth crop entry and row separation."
   },
   {
@@ -176,7 +176,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Wear-resistant skid shoe for header height support over uneven ground."
   },
   {
@@ -196,7 +196,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Flexible reel tine for controlled crop feeding to the cutter bar."
   },
   {
@@ -216,7 +216,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Strong reel bat for maintaining reel balance and feeding performance."
   },
   {
@@ -236,7 +236,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Machined reel spider hub for reliable reel arm mounting."
   },
   {
@@ -256,7 +256,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Reel bush for reduced free play and smoother reel rotation."
   },
   {
@@ -276,7 +276,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Header drive wobble box for stable side-to-side knife action."
   },
   {
@@ -296,7 +296,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Replaceable auger finger to move crop evenly toward feeder housing."
   },
   {
@@ -316,7 +316,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Auger flight section for improved crop gathering across the header width."
   },
   {
@@ -336,7 +336,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Lift spring to support header flotation and stable cutting height."
   },
   {
@@ -356,7 +356,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Protective stone guard to reduce damage from field debris."
   },
   {
@@ -376,7 +376,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "High-strength feeder chain for smooth crop delivery from header to threshing section."
   },
   {
@@ -396,7 +396,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Reinforced feeder slat for even crop carrying and reduced bunching."
   },
   {
@@ -416,7 +416,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harriston-croptec.com/cdn/shop/files/YanmarAW85CombineHarvesterSpareParts1E6C85-21031SPROCKET44T1_700x700.png?v=1743147038",
     "description": "Drive sprocket for feeder chain timing and reliable crop intake."
   },
   {
@@ -436,7 +436,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Wear plate for feeder house floor to support high-throughput feeding."
   },
   {
@@ -456,7 +456,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Feeder drum to regulate crop movement into the threshing drum."
   },
   {
@@ -476,7 +476,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Finger set for consistent crop transfer and reduced blockages."
   },
   {
@@ -496,7 +496,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Feed beater for controlled crop acceleration into threshing area."
   },
   {
@@ -516,7 +516,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190611/John-Deere-Combine-Harvester-Ball-Bearing_ID_40MM_JD39109.jpg",
     "description": "Bearing unit for smoother feeder shaft rotation under load."
   },
   {
@@ -536,7 +536,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Wear-resistant rasp bar for effective grain removal from the crop mat."
   },
   {
@@ -556,7 +556,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Heavy-duty drum tooth for aggressive threshing performance."
   },
   {
@@ -576,7 +576,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Balanced drum shaft for stable threshing drum operation."
   },
   {
@@ -596,7 +596,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Precision concave set for cleaner threshing and controlled grain separation."
   },
   {
@@ -616,7 +616,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Replaceable concave wire section for optimized crop flow through threshing zone."
   },
   {
@@ -636,7 +636,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Durable bar for rebuilding and maintaining concave assemblies."
   },
   {
@@ -656,7 +656,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Beater tooth for moving crop smoothly from threshing to separation."
   },
   {
@@ -676,7 +676,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Heavy gauge beater plate for durable crop transition performance."
   },
   {
@@ -696,7 +696,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Rotor vane for guiding crop flow through rotary separation path."
   },
   {
@@ -716,7 +716,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Rasp bar built for rotary threshing and separation applications."
   },
   {
@@ -736,7 +736,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Separator grate to allow grain drop while carrying straw onward."
   },
   {
@@ -756,7 +756,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Durable straw walker for final grain separation from straw residue."
   },
   {
@@ -776,7 +776,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Crank mechanism for synchronized straw walker motion."
   },
   {
@@ -796,7 +796,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190611/John-Deere-Combine-Harvester-Ball-Bearing_ID_40MM_JD39109.jpg",
     "description": "Bearing kit engineered for straw walker assemblies under heavy load."
   },
   {
@@ -816,7 +816,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Support block for straw walker linkage and alignment."
   },
   {
@@ -836,7 +836,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Walker arm component for controlled oscillation of separation units."
   },
   {
@@ -856,7 +856,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Adjustable upper sieve for separating clean grain from chaff and returns."
   },
   {
@@ -876,7 +876,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Lower cleaning sieve for final grain sample quality control."
   },
   {
@@ -896,7 +896,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Heavy-duty chaffer for air-assisted crop cleaning and separation."
   },
   {
@@ -916,7 +916,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Balanced fan blade for consistent airflow through the cleaning shoe."
   },
   {
@@ -936,7 +936,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Fan shaft machined for stable high-speed airflow generation."
   },
   {
@@ -956,7 +956,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Pulley for reliable cleaning fan speed transmission."
   },
   {
@@ -976,7 +976,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Grain pan for transporting separated grain toward the cleaning system."
   },
   {
@@ -996,7 +996,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190611/John-Deere-Combine-Harvester-Ball-Bearing_ID_40MM_JD39109.jpg",
     "description": "Bushing set for smoother oscillation of grain pan assembly."
   },
   {
@@ -1016,7 +1016,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Return auger for circulating unthreshed material back to the system."
   },
   {
@@ -1036,7 +1036,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Elevator chain for tailings return system operation."
   },
   {
@@ -1056,7 +1056,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Clean grain auger for efficient grain transfer to elevator or tank."
   },
   {
@@ -1076,7 +1076,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Cross auger flight section for horizontal grain movement."
   },
   {
@@ -1096,7 +1096,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "High-strength elevator chain for lifting clean grain to the tank."
   },
   {
@@ -1116,7 +1116,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Bucket attachment for grain elevator chain assemblies."
   },
   {
@@ -1136,7 +1136,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Heavy-duty auger shaft built for stable grain movement and long life."
   },
   {
@@ -1156,7 +1156,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Internal grain tank auger for smooth unloading preparation."
   },
   {
@@ -1176,7 +1176,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Flight section for rebuilding unloading auger assemblies."
   },
   {
@@ -1196,7 +1196,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Auger tube section for the unloading system."
   },
   {
@@ -1216,7 +1216,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Gearbox that drives the unloading auger under field load."
   },
   {
@@ -1236,7 +1236,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Hinge hardware for grain tank cover movement and support."
   },
   {
@@ -1256,7 +1256,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Mounting bracket for grain monitoring sensors and switches."
   },
   {
@@ -1276,7 +1276,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190615/John-Deere-Combine-Harvester-V-Belt_Cogged_Z21400.jpg",
     "description": "Premium drive belt for dependable power transfer through major systems."
   },
   {
@@ -1296,7 +1296,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190615/John-Deere-Combine-Harvester-V-Belt_Cogged_Z21400.jpg",
     "description": "High-grip variator belt for speed control in variable drive assemblies."
   },
   {
@@ -1316,7 +1316,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harriston-croptec.com/cdn/shop/files/YanmarAW85CombineHarvesterSpareParts1E6C85-21031SPROCKET44T1_700x700.png?v=1743147038",
     "description": "Hardened sprocket set for chain-driven combine systems."
   },
   {
@@ -1336,7 +1336,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Balanced drive pulley for efficient motion transfer and less belt wear."
   },
   {
@@ -1356,7 +1356,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Idler pulley to maintain proper belt alignment and tension."
   },
   {
@@ -1376,7 +1376,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Spring for maintaining drive belt or chain tension."
   },
   {
@@ -1396,7 +1396,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Machined drive shaft for dependable torque transmission."
   },
   {
@@ -1416,7 +1416,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Universal joint for angular power transfer in rotating shafts."
   },
   {
@@ -1436,7 +1436,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Input shaft for combine gearbox drive assemblies."
   },
   {
@@ -1456,7 +1456,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Gearbox housing built to support bearings, shafts and seals."
   },
   {
@@ -1476,7 +1476,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Clutch plate for controlled power engagement in specific applications."
   },
   {
@@ -1496,7 +1496,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190611/John-Deere-Combine-Harvester-Ball-Bearing_ID_40MM_JD39109.jpg",
     "description": "Housing unit for securing drive line bearings in alignment."
   },
   {
@@ -1516,7 +1516,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Pressure-rated hydraulic hose for lift, steering or control circuits."
   },
   {
@@ -1536,7 +1536,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Formed hydraulic pipe for durable oil routing across the machine."
   },
   {
@@ -1556,7 +1556,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Seal kit for restoring hydraulic pump performance."
   },
   {
@@ -1576,7 +1576,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Spool element for hydraulic directional control valves."
   },
   {
@@ -1596,7 +1596,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Electro-hydraulic solenoid valve for assisted machine functions."
   },
   {
@@ -1616,7 +1616,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Cylinder seal and service kit for header lift operation."
   },
   {
@@ -1636,7 +1636,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Filter element for keeping hydraulic oil clean under high-use conditions."
   },
   {
@@ -1656,7 +1656,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Sealing kit for hydraulic cylinders, motors and pumps."
   },
   {
@@ -1676,7 +1676,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Primary air filter for protecting engine intake in dusty field conditions."
   },
   {
@@ -1696,7 +1696,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Engine oil filter for cleaner lubrication and longer service life."
   },
   {
@@ -1716,7 +1716,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Fuel filter to protect injection components from contamination."
   },
   {
@@ -1736,7 +1736,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Cooling radiator core for stable engine temperature control."
   },
   {
@@ -1756,7 +1756,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190615/John-Deere-Combine-Harvester-V-Belt_Cogged_Z21400.jpg",
     "description": "Engine fan belt for dependable cooling system drive."
   },
   {
@@ -1776,7 +1776,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Repair kit for restoring coolant circulation performance."
   },
   {
@@ -1796,7 +1796,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Clamp set for secure exhaust pipe connections."
   },
   {
@@ -1816,7 +1816,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Resilient engine mount for vibration isolation and alignment."
   },
   {
@@ -1836,7 +1836,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Reinforced hose for turbocharged intake or charge air routing."
   },
   {
@@ -1856,7 +1856,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Cooling hose for reliable coolant circulation."
   },
   {
@@ -1876,7 +1876,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Section wiring harness for lighting, sensors and instrument systems."
   },
   {
@@ -1896,7 +1896,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "LED work light for better field visibility during low-light harvesting."
   },
   {
@@ -1916,7 +1916,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Signal lamp assembly for combine lighting system replacement."
   },
   {
@@ -1936,7 +1936,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Sensor for monitoring engine or hydraulic temperature."
   },
   {
@@ -1956,7 +1956,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Rotational speed sensor for monitoring shafts or drums."
   },
   {
@@ -1976,7 +1976,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Heavy-duty battery cable for starting and power distribution."
   },
   {
@@ -1996,7 +1996,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Protective cover for electrical fuse panel."
   },
   {
@@ -2016,7 +2016,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Starter motor for dependable engine cranking."
   },
   {
@@ -2036,7 +2036,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190615/John-Deere-Combine-Harvester-V-Belt_Cogged_Z21400.jpg",
     "description": "Drive belt for alternator and auxiliary charging system."
   },
   {
@@ -2056,7 +2056,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://www.lumise.eu/storage/product_images/4/tuotesivu_nordiclightstyovalopakettipuimuri_8020107994_b28a38ac5a90_1.webp",
     "description": "Replacement knob for in-cab switch and control panel use."
   },
   {
@@ -2076,7 +2076,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Cabin air filter for cleaner operator environment and ventilation."
   },
   {
@@ -2096,7 +2096,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Mirror assembly for better field and road visibility."
   },
   {
@@ -2116,7 +2116,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Seat suspension component for improved operator comfort."
   },
   {
@@ -2136,7 +2136,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Cab door handle replacement for secure access."
   },
   {
@@ -2156,7 +2156,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Wiper blade for improved visibility in dusty or wet conditions."
   },
   {
@@ -2176,7 +2176,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Grip replacement for operator control levers."
   },
   {
@@ -2196,7 +2196,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Residue chopper knife for fine chopping of straw and stover."
   },
   {
@@ -2216,7 +2216,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Hammer blade for heavy-duty straw chopping action."
   },
   {
@@ -2236,7 +2236,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Spreader disc for uniform residue distribution behind the machine."
   },
   {
@@ -2256,7 +2256,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Vane blade for directing chaff and straw spread pattern."
   },
   {
@@ -2276,7 +2276,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Flexible residue curtain to control discharge direction."
   },
   {
@@ -2296,7 +2296,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/155f0j00uMItFwahHAgE/Knife-Section-for-Claas-Combine-Harvester-Spare-Parts.webp",
     "description": "Durable straw reaper blade for cutting residue and loose straw."
   },
   {
@@ -2316,7 +2316,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/155f0j00uMItFwahHAgE/Knife-Section-for-Claas-Combine-Harvester-Spare-Parts.webp",
     "description": "Knife holder for mounting straw reaper blades accurately."
   },
   {
@@ -2336,7 +2336,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Gearbox for straw reaper transmission and cutting drive."
   },
   {
@@ -2356,7 +2356,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Chain for straw reaper drive assemblies."
   },
   {
@@ -2376,7 +2376,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Beater bar for residue handling and throughput consistency."
   },
   {
@@ -2396,7 +2396,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/allimg/190611/John-Deere-Combine-Harvester-Ball-Bearing_ID_40MM_JD39109.jpg",
     "description": "Bearing support for feeder drum shaft and steady crop intake."
   },
   {
@@ -2416,7 +2416,7 @@ const PRODUCTS = [
     ],
     "stock": 20,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00ClwfbniBQDqd/1e6b30-39001-Concave-Sieve-for-Yanmar-Combine-Harvester.webp",
     "description": "Pan section for guiding returns material within the cleaning system."
   },
   {
@@ -2436,7 +2436,7 @@ const PRODUCTS = [
     ],
     "stock": 23,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Outlet elbow section for unloading auger path alignment."
   },
   {
@@ -2456,7 +2456,7 @@ const PRODUCTS = [
     ],
     "stock": 26,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6dcef10d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Guard for rotating shaft safety and debris protection."
   },
   {
@@ -2476,7 +2476,7 @@ const PRODUCTS = [
     ],
     "stock": 29,
     "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Coupler fitting for hydraulic line connections."
   },
   {
@@ -2496,7 +2496,7 @@ const PRODUCTS = [
     ],
     "stock": 32,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://harctor.com/uploads/190620/John-Deere-Combine-Harvester-Oil-Filter_T19044.jpg",
     "description": "Cooler assembly for maintaining hydraulic or engine oil temperature."
   },
   {
@@ -2516,7 +2516,7 @@ const PRODUCTS = [
     ],
     "stock": 8,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1581093588401-22c58b7fcb63?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Entry step bracket for operator access."
   },
   {
@@ -2536,7 +2536,7 @@ const PRODUCTS = [
     ],
     "stock": 11,
     "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Blade for distributing chaff evenly behind the combine."
   },
   {
@@ -2556,7 +2556,7 @@ const PRODUCTS = [
     ],
     "stock": 14,
     "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00vYWohpRCABbd/Bearing-World-Combine-Harvester-Spare-Parts-4lz-4-0-88HP-and-90HP-Harvester-Spare-Parts-Gearbox-Spare-Parts.webp",
     "description": "Tension bolt for adjusting elevator chain slack."
   },
   {
@@ -2576,7 +2576,7 @@ const PRODUCTS = [
     ],
     "stock": 17,
     "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://image.made-in-china.com/3f2j00BOuWiCVMrPzZ/Reheader-Auger-Weld-World-Combine-Harvester-4lz-6-0p-102HP-Harvester-Cutting-Header-and-Conveyor.webp",
     "description": "Spline component for header drive engagement."
   }
 ];

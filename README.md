@@ -53,3 +53,5 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Expanded catalog to 100+ common combine harvester and straw reaper spare parts.
 - Updated homepage text to describe the broader catalog coverage.
 - Replaced homepage media with a farm combine-harvesting video embed.
+
+- Replaced generic farm/landscape images with actual part-photo URLs from public combine-harvester spare-parts listings where possible.
