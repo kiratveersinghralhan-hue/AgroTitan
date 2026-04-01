@@ -1,7 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120">
-  <rect width="100%" height="100%" fill="none"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
-    font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#FFD24A">
-    Harvester Parts
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="140" viewBox="0 0 520 140">
+<style>
+@keyframes glow {0%,100%{opacity:.72;filter:drop-shadow(0 0 6px rgba(255,210,74,.25))}50%{opacity:1;filter:drop-shadow(0 0 16px rgba(255,210,74,.45))}}
+@keyframes slide {0%{transform:translateX(-18px);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes shimmer {0%{stroke-dashoffset:160}100%{stroke-dashoffset:0}}
+@keyframes pulseRing {0%{transform:scale(.94);opacity:.55}100%{transform:scale(1.14);opacity:0}}
+.textMain{font-family:Arial,sans-serif;font-weight:900;fill:url(#goldGrad);animation:slide .9s ease forwards, glow 2.8s ease-in-out infinite}
+.textSub{font-family:Arial,sans-serif;font-weight:700;fill:#fff4ce;opacity:.88;letter-spacing:2px}
+.iconGlow{animation:glow 2.2s ease-in-out infinite}
+.ring{transform-origin:54px 70px;animation:pulseRing 2.4s ease-out infinite}
+.line{stroke:url(#goldGrad);stroke-width:4;stroke-linecap:round;fill:none;stroke-dasharray:160;animation:shimmer 1.8s ease forwards}
+</style>
+<defs>
+  <linearGradient id="goldGrad" x1="0" x2="1">
+    <stop offset="0%" stop-color="#ffd24a"/>
+    <stop offset="45%" stop-color="#fff0b0"/>
+    <stop offset="100%" stop-color="#d89d12"/>
+  </linearGradient>
+</defs>
+<rect width="100%" height="100%" fill="none"/>
+<circle class="ring" cx="54" cy="70" r="34" stroke="rgba(255,210,74,.45)" stroke-width="2" fill="none"/>
+<g class="iconGlow">
+  <circle cx="54" cy="70" r="28" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+  <path d="M38 70 L54 52 L70 70 L54 88 Z" fill="url(#goldGrad)"/>
+  <path class="line" d="M30 96 C40 82, 68 82, 78 96"/>
+</g>
+<text x="102" y="72" font-size="42" class="textMain">Harvester Parts</text>
+<text x="104" y="99" font-size="13" class="textSub">PREMIUM SPARE PARTS SHOWROOM</text>
 </svg>

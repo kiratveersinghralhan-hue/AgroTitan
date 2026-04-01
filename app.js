@@ -1406,3 +1406,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".floating .whatsapp-btn").forEach(el => el.style.display = "flex");
   }
 });
+
+
+/* ===== v50 unified mobile action rail safeguard ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 720) {
+    document.querySelectorAll(".floating, #whatsappFloat, .showroom-actions").forEach(el => {
+      if (el) el.style.display = "none";
+    });
+    document.querySelectorAll('a[href^="tel:"][style*="position:fixed"]').forEach(el => el.remove());
+  }
+});
