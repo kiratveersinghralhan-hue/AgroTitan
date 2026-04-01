@@ -73,3 +73,8 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Improved home and products selector responsiveness and premium layout.
 - Added richer SEO titles, meta descriptions, canonical tags, OG tags, and schema markup.
 - Added SEO-rich descriptive website copy for better indexing and local discovery.
+
+- Fixed contact page responsiveness and card/form layout.
+- Added stronger SEO metadata, canonical tags, Open Graph tags, and AutoPartsStore schema.
+- Added richer SEO content blocks for better ranking support.
+- Refreshed robots.txt and sitemap.xml.
