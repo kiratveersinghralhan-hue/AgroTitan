@@ -2701,3 +2701,97 @@ html, body{
   .intro-title-main{font-size:34px}
   .intro-title-sub{font-size:26px}
 }
+
+
+/* ===== Header name-only + intro stop fix v13 ===== */
+
+/* Completely remove visible top logo area and give premium name styling */
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:0 !important;
+}
+.brand img{
+  display:none !important;
+}
+.brand > div,
+.brand-text-only{
+  display:block !important;
+  min-width:0 !important;
+  max-width:none !important;
+  width:auto !important;
+}
+.brand h1{
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: .2px !important;
+  color: #182433 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.4) !important;
+}
+.brand h1::after{
+  content:"";
+  display:block;
+  width: 42px;
+  height: 2px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#1f6f46,#d8a53a);
+  opacity: .9;
+}
+.brand p{
+  display:none !important;
+}
+
+/* Cleaner compact header */
+.header .nav{
+  grid-template-columns:minmax(0,1fr) auto !important;
+  align-items:center !important;
+}
+.menu{ display:none !important; }
+.nav-actions{
+  gap:8px !important;
+}
+.nav-actions .badge-btn[data-static-selector-btn]{
+  min-width:88px !important;
+}
+.nav-actions .badge-btn[data-static-cart-btn]{
+  min-width:74px !important;
+}
+@media (max-width:720px){
+  .brand h1{
+    font-size: 18px !important;
+  }
+  .brand h1::after{
+    width: 36px;
+    margin-top: 4px;
+  }
+  .header .nav{
+    width:min(96vw,560px) !important;
+    padding:10px !important;
+  }
+  .nav-actions .badge-btn{
+    min-width:66px !important;
+    height:36px !important;
+    font-size:11px !important;
+  }
+  .nav-actions .badge-btn[data-static-selector-btn]{
+    min-width:74px !important;
+  }
+  .nav-actions .badge-btn[data-static-cart-btn]{
+    min-width:62px !important;
+  }
+  .menu-toggle-btn{
+    width:36px !important;
+    min-width:36px !important;
+    height:36px !important;
+  }
+}
+
+/* Intro should never keep covering page after load */
+#introLogo{
+  pointer-events:none !important;
+}
+body.intro-finished #introLogo{
+  display:none !important;
+}

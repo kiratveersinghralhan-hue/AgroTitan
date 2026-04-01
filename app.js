@@ -943,12 +943,20 @@ function initGlassHeader(){
 
 
 function initIntroLogo(){
+  const hideIntro = () => {
+    document.body.classList.add("intro-finished");
+    const intro = document.getElementById("introLogo");
+    if(intro){
+      intro.style.opacity = "0";
+      intro.style.visibility = "hidden";
+      intro.style.pointerEvents = "none";
+      setTimeout(() => { intro.style.display = "none"; }, 250);
+    }
+  };
   window.addEventListener("load", () => {
-    setTimeout(() => {
-      const intro = document.getElementById("introLogo");
-      if(intro) intro.style.display = "none";
-    }, 3100);
+    setTimeout(hideIntro, 2200);
   });
+  setTimeout(hideIntro, 3200);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
