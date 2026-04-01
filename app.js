@@ -122,21 +122,51 @@ function setActiveMenu(){
   });
 }
 
+
 function animateCounters(){
-  document.querySelectorAll("[data-count-to]").forEach(el => {
-    const to = Number(el.dataset.countTo || 0);
-    let start = 0;
-    const duration = 1600;
-    const startTime = performance.now();
+  const items = document.querySelectorAll("[data-count-to]");
+  if(!items.length) return;
+
+  items.forEach(el => {
+    el.textContent = "0";
+    el.dataset.done = "0";
+  });
+
+  const runCounter = (el) => {
+    if(el.dataset.done === "1") return;
+    el.dataset.done = "1";
+    const targetRaw = el.getAttribute("data-count-to") || "0";
+    const isPlus = targetRaw.includes("+");
+    const clean = targetRaw.replace(/[+,]/g,"");
+    const target = Number(clean) || 0;
+    const start = performance.now();
+    const duration = 1400;
+
     function step(now){
-      const p = Math.min((now - startTime)/duration, 1);
-      const value = Math.floor(p * to);
-      el.textContent = value.toLocaleString("en-IN") + (el.dataset.suffix || "");
-      if(p < 1) requestAnimationFrame(step);
+      const progress = Math.min((now - start) / duration, 1);
+      let value = Math.floor(target * progress);
+      let out = value.toLocaleString("en-IN");
+      if(targetRaw.includes("/")) out = targetRaw;
+      else if(isPlus && progress === 1) out += "+";
+      else if(isPlus && progress < 1) out = value.toLocaleString("en-IN");
+      el.textContent = out;
+      if(progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
-  });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        runCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.45});
+
+  items.forEach(el => observer.observe(el));
 }
+
 
 function uniqueValues(key){
   return [...new Set(PRODUCTS.map(p => p[key]))].sort();
@@ -854,14 +884,16 @@ function closeMobileDrawer() {
 }
 
 
+
 function initAssistantPage(){
   const messagesEl = document.getElementById("chatMessages");
   const form = document.getElementById("chatForm");
   const input = document.getElementById("chatInput");
   if(!messagesEl || !form || !input) return;
 
-  const initial = [
-    {role:"bot", text:`Hello, I am the AgroTitan AI Assistant. Ask me about part compatibility, New Hira 985 models, pricing range, or contact details.`}
+  const chats = [
+    {role:"bot", text:"Hello, I am the AgroTitan AI Assistant."},
+    {role:"bot", text:"Ask me about New Hira 985 Standard, 985 Deluxe, product pricing, compatibility, or contact details."}
   ];
 
   function renderChat(list){
@@ -875,14 +907,14 @@ function initAssistantPage(){
 
   function reply(q){
     const t = q.toLowerCase();
-    if(t.includes("new hira")) return "We support New Hira 985 Standard and 985 Deluxe machines. You can browse parts by selector on the products page.";
-    if(t.includes("contact") || t.includes("phone") || t.includes("call")) return "Call 9216107700 or 9217000077. Shop address: Patiala Road opposite reliance pump.";
-    if(t.includes("price")) return "Our listed spare parts range from entry-level items to premium assemblies. Open the products page to compare current prices.";
-    if(t.includes("whatsapp")) return "Use the Ask on WhatsApp button or message 9216107700 for fast order help.";
-    return "I can help with machine models, part suggestions, contact details and pricing guidance. Try asking about New Hira 985, contact details, or price range.";
+    if(t.includes("new hira") || t.includes("985")) return "We support New Hira 985 Standard and 985 Deluxe machines. Open Products and use the selector to find matching parts quickly.";
+    if(t.includes("contact") || t.includes("phone") || t.includes("call")) return "Call 9216107700 or 9217000077. Address: Patiala Road opposite reliance pump.";
+    if(t.includes("price")) return "Prices depend on part type. Open the Products page to see current prices and details.";
+    if(t.includes("whatsapp")) return "For the fastest reply, use the Ask on WhatsApp button or message 9216107700.";
+    if(t.includes("cutter") || t.includes("straw") || t.includes("combine")) return "We provide parts for combine harvesters, cutter bars, and straw reapers. Tell me the machine brand and model.";
+    return "I can help with machine models, part suggestions, contact details, pricing guidance, and WhatsApp ordering.";
   }
 
-  const chats = [...initial];
   renderChat(chats);
 
   form.addEventListener("submit", (e) => {
@@ -895,6 +927,7 @@ function initAssistantPage(){
     renderChat(chats);
   });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   fillSharedContent();
