@@ -285,36 +285,29 @@ function renderProductDetail(){
   const id = new URLSearchParams(location.search).get("id");
   const p = getProduct(id) || PRODUCTS[0];
   wrap.innerHTML = `
-    <div class="detail-media card"><img src="${p.image}" alt="${tProduct(p, "name")}" referrerpolicy="no-referrer"></div>
-    <div class="detail-card">
-      <div class="ribbon">${p.brand}</div>
-      <h2 style="font-size:42px;margin:12px 0 8px">${tProduct(p, "name")}</h2>
-      <p style="color:#a8b4cf;font-size:18px;line-height:1.7">${tProduct(p, "description")}</p>
-      <div class="meta">
-        <span>Model: ${p.model}</span>
-        <span>Machine: ${p.machineType}</span>
-        <span>Category: ${p.category}</span>
-        <span>Part No: ${p.partNo}</span>
-        <span>Stock: ${p.stock}</span>
-        <span>Rating: ★ ${p.rating}</span>
+      <button class="lang-top-btn" id="languageButton" type="button" aria-haspopup="true" aria-expanded="false">🌐 Language ▾</button>
+      <div class="lang-dropdown" id="languageDropdown">
+        <div class="lang-search-wrap">
+          <input class="lang-search" id="languageSearch" type="text" placeholder="Search language">
+        </div>
+        <div class="lang-options-scroll" id="languageOptions">
+          <button class="lang-option" type="button" data-lang-choice="en"><span class="lang-option-text"><strong>English</strong><small>Default website language</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="hi"><span class="lang-option-text"><strong>हिंदी</strong><small>Hindi language view</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="pa"><span class="lang-option-text"><strong>ਪੰਜਾਬੀ</strong><small>Punjabi language view</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-arabic"><span class="lang-option-text"><strong>Arabic</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-spanish"><span class="lang-option-text"><strong>Spanish</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-french"><span class="lang-option-text"><strong>French</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-german"><span class="lang-option-text"><strong>German</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-italian"><span class="lang-option-text"><strong>Italian</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-portuguese"><span class="lang-option-text"><strong>Portuguese</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-russian"><span class="lang-option-text"><strong>Russian</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-turkish"><span class="lang-option-text"><strong>Turkish</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-japanese"><span class="lang-option-text"><strong>Japanese</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-korean"><span class="lang-option-text"><strong>Korean</strong><small>Browser translation guidance</small></span></button>
+          <button class="lang-option" type="button" data-lang-choice="other-chinese"><span class="lang-option-text"><strong>Chinese</strong><small>Browser translation guidance</small></span></button>
+        </div>
       </div>
-      <div class="price-row">
-        <div class="price">${formatPrice(p.price)}</div>
-        <div class="old-price">${formatPrice(p.oldPrice)}</div>
-      </div>
-      <div class="notice">Need matching help? Tap the WhatsApp button and send your machine brand, model, and part photo.</div>
-      <div class="actions">
-        <button class="small-btn primary" onclick="addToCart('${p.id}')">Add to Cart</button>
-        <button class="small-btn secondary" onclick="toggleWishlist('${p.id}')">Save to Wishlist</button>
-        <a class="small-btn secondary" style="text-align:center;display:inline-flex;justify-content:center;align-items:center" href="products.html">Back to Products</a>
-      </div>
-      <hr class="sep">
-      <h3>Compatibility</h3>
-      <div class="list">
-        ${p.compatibility.map(c => `<div class="list-item"><strong>${c}</strong><span>Supported</span></div>`).join("")}
-      </div>
-    </div>
-  `;
+    `;
   renderRelated(p.id);
 }
 
@@ -747,10 +740,16 @@ function initLanguageSelector() {
 
   document.querySelectorAll("[data-lang-choice]").forEach(btn => {
     btn.addEventListener("click", () => {
-      applyLanguage(btn.getAttribute("data-lang-choice"));
-      sessionStorage.setItem("agrotitan_lang_popup_v3", "seen");
-      closeLanguageModal();
-      closeLanguageDropdown();
+      const choice = btn.getAttribute("data-lang-choice");
+      if (["en","hi","pa"].includes(choice)) {
+        applyLanguage(choice);
+        sessionStorage.setItem("agrotitan_lang_popup_v3", "seen");
+        closeLanguageModal();
+        closeLanguageDropdown();
+      } else {
+        alert("This site currently has full built-in translation for English, Hindi, and Punjabi. For other languages, please use your browser translation option.");
+        closeLanguageDropdown();
+      }
     });
   });
 
