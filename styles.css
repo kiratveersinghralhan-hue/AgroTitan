@@ -4790,3 +4790,128 @@ body{
   .lang-btn span{ font-size:20px !important; }
   .other-lang-list{ grid-template-columns:1fr; }
 }
+
+
+/* ===== v36 fixes: visible View Details/Wishlist + header language button ===== */
+
+/* product action buttons text visibility */
+.small-btn.secondary,
+.product-actions .small-btn.secondary,
+.product-actions .ghost-btn,
+.card-actions .small-btn.secondary{
+  background:linear-gradient(180deg,#fff8ea,#f3e6c6) !important;
+  color:#2a2418 !important;
+  border:1px solid rgba(255,210,74,.16) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.small-btn.secondary:hover,
+.product-actions .small-btn.secondary:hover{
+  color:#1f1a11 !important;
+}
+.product-actions button,
+.product-actions .small-btn{
+  opacity:1 !important;
+}
+.product-actions .small-btn.secondary,
+.product-actions .small-btn.secondary *{
+  color:#2a2418 !important;
+}
+
+/* make header language button visible and optimized */
+.lang-menu-wrap{
+  display:flex !important;
+  align-items:center !important;
+  position:relative !important;
+}
+.lang-top-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:110px !important;
+  height:56px !important;
+  padding:0 14px !important;
+  border-radius:18px !important;
+  background:linear-gradient(180deg,#fff8ea,#f3e6c6) !important;
+  color:#2b2519 !important;
+  border:1px solid rgba(255,210,74,.16) !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  box-shadow:0 12px 24px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.6) !important;
+}
+.lang-top-btn:hover{
+  transform:translateY(-1px);
+}
+.lang-top-btn::before{
+  display:none !important;
+}
+.lang-dropdown{
+  right:0 !important;
+  left:auto !important;
+  width:280px !important;
+}
+
+/* desktop header actions */
+.nav-actions{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+.nav-actions .badge-btn{
+  min-width:84px !important;
+  height:56px !important;
+  border-radius:18px !important;
+}
+
+/* mobile optimized header row */
+@media (max-width:720px){
+  .header .nav{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) auto auto auto auto !important;
+    align-items:center !important;
+    gap:8px !important;
+    padding:10px 12px !important;
+  }
+  .brand{
+    min-width:0 !important;
+  }
+  .brand h1{
+    font-size:22px !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+  .lang-menu-wrap{
+    display:flex !important;
+  }
+  .lang-top-btn{
+    min-width:84px !important;
+    height:42px !important;
+    padding:0 10px !important;
+    font-size:12px !important;
+    border-radius:14px !important;
+  }
+  .nav-actions{
+    display:contents !important;
+  }
+  .nav-actions .badge-btn[data-static-selector-btn]{
+    min-width:76px !important;
+    height:42px !important;
+    font-size:12px !important;
+    border-radius:14px !important;
+  }
+  .nav-actions .badge-btn[data-static-cart-btn]{
+    min-width:76px !important;
+    height:42px !important;
+    font-size:12px !important;
+    border-radius:14px !important;
+  }
+  #menuToggleBtn,
+  .menu-toggle-btn{
+    width:42px !important;
+    min-width:42px !important;
+    height:42px !important;
+    border-radius:14px !important;
+  }
+}
