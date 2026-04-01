@@ -47,3 +47,5 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Product names, short texts, and descriptions now support Hindi and Punjabi.
 - Added stronger on-page SEO tags plus robots.txt and sitemap.xml placeholders.
 - Replace YOUR-DOMAIN in robots.txt and sitemap.xml after you set your real website URL.
+
+- Added stronger mobile and tablet responsiveness. On mobile, header now shows brand on first row and selector/cart/menu on second row.

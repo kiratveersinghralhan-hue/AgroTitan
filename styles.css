@@ -1585,3 +1585,237 @@ body.drawer-open{overflow:hidden}
     display:none !important;
   }
 }
+
+
+/* ===== Responsive fix v8 ===== */
+html, body{
+  overflow-x:hidden !important;
+}
+.container{
+  width:min(1200px, 94vw) !important;
+}
+
+@media (max-width: 720px){
+  .topbar{
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    padding: 10px 12px !important;
+  }
+
+  .header{
+    padding: 0 !important;
+  }
+
+  .nav{
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) auto auto auto !important;
+    grid-template-areas:
+      "brand brand brand brand"
+      ". selector cart menu" !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 0 12px !important;
+  }
+
+  .brand{
+    grid-area: brand !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  .brand img{
+    width: 44px !important;
+    height: 44px !important;
+    flex: 0 0 44px !important;
+  }
+
+  .brand > div{
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    max-width: calc(100vw - 90px) !important;
+  }
+
+  .brand h1{
+    font-size: 15px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .brand p{
+    font-size: 9px !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .nav-actions{
+    display: contents !important;
+  }
+
+  .nav-actions .badge-btn:first-of-type{
+    grid-area: selector !important;
+  }
+
+  .nav-actions .badge-btn:last-of-type{
+    grid-area: cart !important;
+  }
+
+  .nav-actions .badge-btn{
+    width: 72px !important;
+    min-width: 72px !important;
+    height: 40px !important;
+    padding: 6px 8px !important;
+    border-radius: 14px !important;
+    font-size: 11px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+  }
+
+  .lang-menu-wrap{
+    display: none !important;
+  }
+
+  .menu-toggle-btn{
+    grid-area: menu !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    border-radius: 14px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    justify-self: end !important;
+  }
+
+  .hero{
+    padding-top: 18px !important;
+  }
+
+  .hero-grid{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .hero-copy{
+    padding: 22px !important;
+  }
+
+  .hero-copy h2{
+    font-size: clamp(32px, 10vw, 48px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .hero-copy p{
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  .hero-cta{
+    gap: 10px !important;
+  }
+
+  .primary-btn,
+  .ghost-btn{
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .pills{
+    gap: 8px !important;
+  }
+
+  .pill{
+    max-width: 100% !important;
+    font-size: 12px !important;
+  }
+
+  .card,
+  .hero-copy,
+  .hero-media,
+  .selector,
+  .filters.card,
+  .contact-card,
+  .about-card,
+  .ai-card,
+  .chat-shell{
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .stats-grid,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .product-grid,
+  .footer-grid,
+  .assistant-grid,
+  .contact-grid,
+  .about-grid,
+  .checkout-grid,
+  .cart-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-title{
+    gap: 10px !important;
+  }
+
+  .product-card .thumb{
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .product-body{
+    padding: 16px !important;
+  }
+
+  .product-body h4{
+    font-size: 18px !important;
+    line-height: 1.15 !important;
+  }
+
+  .product-tags,
+  .product-meta,
+  .meta-pills{
+    gap: 8px !important;
+  }
+
+  .product-actions,
+  .card-actions{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .product-actions .primary-btn,
+  .product-actions .ghost-btn,
+  .card-actions .primary-btn,
+  .card-actions .ghost-btn,
+  .card-actions .badge-btn,
+  .card-actions button,
+  .product-actions button{
+    width: 100% !important;
+  }
+
+  .footer{
+    padding-bottom: 120px !important;
+  }
+}
+
+/* Tablet responsiveness */
+@media (min-width: 721px) and (max-width: 1024px){
+  .container{
+    width:min(1200px, 92vw) !important;
+  }
+  .hero-grid,
+  .assistant-grid,
+  .grid-3,
+  .grid-4,
+  .footer-grid{
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
