@@ -1,6 +1,6 @@
 
 const SHOP = {
-  name: "AgroTitan Spares",
+  name: "Harvester Parts",
   owner: "Jatinder Singh",
   tagline: "Powering Your Harvest with Trusted Parts",
   phonePrimary: "9216107700",
@@ -111,7 +111,7 @@ function fillSharedContent(){
   document.querySelectorAll("[data-call-link-primary]").forEach(el => el.href = "tel:" + SHOP.phonePrimary);
   document.querySelectorAll("[data-call-link-secondary]").forEach(el => el.href = "tel:" + SHOP.phoneSecondary);
   document.querySelectorAll("[data-whatsapp-link]").forEach(el => {
-    el.href = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("Hello AgroTitan Spares, I need combine spare parts information.")}`;
+    el.href = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("Hello Harvester Parts, I need combine spare parts information.")}`;
   });
 }
 
@@ -422,13 +422,13 @@ const PAGE_TRANSLATIONS = {
       cart: "Cart",
       selector: "Selector",
       cartBtn: "Cart",
-      footerText: "Premium combine harvester spare parts website for AgroTitan Spares.",
+      footerText: "Premium combine harvester spare parts website for Harvester Parts.",
       aiAssistant: "AI Assistant",
       language: "Language"
     },
     pages: {
       "index.html": {
-        ".kicker": "AgroTitan Spares • Premium Farm Parts Store",
+        ".kicker": "Harvester Parts • Premium Farm Parts Store",
         ".hero-copy h2": "Premium spare parts for combine harvesters, cutter bars, and straw reapers.",
         ".hero-copy p": "Genuine-looking premium online catalog for farmers, mechanics, and dealers. Search by brand, machine type, and model. Fast support on WhatsApp for matching the right part.",
         ".hero-cta .primary-btn": "Shop Spare Parts",
@@ -456,7 +456,7 @@ const PAGE_TRANSLATIONS = {
       },
       "about.html": {
         ".breadcrumb": "Home / About",
-        ".ribbon": "About AgroTitan Spares",
+        ".ribbon": "About Harvester Parts",
         ".about-card h2": "Built for farmers who need the right part fast."
       },
       "contact.html": {
@@ -476,13 +476,13 @@ const PAGE_TRANSLATIONS = {
       cart: "कार्ट",
       selector: "सेलेक्टर",
       cartBtn: "कार्ट",
-      footerText: "AgroTitan Spares के लिए प्रीमियम कंबाइन स्पेयर पार्ट्स वेबसाइट।",
+      footerText: "Harvester Parts के लिए प्रीमियम कंबाइन स्पेयर पार्ट्स वेबसाइट।",
       aiAssistant: "AI सहायक",
       language: "भाषा"
     },
     pages: {
       "index.html": {
-        ".kicker": "AgroTitan Spares • प्रीमियम फार्म पार्ट्स स्टोर",
+        ".kicker": "Harvester Parts • प्रीमियम फार्म पार्ट्स स्टोर",
         ".hero-copy h2": "कंबाइन हार्वेस्टर, कटर बार और स्ट्रॉ रीपर के लिए प्रीमियम स्पेयर पार्ट्स।",
         ".hero-copy p": "किसानों, मिस्त्रियों और डीलरों के लिए प्रीमियम ऑनलाइन कैटलॉग। ब्रांड, मशीन टाइप और मॉडल से खोजें। सही पार्ट मिलाने के लिए व्हाट्सऐप पर तेज सहायता।",
         ".hero-cta .primary-btn": "स्पेयर पार्ट्स देखें",
@@ -510,7 +510,7 @@ const PAGE_TRANSLATIONS = {
       },
       "about.html": {
         ".breadcrumb": "होम / हमारे बारे में",
-        ".ribbon": "AgroTitan Spares के बारे में",
+        ".ribbon": "Harvester Parts के बारे में",
         ".about-card h2": "उन किसानों के लिए बनाया गया जिन्हें सही पार्ट जल्दी चाहिए।"
       },
       "contact.html": {
@@ -530,13 +530,13 @@ const PAGE_TRANSLATIONS = {
       cart: "ਕਾਰਟ",
       selector: "ਸਿਲੈਕਟਰ",
       cartBtn: "ਕਾਰਟ",
-      footerText: "AgroTitan Spares ਲਈ ਪ੍ਰੀਮਿਅਮ ਕੰਬਾਈਨ ਸਪੇਅਰ ਪਾਰਟਸ ਵੈੱਬਸਾਈਟ।",
+      footerText: "Harvester Parts ਲਈ ਪ੍ਰੀਮਿਅਮ ਕੰਬਾਈਨ ਸਪੇਅਰ ਪਾਰਟਸ ਵੈੱਬਸਾਈਟ।",
       aiAssistant: "AI ਸਹਾਇਕ",
       language: "ਭਾਸ਼ਾ"
     },
     pages: {
       "index.html": {
-        ".kicker": "AgroTitan Spares • ਪ੍ਰੀਮਿਅਮ ਫਾਰਮ ਪਾਰਟਸ ਸਟੋਰ",
+        ".kicker": "Harvester Parts • ਪ੍ਰੀਮਿਅਮ ਫਾਰਮ ਪਾਰਟਸ ਸਟੋਰ",
         ".hero-copy h2": "ਕੰਬਾਈਨ ਹਾਰਵੇਸਟਰ, ਕਟਰ ਬਾਰ ਅਤੇ ਸਟ੍ਰਾ ਰੀਪਰ ਲਈ ਪ੍ਰੀਮਿਅਮ ਸਪੇਅਰ ਪਾਰਟਸ।",
         ".hero-copy p": "ਕਿਸਾਨਾਂ, ਮਕੈਨਿਕਾਂ ਅਤੇ ਡੀਲਰਾਂ ਲਈ ਪ੍ਰੀਮਿਅਮ ਆਨਲਾਈਨ ਕੈਟਾਲਾਗ। ਬ੍ਰਾਂਡ, ਮਸ਼ੀਨ ਕਿਸਮ ਅਤੇ ਮਾਡਲ ਨਾਲ ਖੋਜੋ। ਸਹੀ ਪਾਰਟ ਮਿਲਾਉਣ ਲਈ ਵਟਸਐਪ ਤੇ ਤੇਜ਼ ਸਹਾਇਤਾ।",
         ".hero-cta .primary-btn": "ਸਪੇਅਰ ਪਾਰਟਸ ਵੇਖੋ",
@@ -564,7 +564,7 @@ const PAGE_TRANSLATIONS = {
       },
       "about.html": {
         ".breadcrumb": "ਹੋਮ / ਸਾਡੇ ਬਾਰੇ",
-        ".ribbon": "AgroTitan Spares ਬਾਰੇ",
+        ".ribbon": "Harvester Parts ਬਾਰੇ",
         ".about-card h2": "ਉਨ੍ਹਾਂ ਕਿਸਾਨਾਂ ਲਈ ਬਣਾਇਆ ਗਿਆ ਜਿਨ੍ਹਾਂ ਨੂੰ ਸਹੀ ਪਾਰਟ ਜਲਦੀ ਚਾਹੀਦਾ ਹੈ।"
       },
       "contact.html": {
@@ -951,7 +951,7 @@ function initAssistantPage(){
   if(!messagesEl || !form || !input) return;
 
   const chats = [
-    {role:"bot", text:"Hello, I am the AgroTitan AI Assistant."},
+    {role:"bot", text:"Hello, I am the Harvester Parts AI Assistant."},
     {role:"bot", text:"Ask me about New Hira 985 Standard, 985 Deluxe, product pricing, compatibility, or contact details."}
   ];
 

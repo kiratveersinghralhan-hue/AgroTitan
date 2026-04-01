@@ -1,5 +1,5 @@
 
-# AgroTitan Spares - Final Pro Flat Website
+# Harvester Parts - Final Pro Flat Website
 
 This website is built as a GitHub-compatible static ecommerce-style site for combine harvester spare parts.
 
@@ -27,7 +27,7 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Cart with localStorage
 - Demo checkout
 - WhatsApp and call buttons
-- Shop branding for AgroTitan Spares
+- Shop branding for Harvester Parts
 
 ## Notes
 - Product images use external image URLs, so internet is required for those images to load.
