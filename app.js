@@ -941,8 +941,19 @@ function initGlassHeader(){
   window.addEventListener("scroll", onScroll, {passive:true});
 }
 
+
+function initIntroLogo(){
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const intro = document.getElementById("introLogo");
+      if(intro) intro.style.display = "none";
+    }, 3400);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   fillSharedContent();
+  initIntroLogo();
   initGlassHeader();
   enhanceHeader();
   initLanguageSelector();
