@@ -1393,3 +1393,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const extraWhatsapp = document.getElementById("whatsappFloat");
   if (window.innerWidth <= 720 && extraWhatsapp) extraWhatsapp.style.display = "none";
 });
+
+
+/* ===== v46 mobile floating safeguard ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 720) {
+    document.querySelectorAll(".floating").forEach(el => el.style.display = "none");
+  }
+});

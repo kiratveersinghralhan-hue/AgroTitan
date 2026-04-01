@@ -6464,3 +6464,32 @@ body{ padding-bottom:0 !important; }
 #scrollTopBtn{
   z-index:521;
 }
+
+
+/* ===== v46 mobile right-side floating fix ===== */
+@media (max-width:720px){
+  /* hide side floating buttons that cover hero/search/buttons */
+  .floating{
+    display:none !important;
+  }
+
+  /* keep only scroll top, lower and smaller */
+  #scrollTopBtn{
+    right:14px !important;
+    bottom:96px !important;
+    width:48px !important;
+    height:48px !important;
+    z-index:520 !important;
+  }
+
+  /* add breathing room for hero buttons */
+  .hero-copy{
+    overflow:visible !important;
+  }
+  .smart-search-bar{
+    margin:14px 0 14px !important;
+  }
+  .hero-cta{
+    margin-top:6px !important;
+  }
+}
