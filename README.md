@@ -55,3 +55,6 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Replaced homepage media with a farm combine-harvesting video embed.
 
 - Replaced generic farm/landscape images with actual part-photo URLs from public combine-harvester spare-parts listings where possible.
+
+- Reduced the catalog to 70 curated products using cleaner exact-name part listings and more precise part-photo mappings.
+- Updated homepage copy and video for a more realistic dealer-style presentation.
