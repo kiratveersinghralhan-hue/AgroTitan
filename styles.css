@@ -5826,3 +5826,179 @@ body{
     gap:10px !important;
   }
 }
+
+
+/* ===== v41 selector responsive + SEO improvements ===== */
+
+/* home selector: force neat stacked layout on mobile and clean 4-col desktop */
+.selector-home{
+  position:relative;
+  z-index:2;
+}
+.selector-home-grid.selector-grid-premium{
+  display:grid !important;
+  grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+  gap:14px !important;
+  align-items:end !important;
+}
+.selector-home-grid.selector-grid-premium .field{
+  min-width:0 !important;
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:8px !important;
+}
+.selector-home-grid.selector-grid-premium .field label{
+  display:block !important;
+}
+.selector-home-grid.selector-grid-premium .field select,
+.selector-home-grid.selector-grid-premium .field input,
+.selector-home-grid.selector-grid-premium .field button{
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+.selector-home .helper{
+  margin-top:14px !important;
+}
+@media (max-width: 900px){
+  .selector-home-grid.selector-grid-premium{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 720px){
+  .selector-home .card{
+    padding:20px !important;
+  }
+  .selector-home-grid.selector-grid-premium{
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+  .selector-home-grid.selector-grid-premium .field{
+    margin:0 !important;
+  }
+  .selector-home .section-title{
+    align-items:start !important;
+  }
+  .selector-home .section-title h3{
+    font-size:clamp(24px, 9vw, 34px) !important;
+  }
+  .selector-home .field select,
+  .selector-home .field input,
+  .selector-home .field button{
+    min-height:54px !important;
+  }
+}
+
+/* products selector: make all fields visible and properly layered */
+.products-wrap{
+  display:grid !important;
+  grid-template-columns:340px minmax(0,1fr) !important;
+  gap:22px !important;
+  align-items:start !important;
+}
+.selector-products.selector-premium{
+  position:sticky !important;
+  top:104px !important;
+  display:block !important;
+  overflow:visible !important;
+}
+.selector-products.selector-premium .field{
+  position:relative !important;
+  z-index:1 !important;
+}
+.selector-products.selector-premium .field,
+.selector-products.selector-premium .filter-actions,
+.selector-products.selector-premium .helper{
+  width:100% !important;
+}
+.selector-products.selector-premium .field select,
+.selector-products.selector-premium .field input{
+  display:block !important;
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+.selector-products.selector-premium .filter-actions{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px !important;
+}
+.selector-products.selector-premium .filter-actions .primary-btn,
+.selector-products.selector-premium .filter-actions .ghost-btn{
+  width:100% !important;
+}
+@media (max-width: 980px){
+  .products-wrap{
+    grid-template-columns:1fr !important;
+  }
+  .selector-products.selector-premium{
+    position:relative !important;
+    top:auto !important;
+  }
+}
+@media (max-width: 720px){
+  .selector-products.selector-premium{
+    padding:20px !important;
+  }
+  .selector-products.selector-premium .filter-actions{
+    grid-template-columns:1fr !important;
+  }
+  .selector-products.selector-premium .field label{
+    font-size:14px !important;
+  }
+  .selector-products.selector-premium h3{
+    font-size:clamp(24px, 9vw, 34px) !important;
+  }
+}
+
+/* ensure old conflicting decorative overlays do not cover selectors */
+.selector-home .card::before,
+.selector-home .card::after,
+.selector-products::before,
+.selector-products::after{
+  opacity:.12 !important;
+  pointer-events:none !important;
+}
+.selector-home *,
+.selector-products *{
+  position:relative;
+  z-index:2;
+}
+
+/* SEO content */
+.seo-copy-card{
+  padding:24px !important;
+}
+.seo-copy-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:16px;
+}
+.seo-copy-grid p,
+.seo-inline-card p{
+  margin:0;
+  color:#d8ccb0 !important;
+  line-height:1.7 !important;
+  font-size:16px !important;
+}
+.seo-inline-card{
+  margin-bottom:18px !important;
+}
+@media (max-width: 900px){
+  .seo-copy-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* smoother page responsiveness overall */
+img{
+  max-width:100%;
+  height:auto;
+}
+.container{
+  width:min(1200px, calc(100vw - 32px)) !important;
+}
+@media (max-width: 720px){
+  .container{
+    width:min(1200px, calc(100vw - 20px)) !important;
+  }
+}

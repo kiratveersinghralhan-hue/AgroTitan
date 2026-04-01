@@ -1254,3 +1254,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(fixPageAfterLoadV39, 50);
   setTimeout(fixPageAfterLoadV39, 300);
 });
+
+
+/* ===== v41 selector UI safeguard ===== */
+function fixSelectorLayoutsV41(){
+  document.querySelectorAll('.selector-home-grid .field, .selector-products .field').forEach(el => {
+    el.style.display = 'flex';
+    el.style.flexDirection = 'column';
+    el.style.minWidth = '0';
+  });
+  document.querySelectorAll('.selector-products .filter-actions').forEach(el => {
+    el.style.display = window.innerWidth <= 720 ? 'grid' : 'grid';
+  });
+}
+window.addEventListener('resize', fixSelectorLayoutsV41);
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(fixSelectorLayoutsV41, 80);
+  setTimeout(fixSelectorLayoutsV41, 400);
+});

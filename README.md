@@ -69,3 +69,7 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Fixed counters to use actual live values for products, stock, brands and cart, and animate when visible or when cart changes.
 
 - Added a top-level showroom visual system with cinematic gradients, luxury glass header, premium hover cards, and floating action rail.
+
+- Improved home and products selector responsiveness and premium layout.
+- Added richer SEO titles, meta descriptions, canonical tags, OG tags, and schema markup.
+- Added SEO-rich descriptive website copy for better indexing and local discovery.
