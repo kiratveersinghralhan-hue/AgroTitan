@@ -929,8 +929,21 @@ function initAssistantPage(){
 }
 
 
+
+function initGlassHeader(){
+  const header = document.querySelector(".header");
+  if(!header) return;
+  const onScroll = () => {
+    if(window.scrollY > 10) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   fillSharedContent();
+  initGlassHeader();
   enhanceHeader();
   initLanguageSelector();
   updateBadges();
