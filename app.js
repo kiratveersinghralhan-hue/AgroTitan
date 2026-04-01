@@ -952,11 +952,11 @@ function initIntroLogo(){
       intro.style.pointerEvents = "none";
       setTimeout(() => {
         if(intro && intro.parentNode) intro.remove();
-      }, 450);
+      }, 420);
     }
   };
-  window.addEventListener("load", () => setTimeout(hideIntro, 1800));
-  setTimeout(hideIntro, 2600);
+  window.addEventListener("load", () => setTimeout(hideIntro, 1650));
+  setTimeout(hideIntro, 2400);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
