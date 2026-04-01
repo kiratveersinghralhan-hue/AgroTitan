@@ -1395,9 +1395,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ===== v46 mobile floating safeguard ===== */
+
+
+/* ===== v47 mobile right-button safeguard ===== */
 document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 720) {
-    document.querySelectorAll(".floating").forEach(el => el.style.display = "none");
+    const extraWhatsapp = document.getElementById("whatsappFloat");
+    if (extraWhatsapp) extraWhatsapp.style.display = "none";
+    document.querySelectorAll(".floating .call-btn").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".floating .whatsapp-btn").forEach(el => el.style.display = "flex");
   }
 });
