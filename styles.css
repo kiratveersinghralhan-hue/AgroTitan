@@ -5623,3 +5623,206 @@ body{
   font-weight:800;
   font-size:16px;
 }
+
+
+/* ===== v40 premium selector layout redesign ===== */
+
+/* shared selector polish */
+.selector-home .card,
+.selector-products{
+  background:
+    radial-gradient(circle at top right, rgba(255,210,74,.10), transparent 30%),
+    linear-gradient(180deg, rgba(28,21,10,.98), rgba(18,14,9,.98)) !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  box-shadow:0 20px 42px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,248,220,.04) !important;
+}
+
+.selector-home .section-title h3,
+.selector-products h3{
+  font-size:clamp(28px,4vw,40px) !important;
+  line-height:1.06 !important;
+  color:#fff5dc !important;
+  margin:0 0 10px !important;
+}
+.selector-home .section-title p,
+.selector-products .helper{
+  color:#d8ccb0 !important;
+  font-size:16px !important;
+  line-height:1.55 !important;
+}
+
+/* home selector premium card */
+.selector-home .card{
+  padding:28px !important;
+  border-radius:30px !important;
+  overflow:hidden !important;
+}
+.selector-home-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4, minmax(0,1fr)) !important;
+  gap:16px !important;
+  margin-top:18px !important;
+}
+.selector-home-grid .field{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:8px !important;
+}
+.selector-home-grid .field:last-child{
+  justify-content:flex-end !important;
+}
+.selector-home .field label{
+  font-size:14px !important;
+  font-weight:800 !important;
+  color:#f2ddb0 !important;
+  letter-spacing:.1px !important;
+}
+.selector-home .field select,
+.selector-home .field input{
+  width:100% !important;
+  height:58px !important;
+  border-radius:18px !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  background:linear-gradient(180deg,#0e1736,#07112d) !important;
+  color:#fff8ea !important;
+  padding:0 16px !important;
+  box-sizing:border-box !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+.selector-home .field select:focus,
+.selector-home .field input:focus,
+.selector-products .field select:focus,
+.selector-products .field input:focus{
+  outline:none !important;
+  border-color:rgba(255,210,74,.28) !important;
+  box-shadow:0 0 0 3px rgba(255,210,74,.10) !important;
+}
+.selector-home .primary-btn{
+  width:100% !important;
+  min-height:58px !important;
+  border-radius:18px !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+}
+.selector-home .helper{
+  margin-top:16px !important;
+  padding:14px 16px !important;
+  border-radius:18px !important;
+  background:rgba(255,210,74,.07) !important;
+  border:1px solid rgba(255,210,74,.10) !important;
+  color:#dbcda8 !important;
+}
+
+/* products page selector premium layout */
+.products-wrap{
+  display:grid !important;
+  grid-template-columns:340px minmax(0,1fr) !important;
+  gap:22px !important;
+  align-items:start !important;
+}
+.selector-products{
+  padding:24px !important;
+  border-radius:28px !important;
+  position:sticky !important;
+  top:110px !important;
+  height:max-content !important;
+  overflow:hidden !important;
+}
+.selector-products .field{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:8px !important;
+  margin-bottom:14px !important;
+}
+.selector-products .field label{
+  display:block !important;
+  margin:0 !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  color:#f2ddb0 !important;
+}
+.selector-products .field select,
+.selector-products .field input{
+  width:100% !important;
+  height:56px !important;
+  border-radius:16px !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  background:linear-gradient(180deg,#0e1736,#07112d) !important;
+  color:#fff8ea !important;
+  padding:0 16px !important;
+  box-sizing:border-box !important;
+}
+.selector-products .field input::placeholder{
+  color:#b9b1a0 !important;
+}
+.selector-products .filter-actions{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px !important;
+  margin-top:16px !important;
+}
+.selector-products .filter-actions .primary-btn,
+.selector-products .filter-actions .ghost-btn{
+  width:100% !important;
+  min-height:54px !important;
+  border-radius:16px !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+  justify-content:center !important;
+}
+.selector-products .helper{
+  margin-top:16px !important;
+  padding:14px 16px !important;
+  border-radius:18px !important;
+  background:rgba(255,210,74,.07) !important;
+  border:1px solid rgba(255,210,74,.10) !important;
+}
+
+/* clean up stray text overlaps */
+.selector-products::before,
+.selector-products::after,
+.selector-home .card::before,
+.selector-home .card::after{
+  pointer-events:none !important;
+}
+
+/* mobile layout */
+@media (max-width: 900px){
+  .products-wrap{
+    grid-template-columns:1fr !important;
+  }
+  .selector-products{
+    position:relative !important;
+    top:auto !important;
+  }
+}
+@media (max-width: 720px){
+  .selector-home .card{
+    padding:22px !important;
+    border-radius:26px !important;
+  }
+  .selector-home-grid{
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+  .selector-home .section-title h3,
+  .selector-products h3{
+    font-size:clamp(24px,9vw,34px) !important;
+  }
+  .selector-home .field select,
+  .selector-home .field input,
+  .selector-home .primary-btn,
+  .selector-products .field select,
+  .selector-products .field input{
+    height:54px !important;
+    border-radius:16px !important;
+  }
+  .selector-products{
+    padding:20px !important;
+    border-radius:24px !important;
+  }
+  .selector-products .filter-actions{
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+}
