@@ -952,10 +952,10 @@ function initIntroLogo(){
       intro.style.pointerEvents = "none";
       setTimeout(() => {
         if(intro && intro.parentNode) intro.remove();
-      }, 500);
+      }, 450);
     }
   };
-  window.addEventListener("load", () => setTimeout(hideIntro, 1900));
+  window.addEventListener("load", () => setTimeout(hideIntro, 1800));
   setTimeout(hideIntro, 2600);
 }
 
