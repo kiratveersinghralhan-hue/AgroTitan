@@ -49,3 +49,7 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Replace YOUR-DOMAIN in robots.txt and sitemap.xml after you set your real website URL.
 
 - Added stronger mobile and tablet responsiveness. On mobile, header now shows brand on first row and selector/cart/menu on second row.
+
+- Expanded catalog to 100+ common combine harvester and straw reaper spare parts.
+- Updated homepage text to describe the broader catalog coverage.
+- Replaced homepage media with a farm combine-harvesting video embed.
