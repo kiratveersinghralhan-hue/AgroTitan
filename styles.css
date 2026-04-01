@@ -6002,3 +6002,174 @@ img{
     width:min(1200px, calc(100vw - 20px)) !important;
   }
 }
+
+
+/* ===== v43 contact page responsive fix ===== */
+.contact-page-main{
+  overflow:hidden !important;
+}
+.contact-page-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:22px !important;
+  align-items:start !important;
+}
+.contact-page-grid > *{
+  min-width:0 !important;
+}
+.contact-page-grid .card,
+.contact-page-grid .contact-card{
+  padding:24px !important;
+  border-radius:28px !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+}
+.contact-page-grid h3{
+  font-size:clamp(26px,3vw,36px) !important;
+  line-height:1.08 !important;
+  margin:0 0 14px !important;
+}
+.contact-page-grid p,
+.contact-page-grid .helper{
+  font-size:16px !important;
+  line-height:1.65 !important;
+  color:#d8ccb0 !important;
+  word-break:break-word !important;
+}
+.contact-page-grid .field{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:8px !important;
+  margin-bottom:14px !important;
+  min-width:0 !important;
+}
+.contact-page-grid .field label{
+  display:block !important;
+  margin:0 !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  color:#f2ddb0 !important;
+}
+.contact-page-grid .field input,
+.contact-page-grid .field textarea,
+.contact-page-grid .field select{
+  width:100% !important;
+  box-sizing:border-box !important;
+  min-height:56px !important;
+  padding:14px 16px !important;
+  border-radius:18px !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  background:linear-gradient(180deg,#0e1736,#07112d) !important;
+  color:#fff8ea !important;
+}
+.contact-page-grid .field textarea{
+  min-height:140px !important;
+  resize:vertical !important;
+}
+.contact-page-grid .primary-btn,
+.contact-page-grid .ghost-btn{
+  width:100% !important;
+  min-height:56px !important;
+  border-radius:18px !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+}
+.contact-page-grid .actions,
+.contact-page-grid .contact-actions{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px !important;
+  margin-top:14px !important;
+}
+.contact-page-grid .list,
+.contact-page-grid .contact-list{
+  display:grid !important;
+  gap:14px !important;
+}
+.contact-page-grid .list-item,
+.contact-page-grid .contact-item{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:6px !important;
+  padding:16px 18px !important;
+  border-radius:18px !important;
+  background:rgba(255,210,74,.06) !important;
+  border:1px solid rgba(255,210,74,.10) !important;
+  min-width:0 !important;
+}
+.contact-page-grid a{
+  overflow-wrap:anywhere !important;
+}
+.contact-page-grid iframe,
+.contact-page-grid .map-wrap iframe{
+  width:100% !important;
+  max-width:100% !important;
+  min-height:280px !important;
+  border-radius:22px !important;
+  border:0 !important;
+}
+
+.footer .footer-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:18px !important;
+}
+.footer .footer-grid > *{
+  min-width:0 !important;
+}
+.footer .footer-grid a,
+.footer .footer-grid p,
+.footer .footer-grid span{
+  overflow-wrap:anywhere !important;
+}
+
+@media (max-width: 980px){
+  .contact-page-grid{
+    grid-template-columns:1fr !important;
+  }
+  .footer .footer-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+@media (max-width: 720px){
+  .contact-page-main{
+    margin-top:20px !important;
+  }
+  .contact-page-grid{
+    gap:18px !important;
+  }
+  .contact-page-grid .card,
+  .contact-page-grid .contact-card{
+    padding:20px !important;
+    border-radius:24px !important;
+  }
+  .contact-page-grid h3{
+    font-size:clamp(24px,8vw,32px) !important;
+  }
+  .contact-page-grid p,
+  .contact-page-grid .helper{
+    font-size:15px !important;
+    line-height:1.6 !important;
+  }
+  .contact-page-grid .actions,
+  .contact-page-grid .contact-actions{
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+  .contact-page-grid .field input,
+  .contact-page-grid .field textarea,
+  .contact-page-grid .field select,
+  .contact-page-grid .primary-btn,
+  .contact-page-grid .ghost-btn{
+    min-height:52px !important;
+    border-radius:16px !important;
+  }
+  .contact-page-grid iframe,
+  .contact-page-grid .map-wrap iframe{
+    min-height:240px !important;
+    border-radius:18px !important;
+  }
+  .footer .footer-grid{
+    grid-template-columns:1fr !important;
+  }
+}
