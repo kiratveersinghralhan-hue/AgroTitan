@@ -7738,3 +7738,121 @@ body{
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* ===== v66 force proper mobile width on seller/contact pages ===== */
+html, body{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
+}
+
+.seller-page-clean,
+.contact-page-clean,
+.seller-page-clean main,
+.contact-page-clean main{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
+}
+
+.seller-page-clean .container,
+.contact-page-clean .container{
+  width:calc(100vw - 20px) !important;
+  max-width:none !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+
+.seller-page-clean .marketplace-layout,
+.seller-page-clean .marketplace-layout-single,
+.contact-page-clean .contact-grid{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  gap:18px !important;
+}
+
+.seller-page-clean .seller-form-card,
+.contact-page-clean .contact-card,
+.contact-page-clean .contact-enquiry-card{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+}
+
+.seller-page-clean .seller-form-grid,
+.contact-page-clean .contact-grid,
+.contact-page-clean .list,
+.seller-page-clean .list{
+  width:100% !important;
+  min-width:0 !important;
+}
+
+.seller-page-clean .seller-form-grid .field,
+.contact-page-clean .field{
+  width:100% !important;
+  min-width:0 !important;
+}
+
+.seller-page-clean .seller-form-grid input,
+.seller-page-clean .seller-form-grid textarea,
+.contact-page-clean input,
+.contact-page-clean textarea{
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+.seller-page-clean .seller-actions,
+.contact-page-clean .contact-submit-btn{
+  position:static !important;
+  width:100% !important;
+}
+
+.seller-page-clean .footer .container,
+.contact-page-clean .footer .container{
+  width:calc(100vw - 20px) !important;
+  max-width:none !important;
+}
+
+@media (max-width: 900px){
+  .seller-page-clean .footer-grid,
+  .contact-page-clean .footer-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media (max-width: 720px){
+  .seller-page-clean .container,
+  .contact-page-clean .container{
+    width:calc(100vw - 16px) !important;
+  }
+
+  .seller-page-clean .seller-form-card,
+  .contact-page-clean .contact-card,
+  .contact-page-clean .contact-enquiry-card{
+    padding:18px !important;
+    border-radius:22px !important;
+  }
+
+  .seller-page-clean .section-title h3,
+  .contact-page-clean .section-title h3{
+    font-size:clamp(26px, 10vw, 44px) !important;
+    line-height:0.98 !important;
+  }
+
+  .seller-page-clean .seller-actions{
+    grid-template-columns:1fr !important;
+  }
+
+  .seller-page-clean .helper,
+  .contact-page-clean .helper,
+  .contact-page-clean .contact-form-intro{
+    font-size:14px !important;
+  }
+}
