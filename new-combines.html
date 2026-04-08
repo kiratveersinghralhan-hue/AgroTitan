@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Combine Harvester Models | Harvester Parts</title>
+  <meta name="description" content="Explore new combines from New Hira, Malkit, Preet, Kartar and more with price, booking amount, delivery time, finance and support details.">
+  <meta name="keywords" content="harvester parts, combine harvester spare parts, used combines, new combines, farm machinery marketplace">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Harvester Parts">
+  <link rel="canonical" href="https://kiratveersinghralhan-hue.github.io/new-combines.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="New Combine Harvester Models | Harvester Parts">
+  <meta property="og:description" content="Explore new combines from New Hira, Malkit, Preet, Kartar and more with price, booking amount, delivery time, finance and support details.">
+  <meta property="og:url" content="https://kiratveersinghralhan-hue.github.io/new-combines.html">
+  <meta property="og:image" content="logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="marketplace-page">
+
+  <div class="topbar">Premium combine harvester, cutter bar, and straw reaper spare parts support • Call <span data-phone-primary></span></div>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-text-only">
+          <h1 data-shop-name>Harvester Parts</h1>
+          <p data-tagline>Premium Farm Parts Store</p>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="new-combines.html">New Combines</a>
+        <a href="used-combines.html">Used Market</a>
+        <a href="products.html">Spares</a>
+        <a href="rewards.html">Rewards</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="badge-btn" href="products.html" data-static-selector-btn>Selector</a>
+        <a class="badge-btn" href="cart.html" data-static-cart-btn>Cart <span data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="card marketplace-hero-card">
+      <div class="section-title"><div><h3>New combine marketplace</h3><p>New combines from multiple brands with price logic, booking amount, delivery timeline, and financing support.</p></div></div>
+      <div class="marketplace-summary-grid">
+        <div class="summary-mini card"><strong>Brand choices</strong><span>New Hira, Malkit, Preet, Kartar and more</span></div>
+        <div class="summary-mini card"><strong>Revenue logic</strong><span>Lead generation, booking margin, finance referral and delivery support</span></div>
+        <div class="summary-mini card"><strong>Buyer rewards</strong><span>Earn points on enquiries, booking, and delivery</span></div>
+      </div>
+      <div class="smart-search-bar smart-search-bar-wide">
+        <input id="newCombineSearch" type="text" placeholder="Search new combine by brand or model">
+        <button type="button" onclick="renderNewCombinesPage()">Search</button>
+      </div>
+    </section>
+
+    <section class="marketplace-layout">
+      <aside class="filters card segment-filter-card">
+        <h3>Filter new combines</h3>
+        <div class="field"><label>Brand</label><select id="newBrandFilter"><option value="">All Brands</option></select></div>
+        <div class="field"><label>Finance</label><select id="newFinanceFilter"><option value="">All</option><option value="Available">Finance Available</option></select></div>
+        <div class="field"><label>Budget</label><select id="newBudgetFilter"><option value="">All Budgets</option><option value="2500000">Up to ₹25 lakh</option><option value="2800000">Up to ₹28 lakh</option><option value="99999999">Above ₹28 lakh</option></select></div>
+        <div class="filter-actions">
+          <button class="primary-btn" type="button" onclick="renderNewCombinesPage()">Apply Filters</button>
+          <button class="ghost-btn" type="button" onclick="resetNewCombinesFilters()">Reset</button>
+        </div>
+        <div class="helper">This segment can make money through booking commission, finance referral commission, warranty support, and delivery coordination.</div>
+      </aside>
+
+      <section>
+        <div class="section-title"><div><h3>Available new combines</h3><p id="newCombinesCount">0 models found</p></div></div>
+        <div id="newCombinesGrid" class="cards-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="card">
+        <div class="footer-grid">
+          <div style="padding:24px">
+            <div class="brand">
+              <img src="logo.svg" alt="Harvester Parts logo">
+              <div>
+                <h1 style="margin:0;font-size:24px" data-shop-name></h1>
+                <p data-tagline></p>
+              </div>
+            </div>
+            <p style="color:#dccaa1;line-height:1.7;margin-top:16px">
+              One website for new combines, used combine listings, and premium spare parts support with direct business inquiry options.
+            </p>
+          </div>
+          <div style="padding:24px">
+            <h3>Segments</h3>
+            <div class="list">
+              <a href="new-combines.html">New Combines</a>
+              <a href="used-combines.html">Used Combines</a>
+              <a href="products.html">Spare Parts</a>
+              <a href="seller-center.html">Seller Center</a>
+              <a href="rewards.html">Rewards</a>
+            </div>
+          </div>
+          <div style="padding:24px">
+            <h3>Contact</h3>
+            <div class="list">
+              <div>Owner: <strong data-owner></strong></div>
+              <div>Phone: <strong data-phone-primary></strong>, <strong data-phone-secondary></strong></div>
+              <div>Address: <span data-address></span></div>
+              <a data-maps href="#" target="_blank" rel="noopener">Open Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="products-data.js"></script>
+  <script src="market-data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

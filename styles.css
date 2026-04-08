@@ -7002,193 +7002,48 @@ body{
   }
 }
 
-
-/* ===== v53 contact page redesign ===== */
-body.contact-redesign-page{
-  padding-bottom: 0 !important;
+/* ===== v54 multi-segment marketplace ===== */
+.marketplace-page .container{ width:min(1240px, calc(100vw - 24px)) !important; }
+.marketplace-hero-card{ padding:26px !important; margin-bottom:22px !important; }
+.marketplace-summary-grid,.seller-kpis{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:16px 0 18px; }
+.seller-kpis{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+.summary-mini{ padding:18px !important; }
+.summary-mini strong{ display:block; color:#fff6de !important; margin-bottom:8px; }
+.summary-mini span{ color:#dccaa1 !important; line-height:1.55; }
+.marketplace-layout{ display:grid; grid-template-columns:320px minmax(0,1fr); gap:22px; align-items:start; }
+.marketplace-layout-single{ grid-template-columns:1fr !important; }
+.segment-filter-card{ position:sticky; top:104px; height:max-content; }
+.cards-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.market-card .thumb{ aspect-ratio:16/10; overflow:hidden; border-radius:22px; background:#fff; margin-bottom:16px; }
+.market-card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.market-card .meta{ display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.market-card .meta span{ padding:8px 12px; border-radius:999px; background:linear-gradient(180deg,#fff8ea,#f3e6c6); color:#2a2418; font-size:13px; font-weight:800; }
+.market-card h4{ margin:0 0 10px; font-size:clamp(24px,2vw,32px); color:#fff7e6; line-height:1.08; }
+.market-card p{ color:#dccaa1; line-height:1.7; }
+.market-card .price-row{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:14px 0 10px; }
+.market-card .price-row strong{ font-size:30px; color:#fff5d2; }
+.market-card .price-row small{ color:#dccaa1; font-size:14px; font-weight:700; }
+.market-card .action-row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+.market-card .badge-ribbon{ display:inline-flex; align-items:center; padding:8px 12px; border-radius:999px; background:linear-gradient(90deg,#ffd24a,#e0aa1f); color:#241d10; font-size:13px; font-weight:900; margin-bottom:12px; }
+.segments-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.segment-card{ display:block; text-decoration:none; padding:24px !important; color:inherit; }
+.segment-card h4{ color:#fff7e6 !important; margin:12px 0 10px; font-size:28px; }
+.segment-card p{ color:#dccaa1 !important; line-height:1.7; }
+.segment-badge{ display:inline-flex; padding:8px 12px; border-radius:999px; background:rgba(255,210,74,.08); border:1px solid rgba(255,210,74,.12); color:#ffd24a; font-size:13px; font-weight:800; }
+.seller-form-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.field-full{ grid-column:1 / -1; }
+.seller-actions{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+#badgesGrid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.badge-card{ padding:24px !important; }
+.badge-points{ display:inline-flex; padding:8px 12px; border-radius:999px; background:linear-gradient(90deg,#ffd24a,#e0aa1f); color:#241d10; font-weight:900; margin-bottom:14px; }
+@media (max-width:1020px){
+  .marketplace-layout{ grid-template-columns:1fr; }
+  .segment-filter-card{ position:relative; top:auto; }
+  .marketplace-summary-grid,.seller-kpis,.segments-grid,#badgesGrid{ grid-template-columns:1fr 1fr; }
 }
-body.contact-redesign-page .mobile-action-rail,
-body.contact-redesign-page .floating,
-body.contact-redesign-page #whatsappFloat,
-body.contact-redesign-page .showroom-actions{
-  display:none !important;
-}
-body.contact-redesign-page #scrollTopBtn{
-  right:16px !important;
-  bottom:24px !important;
-}
-
-.contact-redesign-main{
-  display:block !important;
-}
-.contact-hero-card{
-  padding:24px !important;
-  margin-bottom:22px !important;
-}
-.contact-hero-copy p{
-  margin:0 !important;
-  color:#dccaa1 !important;
-  line-height:1.7 !important;
-}
-.contact-redesign-grid{
-  display:grid !important;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
-  gap:22px !important;
-  align-items:start !important;
-}
-.contact-redesign-grid > *{
-  min-width:0 !important;
-}
-.contact-info-card,
-.contact-form-card{
-  padding:24px !important;
-  border-radius:28px !important;
-  overflow:hidden !important;
-}
-.contact-info-card h3,
-.contact-form-card h3{
-  margin:0 0 14px !important;
-  color:#fff7e6 !important;
-  font-size:clamp(26px,3vw,34px) !important;
-}
-.contact-detail-list{
-  display:grid !important;
-  gap:12px !important;
-}
-.contact-detail-row{
-  display:grid !important;
-  grid-template-columns:110px minmax(0,1fr) !important;
-  gap:12px !important;
-  align-items:start !important;
-  padding:14px 16px !important;
-  border-radius:18px !important;
-  background:rgba(255,210,74,.06) !important;
-  border:1px solid rgba(255,210,74,.10) !important;
-}
-.contact-detail-row span{
-  color:#dccaa1 !important;
-  font-size:15px !important;
-}
-.contact-detail-row strong,
-.contact-detail-row a{
-  color:#fff7e6 !important;
-  overflow-wrap:anywhere !important;
-}
-.contact-cta-grid{
-  display:grid !important;
-  grid-template-columns:1fr 1fr !important;
-  gap:12px !important;
-  margin-top:18px !important;
-}
-.map-card{
-  margin-top:18px !important;
-}
-.map-card iframe{
-  width:100% !important;
-  min-height:300px !important;
-  border:0 !important;
-  border-radius:22px !important;
-  display:block !important;
-}
-.contact-form-intro{
-  margin:0 0 14px !important;
-  color:#dccaa1 !important;
-  line-height:1.65 !important;
-}
-.contact-form-card .field{
-  display:flex !important;
-  flex-direction:column !important;
-  gap:8px !important;
-  margin-bottom:14px !important;
-}
-.contact-form-card .field label{
-  display:block !important;
-  margin:0 !important;
-  color:#f2ddb0 !important;
-  font-size:14px !important;
-  font-weight:800 !important;
-}
-.contact-form-card .field input,
-.contact-form-card .field textarea{
-  width:100% !important;
-  box-sizing:border-box !important;
-  min-height:56px !important;
-  padding:14px 16px !important;
-  border-radius:18px !important;
-  border:1px solid rgba(255,210,74,.14) !important;
-  background:linear-gradient(180deg,#0e1736,#07112d) !important;
-  color:#fff8ea !important;
-}
-.contact-form-card .field textarea{
-  min-height:150px !important;
-  resize:vertical !important;
-}
-.enquiry-send-btn{
-  width:100% !important;
-  min-height:56px !important;
-  border:none !important;
-  border-radius:18px !important;
-  font-size:16px !important;
-  font-weight:900 !important;
-}
-.contact-mini-trust{
-  display:grid !important;
-  grid-template-columns:1fr 1fr !important;
-  gap:12px !important;
-  margin-top:18px !important;
-}
-.mini-trust-box{
-  padding:16px 18px !important;
-  border-radius:18px !important;
-  background:rgba(255,210,74,.06) !important;
-  border:1px solid rgba(255,210,74,.10) !important;
-}
-.mini-trust-box strong{
-  display:block !important;
-  color:#fff6de !important;
-  margin-bottom:6px !important;
-}
-.mini-trust-box span{
-  color:#dccaa1 !important;
-  line-height:1.55 !important;
-  font-size:14px !important;
-}
-@media (max-width: 900px){
-  .contact-redesign-grid{
-    grid-template-columns:1fr !important;
-  }
-}
-@media (max-width: 720px){
-  .contact-hero-card,
-  .contact-info-card,
-  .contact-form-card{
-    padding:20px !important;
-    border-radius:24px !important;
-  }
-  .contact-detail-row{
-    grid-template-columns:1fr !important;
-    gap:6px !important;
-    padding:14px !important;
-  }
-  .contact-cta-grid,
-  .contact-mini-trust{
-    grid-template-columns:1fr !important;
-  }
-  .map-card iframe{
-    min-height:240px !important;
-    border-radius:18px !important;
-  }
-  .contact-info-card h3,
-  .contact-form-card h3{
-    font-size:clamp(24px,8vw,32px) !important;
-  }
-  .contact-form-card .field input,
-  .contact-form-card .field textarea,
-  .enquiry-send-btn{
-    min-height:52px !important;
-    border-radius:16px !important;
-  }
-  .footer{
-    padding-bottom:24px !important;
-  }
+@media (max-width:720px){
+  .cards-grid,.marketplace-summary-grid,.seller-kpis,.segments-grid,#badgesGrid,.seller-form-grid{ grid-template-columns:1fr !important; }
+  .market-card .action-row,.seller-actions{ grid-template-columns:1fr !important; }
+  .market-card h4{ font-size:clamp(24px,8vw,34px); }
+  .marketplace-hero-card{ padding:20px !important; }
 }

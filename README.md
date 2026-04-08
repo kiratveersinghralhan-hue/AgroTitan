@@ -78,3 +78,9 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Added stronger SEO metadata, canonical tags, Open Graph tags, and AutoPartsStore schema.
 - Added richer SEO content blocks for better ranking support.
 - Refreshed robots.txt and sitemap.xml.
+
+- Added new combine marketplace page.
+- Added used combine buy/sell marketplace page.
+- Added seller center and rewards pages.
+- Added monetization logic messaging for new combines, used combines, and spare parts.
+- Added buyer/seller badge and points system using localStorage.

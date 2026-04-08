@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Used Combine Buy & Sell Marketplace | Harvester Parts</title>
+  <meta name="description" content="Buy and sell old combines with model, year, hours, condition, price, location and seller details in one trusted used marketplace.">
+  <meta name="keywords" content="harvester parts, combine harvester spare parts, used combines, new combines, farm machinery marketplace">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Harvester Parts">
+  <link rel="canonical" href="https://kiratveersinghralhan-hue.github.io/used-combines.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Used Combine Buy & Sell Marketplace | Harvester Parts">
+  <meta property="og:description" content="Buy and sell old combines with model, year, hours, condition, price, location and seller details in one trusted used marketplace.">
+  <meta property="og:url" content="https://kiratveersinghralhan-hue.github.io/used-combines.html">
+  <meta property="og:image" content="logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="marketplace-page">
+
+  <div class="topbar">Premium combine harvester, cutter bar, and straw reaper spare parts support • Call <span data-phone-primary></span></div>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-text-only">
+          <h1 data-shop-name>Harvester Parts</h1>
+          <p data-tagline>Premium Farm Parts Store</p>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="new-combines.html">New Combines</a>
+        <a href="used-combines.html">Used Market</a>
+        <a href="products.html">Spares</a>
+        <a href="rewards.html">Rewards</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="badge-btn" href="products.html" data-static-selector-btn>Selector</a>
+        <a class="badge-btn" href="cart.html" data-static-cart-btn>Cart <span data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="card marketplace-hero-card">
+      <div class="section-title"><div><h3>Used combines marketplace</h3><p>Buy and sell old combines with proper specifications, age, running hours, seller rewards, and premium visibility badges.</p></div></div>
+      <div class="marketplace-summary-grid">
+        <div class="summary-mini card"><strong>Seller income logic</strong><span>Listing fee, premium badge upgrade, verified placement, and lead fee model</span></div>
+        <div class="summary-mini card"><strong>Buyer safety logic</strong><span>Model specs, age, hours, ownership and verified listing fields</span></div>
+        <div class="summary-mini card"><strong>Repeat revenue</strong><span>Used combine leads also feed spare parts and maintenance business</span></div>
+      </div>
+      <div class="smart-search-bar smart-search-bar-wide">
+        <input id="usedCombineSearch" type="text" placeholder="Search used combine by brand, year, location">
+        <button type="button" onclick="renderUsedCombinesPage()">Search</button>
+      </div>
+    </section>
+
+    <section class="marketplace-layout">
+      <aside class="filters card segment-filter-card">
+        <h3>Filter used listings</h3>
+        <div class="field"><label>Brand</label><select id="usedBrandFilter"><option value="">All Brands</option></select></div>
+        <div class="field"><label>Condition</label><select id="usedConditionFilter"><option value="">All Conditions</option><option value="Very Good">Very Good</option><option value="Good">Good</option><option value="Fair">Fair</option></select></div>
+        <div class="field"><label>Location</label><input id="usedLocationFilter" placeholder="Example: Patiala"></div>
+        <div class="filter-actions">
+          <button class="primary-btn" type="button" onclick="renderUsedCombinesPage()">Apply Filters</button>
+          <button class="ghost-btn" type="button" onclick="resetUsedCombinesFilters()">Reset</button>
+        </div>
+        <div class="helper">This segment can make money through listing fee, premium listing boost, seller verification fee, inspection service, and commission on successful sale.</div>
+      </aside>
+
+      <section>
+        <div class="section-title"><div><h3>Used combine listings</h3><p id="usedCombinesCount">0 listings found</p></div><a class="primary-btn" href="seller-center.html">Sell Your Combine</a></div>
+        <div id="usedCombinesGrid" class="cards-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="card">
+        <div class="footer-grid">
+          <div style="padding:24px">
+            <div class="brand">
+              <img src="logo.svg" alt="Harvester Parts logo">
+              <div>
+                <h1 style="margin:0;font-size:24px" data-shop-name></h1>
+                <p data-tagline></p>
+              </div>
+            </div>
+            <p style="color:#dccaa1;line-height:1.7;margin-top:16px">
+              One website for new combines, used combine listings, and premium spare parts support with direct business inquiry options.
+            </p>
+          </div>
+          <div style="padding:24px">
+            <h3>Segments</h3>
+            <div class="list">
+              <a href="new-combines.html">New Combines</a>
+              <a href="used-combines.html">Used Combines</a>
+              <a href="products.html">Spare Parts</a>
+              <a href="seller-center.html">Seller Center</a>
+              <a href="rewards.html">Rewards</a>
+            </div>
+          </div>
+          <div style="padding:24px">
+            <h3>Contact</h3>
+            <div class="list">
+              <div>Owner: <strong data-owner></strong></div>
+              <div>Phone: <strong data-phone-primary></strong>, <strong data-phone-secondary></strong></div>
+              <div>Address: <span data-address></span></div>
+              <a data-maps href="#" target="_blank" rel="noopener">Open Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="products-data.js"></script>
+  <script src="market-data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -1425,3 +1425,184 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('contact-mobile-fix');
   }
 });
+
+/* ===== v54 marketplace logic ===== */
+function getRewardProfile(){ try{return JSON.parse(localStorage.getItem("hp_rewards") || '{"points":0,"actions":0}');}catch(e){return {points:0,actions:0};} }
+function saveRewardProfile(profile){ localStorage.setItem("hp_rewards", JSON.stringify(profile)); }
+function addRewardPoints(points){ const p = getRewardProfile(); p.points += points; p.actions += 1; saveRewardProfile(p); }
+function formatMoney(num){ return '₹' + Number(num || 0).toLocaleString('en-IN'); }
+
+function marketplaceCardHTML(item, type){
+  const isUsed = type === 'used';
+  return `
+    <article class="card market-card">
+      <div class="thumb"><img src="${item.image}" alt="${item.brand} ${item.model}" referrerpolicy="no-referrer"></div>
+      <div class="badge-ribbon">${item.badge || (isUsed ? 'Used Listing' : 'New Model')}</div>
+      <h4>${item.brand} ${item.model}</h4>
+      <div class="meta">
+        <span>${item.machineType || 'Combine Harvester'}</span>
+        <span>${isUsed ? item.year : item.hp}</span>
+        <span>${isUsed ? item.location : item.deliveryTime}</span>
+      </div>
+      <p>${item.description}</p>
+      <div class="price-row">
+        <strong>${formatMoney(isUsed ? item.askingPrice : item.price)}</strong>
+        <small>${isUsed ? (item.negotiable ? 'Negotiable' : 'Fixed price') : ('Booking: ' + formatMoney(item.bookingAmount))}</small>
+      </div>
+      <div class="meta">
+        ${isUsed
+          ? `<span>${item.hours}</span><span>${item.condition}</span><span>${item.ownership}</span><span>${item.age}</span>`
+          : `<span>${item.finance}</span><span>${item.warranty}</span><span>${item.cuttingWidth}</span><span>${item.seasonOffer}</span>`
+        }
+      </div>
+      <div class="action-row">
+        <a class="primary-btn" href="https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent('Hello, I am interested in ' + item.brand + ' ' + item.model + (isUsed ? ' used listing' : ' new combine'))}" target="_blank" rel="noopener" onclick="addRewardPoints(${isUsed ? 20 : 25})">${isUsed ? 'Get Seller Details' : 'Request Price'}</a>
+        <button class="ghost-btn" type="button" onclick="openMarketQuickView('${type}','${item.id}')">Quick View</button>
+      </div>
+    </article>
+  `;
+}
+
+function openMarketQuickView(type,id){
+  const source = type === 'used' ? (window.USED_COMBINES || []) : (window.NEW_COMBINES || []);
+  const item = source.find(x => x.id === id);
+  if(!item) return;
+  let modal = document.getElementById('quickViewModal');
+  if(!modal){
+    modal = document.createElement('div');
+    modal.id = 'quickViewModal';
+    modal.className = 'quickview-modal';
+    modal.innerHTML = '<div class="quickview-card"><button class="quickview-close" type="button">×</button><div id="quickViewContent"></div></div>';
+    document.body.appendChild(modal);
+    modal.querySelector('.quickview-close').addEventListener('click', ()=>modal.classList.remove('show'));
+    modal.addEventListener('click', e => { if(e.target === modal) modal.classList.remove('show'); });
+  }
+  const content = document.getElementById('quickViewContent');
+  content.innerHTML = `
+    <div class="quickview-grid">
+      <div class="quickview-image"><img src="${item.image}" alt="${item.brand} ${item.model}" referrerpolicy="no-referrer"></div>
+      <div class="quickview-content">
+        <div class="ribbon">${item.badge || (type === 'used' ? 'Used Listing' : 'New Model')}</div>
+        <h3>${item.brand} ${item.model}</h3>
+        <div class="quickview-price">${formatMoney(type === 'used' ? item.askingPrice : item.price)}</div>
+        <div class="quickview-meta">
+          ${(type === 'used'
+            ? [item.year,item.hours,item.location,item.condition,item.ownership,item.age]
+            : [item.hp,item.cuttingWidth,item.deliveryTime,item.finance,item.warranty,item.seasonOffer]
+          ).filter(Boolean).map(v => `<span>${v}</span>`).join('')}
+        </div>
+        <p>${item.description}</p>
+        <div class="quickview-actions">
+          <a class="primary-btn" href="https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent('Hello, I am interested in ' + item.brand + ' ' + item.model)}" target="_blank" rel="noopener" onclick="addRewardPoints(${type === 'used' ? 20 : 25})">WhatsApp</a>
+          <a class="ghost-btn" href="tel:${SHOP.phone_primary}">Call</a>
+          <button class="ghost-btn" type="button" onclick="document.getElementById('quickViewModal').classList.remove('show')">Close</button>
+        </div>
+      </div>
+    </div>`;
+  modal.classList.add('show');
+}
+
+function fillSelectOptions(selectId, items, key){
+  const el = document.getElementById(selectId);
+  if(!el) return;
+  const values = [...new Set(items.map(x => x[key]).filter(Boolean))];
+  const first = el.querySelector('option')?.outerHTML || '<option value="">All</option>';
+  el.innerHTML = first + values.map(v => `<option value="${v}">${v}</option>`).join('');
+}
+
+function renderNewCombinesPage(){
+  const grid = document.getElementById('newCombinesGrid');
+  if(!grid || !window.NEW_COMBINES) return;
+  fillSelectOptions('newBrandFilter', NEW_COMBINES, 'brand');
+  const search = (document.getElementById('newCombineSearch')?.value || '').trim().toLowerCase();
+  const brand = document.getElementById('newBrandFilter')?.value || '';
+  const finance = document.getElementById('newFinanceFilter')?.value || '';
+  const budget = document.getElementById('newBudgetFilter')?.value || '';
+  let items = NEW_COMBINES.filter(item => {
+    const okSearch = !search || [item.brand,item.model,item.description].join(' ').toLowerCase().includes(search);
+    const okBrand = !brand || item.brand === brand;
+    const okFinance = !finance || item.finance === finance;
+    let okBudget = true;
+    if(budget){
+      const b = Number(budget);
+      okBudget = b === 99999999 ? item.price > 2800000 : item.price <= b;
+    }
+    return okSearch && okBrand && okFinance && okBudget;
+  });
+  const count = document.getElementById('newCombinesCount');
+  if(count) count.textContent = items.length + ' models found';
+  grid.innerHTML = items.map(item => marketplaceCardHTML(item,'new')).join('') || '<div class="card" style="padding:24px">No models found.</div>';
+}
+function resetNewCombinesFilters(){ ['newBrandFilter','newFinanceFilter','newBudgetFilter','newCombineSearch'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; }); renderNewCombinesPage(); }
+
+function renderUsedCombinesPage(){
+  const grid = document.getElementById('usedCombinesGrid');
+  if(!grid || !window.USED_COMBINES) return;
+  fillSelectOptions('usedBrandFilter', USED_COMBINES, 'brand');
+  const search = (document.getElementById('usedCombineSearch')?.value || '').trim().toLowerCase();
+  const brand = document.getElementById('usedBrandFilter')?.value || '';
+  const condition = document.getElementById('usedConditionFilter')?.value || '';
+  const location = (document.getElementById('usedLocationFilter')?.value || '').trim().toLowerCase();
+  let items = USED_COMBINES.filter(item => {
+    const okSearch = !search || [item.brand,item.model,item.description,item.location,item.year].join(' ').toLowerCase().includes(search);
+    const okBrand = !brand || item.brand === brand;
+    const okCondition = !condition || item.condition === condition;
+    const okLocation = !location || (item.location || '').toLowerCase().includes(location);
+    return okSearch && okBrand && okCondition && okLocation;
+  });
+  const count = document.getElementById('usedCombinesCount');
+  if(count) count.textContent = items.length + ' listings found';
+  grid.innerHTML = items.map(item => marketplaceCardHTML(item,'used')).join('') || '<div class="card" style="padding:24px">No used combine listings found.</div>';
+}
+function resetUsedCombinesFilters(){ ['usedBrandFilter','usedConditionFilter','usedLocationFilter','usedCombineSearch'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; }); renderUsedCombinesPage(); }
+
+function renderRewardsPage(){
+  const grid = document.getElementById('badgesGrid');
+  if(!grid || !window.REWARD_BADGES) return;
+  const profile = getRewardProfile();
+  grid.innerHTML = REWARD_BADGES.map(item => `
+    <article class="card badge-card">
+      <div class="badge-points">${item.points}+ points</div>
+      <h4>${item.name}</h4>
+      <p>${item.desc}</p>
+      <div class="helper">${profile.points >= item.points ? 'Unlocked or eligible soon' : ('Need ' + (item.points - profile.points) + ' more points')}</div>
+    </article>`).join('');
+}
+
+function initSellerCenter(){
+  const btn = document.getElementById('sellerWhatsAppBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    const vals = {
+      name: document.getElementById('sellerName')?.value || '',
+      phone: document.getElementById('sellerPhone')?.value || '',
+      brand: document.getElementById('sellerBrand')?.value || '',
+      model: document.getElementById('sellerModel')?.value || '',
+      year: document.getElementById('sellerYear')?.value || '',
+      hours: document.getElementById('sellerHours')?.value || '',
+      location: document.getElementById('sellerLocation')?.value || '',
+      price: document.getElementById('sellerPrice')?.value || '',
+      notes: document.getElementById('sellerNotes')?.value || ''
+    };
+    const lines = ['Hello Harvester Parts, I want to list my used combine.',
+      vals.name ? 'Seller: ' + vals.name : '',
+      vals.phone ? 'Phone: ' + vals.phone : '',
+      vals.brand ? 'Brand: ' + vals.brand : '',
+      vals.model ? 'Model: ' + vals.model : '',
+      vals.year ? 'Year: ' + vals.year : '',
+      vals.hours ? 'Hours: ' + vals.hours : '',
+      vals.location ? 'Location: ' + vals.location : '',
+      vals.price ? 'Expected Price: ' + vals.price : '',
+      vals.notes ? 'Condition / Notes: ' + vals.notes : ''
+    ].filter(Boolean);
+    addRewardPoints(30);
+    window.open('https://wa.me/' + SHOP.whatsapp + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(renderNewCombinesPage, 80);
+  setTimeout(renderUsedCombinesPage, 80);
+  setTimeout(renderRewardsPage, 80);
+  setTimeout(initSellerCenter, 80);
+});
