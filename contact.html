@@ -34,7 +34,7 @@
   }
   </script>
 </head>
-<body>
+<body class="contact-page-clean">
   <div class="topbar">Premium combine harves
   <title>Contact Harvester Parts</title>
   <meta name="description" content="Contact Harvester Parts for combine harvester spare parts, pricing, compatibility, and order help.">
@@ -117,12 +117,13 @@ ter, cutter bar, and straw reaper spare parts support • Call <span data-phone-
           <a class="ghost-btn" data-call-link-primary href="#">Call Now</a>
         </div>
       </section>
-      <aside class="contact-card">
+      <aside class="contact-card contact-enquiry-card">
         <h3>Send a quick enquiry</h3>
-        <div class="field"><label>Your Name</label><input placeholder="Enter name"></div>
-        <div class="field"><label>Phone Number</label><input placeholder="Enter phone"></div>
-        <div class="field"><label>Machine details / Part requirement</label><textarea placeholder="Example: New Hira 985 Deluxe, need knife blade set"></textarea></div>
-        <a class="primary-btn" style="display:inline-block;margin-top:8px" data-whatsapp-link href="#" target="_blank" rel="noopener">Send Through WhatsApp</a>
+        <p class="contact-form-intro">Share your machine model or spare part requirement. Your message will open directly on WhatsApp in a cleaner format.</p>
+        <div class="field"><label for="contactName">Your Name</label><input id="contactName" placeholder="Enter name"></div>
+        <div class="field"><label for="contactPhone">Phone Number</label><input id="contactPhone" placeholder="Enter phone"></div>
+        <div class="field"><label for="contactRequirement">Machine details / Part requirement</label><textarea id="contactRequirement" placeholder="Example: New Hira 985 Deluxe, need knife blade set"></textarea></div>
+        <button class="primary-btn contact-submit-btn" id="contactWhatsAppBtn" type="button">Send Through WhatsApp</button>
       </aside>
     </div>
   </main>

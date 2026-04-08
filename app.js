@@ -1931,3 +1931,24 @@ function initCarousels(){
 document.addEventListener('DOMContentLoaded', function(){
   setTimeout(initCarousels, 120);
 });
+
+
+/* ===== v64 contact enquiry button ===== */
+function initContactEnquiry(){
+  const btn = document.getElementById('contactWhatsAppBtn');
+  if(!btn || btn.dataset.bound === '1') return;
+  btn.dataset.bound = '1';
+  btn.addEventListener('click', function(){
+    const name = (document.getElementById('contactName')?.value || '').trim();
+    const phone = (document.getElementById('contactPhone')?.value || '').trim();
+    const req = (document.getElementById('contactRequirement')?.value || '').trim();
+    const lines = [
+      'Hello Harvester Parts,',
+      name ? 'Name: ' + name : '',
+      phone ? 'Phone: ' + phone : '',
+      req ? 'Requirement: ' + req : ''
+    ].filter(Boolean);
+    window.open('https://wa.me/' + SHOP.whatsapp + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){ setTimeout(initContactEnquiry, 120); });

@@ -79,38 +79,19 @@
   </div>
 </section>
 
-<section class="marketplace-layout">
+<section class="marketplace-layout marketplace-layout-single">
+      <section class="card clean-market-note">
+        <div class="section-title">
+          <div>
+            <h3>New combine buying made simple</h3>
+            <p>Use the search bar above to quickly browse combine models. Filters were removed on mobile for a cleaner premium layout.</p>
+          </div>
+        </div>
+      </section>
 
-      <aside class="filters card segment-filter-card">
-        <h3>Filter new combines</h3>
-        <div class="field">
-          <label for="newBrandFilter">Brand</label>
-          <select id="newBrandFilter"><option value="">All Brands</option></select>
-        </div>
-        <div class="field">
-          <label for="newFinanceFilter">Finance</label>
-          <select id="newFinanceFilter"><option value="">All</option><option value="Available">Finance Available</option></select>
-        </div>
-        <div class="field">
-          <label for="newBudgetFilter">Budget</label>
-          <select id="newBudgetFilter">
-            <option value="">All Budgets</option>
-            <option value="2500000">Up to ₹25 lakh</option>
-            <option value="2800000">Up to ₹28 lakh</option>
-            <option value="99999999">Above ₹28 lakh</option>
-          </select>
-        </div>
-        <div class="filter-actions">
-          <button class="primary-btn" type="button" onclick="renderNewCombinesPage()">Apply Filters</button>
-          <button class="ghost-btn" type="button" onclick="resetNewCombinesFilters()">Reset</button>
-        </div>
-        <div class="helper">This segment can make money through booking commission, finance referral commission, warranty support, and delivery coordination.</div>
-      </aside>
-
-      
 
       <section>
-        <div class="section-title"><div><h3>Available new combines</h3><p id="newCombinesCount">0 models found</p></div></div>
+        <div class="section-title marketplace-listing-title"><div><h3>Available new combines</h3><p id="newCombinesCount">0 models found</p></div></div>
         <div id="newCombinesGrid" class="cards-grid"></div>
       </section>
     </section>

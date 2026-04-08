@@ -7499,3 +7499,124 @@ body{
     padding: 24px 22px 74px !important;
   }
 }
+
+
+/* ===== v64 serious layout fixes ===== */
+.marketplace-layout-single{
+  grid-template-columns:1fr !important;
+}
+.clean-market-note{
+  padding:22px !important;
+  margin-bottom:4px !important;
+}
+.clean-market-note h3{
+  color:#fff7e6 !important;
+}
+.clean-market-note p{
+  color:#dccaa1 !important;
+  line-height:1.7 !important;
+}
+.marketplace-listing-title{
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:flex-end !important;
+  gap:12px !important;
+}
+.sell-combine-btn{
+  white-space:nowrap !important;
+}
+
+.contact-enquiry-card{
+  padding:24px !important;
+}
+.contact-form-intro{
+  color:#dccaa1 !important;
+  line-height:1.65 !important;
+  margin:0 0 14px !important;
+}
+.contact-submit-btn{
+  width:100% !important;
+  min-height:56px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin-top:8px !important;
+}
+.contact-page-clean .mobile-action-rail,
+.contact-page-clean .floating,
+.contact-page-clean #whatsappFloat,
+.contact-page-clean .showroom-actions{
+  display:none !important;
+}
+
+.ai-page-clean .hp-chat{
+  min-height:260px !important;
+  max-height:360px !important;
+  background:rgba(9,7,5,.58) !important;
+  border:1px solid rgba(255,210,74,.10) !important;
+  border-radius:22px !important;
+  padding:18px !important;
+  margin-bottom:16px !important;
+}
+.ai-page-clean .hp-chat .chat-row{
+  margin-bottom:14px !important;
+}
+.ai-page-clean .hp-chat .bubble{
+  max-width:88% !important;
+  border-radius:20px !important;
+  padding:16px 18px !important;
+  font-size:16px !important;
+}
+.ai-page-clean .chat-form{
+  display:grid !important;
+  grid-template-columns:1fr auto !important;
+  gap:12px !important;
+  align-items:center !important;
+}
+.ai-page-clean .chat-form input{
+  min-height:56px !important;
+  padding:14px 16px !important;
+  border-radius:16px !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  background:linear-gradient(180deg,#0e1736,#07112d) !important;
+  color:#fff8ea !important;
+}
+.ai-page-clean .chat-form .primary-btn{
+  min-height:56px !important;
+  padding:0 24px !important;
+  border-radius:16px !important;
+}
+
+@media (max-width:720px){
+  .marketplace-listing-title{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+  .marketplace-listing-title .primary-btn{
+    width:100% !important;
+  }
+  .marketplace-listing-title h3{
+    font-size:clamp(30px,11vw,54px) !important;
+    line-height:0.95 !important;
+  }
+  .clean-market-note,
+  .contact-enquiry-card{
+    padding:20px !important;
+    border-radius:24px !important;
+  }
+  .ai-page-clean .chat-form{
+    grid-template-columns:1fr !important;
+  }
+  .ai-page-clean .chat-form .primary-btn{
+    width:100% !important;
+  }
+  .ai-page-clean .hp-chat{
+    min-height:220px !important;
+    max-height:320px !important;
+    padding:14px !important;
+  }
+  .ai-page-clean .hp-chat .bubble{
+    max-width:92% !important;
+    font-size:15px !important;
+  }
+}
