@@ -7158,3 +7158,134 @@ body{
     grid-template-columns:repeat(3,1fr);
   }
 }
+
+
+/* ===== v58 carousels ===== */
+.hp-carousel{
+  position:relative;
+  border-radius:28px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top right, rgba(255,210,74,.08), transparent 28%),
+    linear-gradient(180deg, rgba(23,17,9,.98), rgba(16,12,8,.98));
+  border:1px solid rgba(255,210,74,.12);
+  box-shadow:0 22px 44px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,248,220,.04);
+  min-height:280px;
+}
+.hp-carousel.compact{
+  min-height:220px;
+}
+.hp-carousel-track{
+  position:relative;
+  min-height:inherit;
+}
+.hp-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:translateX(30px);
+  transition:opacity .45s ease, transform .45s ease;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+}
+.hp-slide.active{
+  opacity:1;
+  transform:translateX(0);
+  pointer-events:auto;
+}
+.hp-slide-content{
+  padding:34px 72px;
+  max-width:760px;
+}
+.hp-slide-kicker{
+  display:inline-flex;
+  margin-bottom:12px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,210,74,.08);
+  border:1px solid rgba(255,210,74,.14);
+  color:#ffd24a;
+  font-size:13px;
+  font-weight:800;
+}
+.hp-slide h3{
+  margin:0 0 12px;
+  font-size:clamp(28px,4vw,46px);
+  line-height:1.06;
+  color:#fff7e6;
+}
+.hp-slide p{
+  margin:0 0 18px;
+  color:#dccaa1;
+  line-height:1.7;
+  font-size:16px;
+  max-width:680px;
+}
+.hp-carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(90deg,#735010,#ffd24a 55%, #d89d12);
+  color:#241d10;
+  font-size:28px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(0,0,0,.28);
+}
+.hp-carousel-btn.prev{ left:14px; }
+.hp-carousel-btn.next{ right:14px; }
+.hp-carousel-dots{
+  position:absolute;
+  left:50%;
+  bottom:16px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  z-index:2;
+}
+.hp-carousel-dots button{
+  width:10px;
+  height:10px;
+  border:none;
+  border-radius:999px;
+  background:rgba(255,255,255,.32);
+  cursor:pointer;
+}
+.hp-carousel-dots button.active{
+  background:#ffd24a;
+}
+@media (max-width:720px){
+  .hp-carousel{
+    min-height:250px;
+    border-radius:24px;
+  }
+  .hp-carousel.compact{
+    min-height:210px;
+  }
+  .hp-slide-content{
+    padding:26px 22px 56px;
+  }
+  .hp-slide h3{
+    font-size:clamp(24px,8vw,34px);
+  }
+  .hp-slide p{
+    font-size:15px;
+    line-height:1.6;
+  }
+  .hp-carousel-btn{
+    width:40px;
+    height:40px;
+    font-size:24px;
+    top:auto;
+    bottom:18px;
+    transform:none;
+  }
+  .hp-carousel-btn.prev{ left:14px; }
+  .hp-carousel-btn.next{ right:14px; }
+}

@@ -1828,3 +1828,54 @@ document.addEventListener('DOMContentLoaded', function(){
   setTimeout(initSellerCenterV56, 100);
   setTimeout(initAIBotsPage, 100);
 });
+
+
+/* ===== v58 carousel logic ===== */
+function initCarousels(){
+  document.querySelectorAll('.hp-carousel').forEach(carousel => {
+    if(carousel.dataset.bound === '1') return;
+    carousel.dataset.bound = '1';
+    const slides = Array.from(carousel.querySelectorAll('.hp-slide'));
+    const prev = carousel.querySelector('.hp-carousel-btn.prev');
+    const next = carousel.querySelector('.hp-carousel-btn.next');
+    const dotsWrap = carousel.querySelector('.hp-carousel-dots');
+    let index = slides.findIndex(s => s.classList.contains('active'));
+    if(index < 0) index = 0;
+
+    function renderDots(){
+      if(!dotsWrap) return;
+      dotsWrap.innerHTML = slides.map((_,i)=>`<button type="button" class="${i===index?'active':''}" aria-label="Go to slide ${i+1}"></button>`).join('');
+      Array.from(dotsWrap.querySelectorAll('button')).forEach((btn,i)=>{
+        btn.addEventListener('click', ()=>{
+          index = i;
+          update();
+          restart();
+        });
+      });
+    }
+    function update(){
+      slides.forEach((s,i)=>s.classList.toggle('active', i===index));
+      if(dotsWrap){
+        Array.from(dotsWrap.querySelectorAll('button')).forEach((btn,i)=>btn.classList.toggle('active', i===index));
+      }
+    }
+    function go(step){
+      index = (index + step + slides.length) % slides.length;
+      update();
+    }
+    let timer = null;
+    function restart(){
+      if(timer) clearInterval(timer);
+      timer = setInterval(()=>go(1), 4200);
+    }
+    prev?.addEventListener('click', ()=>{ go(-1); restart(); });
+    next?.addEventListener('click', ()=>{ go(1); restart(); });
+    renderDots();
+    update();
+    restart();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(initCarousels, 120);
+});
