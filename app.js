@@ -1832,7 +1832,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-/* ===== v59 carousel logic ===== */
+
+
+/* ===== v63 carousel logic with swipe ===== */
 function initCarousels(){
   document.querySelectorAll('.hp-carousel').forEach(carousel => {
     if (carousel.dataset.bound === '1') return;
@@ -1844,6 +1846,9 @@ function initCarousels(){
     const dotsWrap = carousel.querySelector('.hp-carousel-dots');
     let index = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
     let timer = null;
+    let startX = 0;
+    let startY = 0;
+    let dragging = false;
 
     function renderDots(){
       if (!dotsWrap) return;
@@ -1881,8 +1886,41 @@ function initCarousels(){
       timer = setInterval(() => go(1), 4200);
     }
 
+    function onStart(x, y){
+      startX = x;
+      startY = y;
+      dragging = true;
+      carousel.classList.add('swiping');
+      if (timer) clearInterval(timer);
+    }
+
+    function onEnd(x, y){
+      if (!dragging) return;
+      const dx = x - startX;
+      const dy = y - startY;
+      dragging = false;
+      carousel.classList.remove('swiping');
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) go(1);
+        else go(-1);
+      }
+      restart();
+    }
+
     prev && prev.addEventListener('click', () => { go(-1); restart(); });
     next && next.addEventListener('click', () => { go(1); restart(); });
+
+    carousel.addEventListener('touchstart', (e) => {
+      const t = e.changedTouches[0];
+      onStart(t.clientX, t.clientY);
+    }, {passive:true});
+    carousel.addEventListener('touchend', (e) => {
+      const t = e.changedTouches[0];
+      onEnd(t.clientX, t.clientY);
+    }, {passive:true});
+
+    carousel.addEventListener('mousedown', (e) => onStart(e.clientX, e.clientY));
+    window.addEventListener('mouseup', (e) => onEnd(e.clientX, e.clientY));
 
     renderDots();
     update();

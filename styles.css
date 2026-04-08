@@ -7447,3 +7447,55 @@ body{
     width: 100% !important;
   }
 }
+
+
+/* ===== v63 image carousel + swipe ===== */
+.hp-carousel{
+  touch-action: pan-y;
+  user-select: none;
+}
+.hp-image-carousel{
+  min-height: 380px !important;
+}
+.hp-slide{
+  position: relative;
+}
+.hp-slide-media{
+  position:absolute;
+  inset:0;
+}
+.hp-slide-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.hp-slide-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(10,7,4,.86) 0%, rgba(10,7,4,.58) 45%, rgba(10,7,4,.26) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.20) 100%);
+}
+.hp-image-carousel .hp-slide-content{
+  position:relative;
+  z-index:2;
+  max-width:780px;
+}
+.hp-image-carousel .hp-slide h3,
+.hp-image-carousel .hp-slide p,
+.hp-image-carousel .hp-slide-kicker{
+  text-shadow: 0 8px 24px rgba(0,0,0,.28);
+}
+.hp-carousel.swiping .hp-slide-content,
+.hp-carousel.swiping .hp-slide-media{
+  pointer-events:none;
+}
+@media (max-width:720px){
+  .hp-image-carousel{
+    min-height: 340px !important;
+  }
+  .hp-image-carousel .hp-slide-content{
+    padding: 24px 22px 74px !important;
+  }
+}
