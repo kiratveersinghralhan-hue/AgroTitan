@@ -80,17 +80,34 @@
 </section>
 
 <section class="marketplace-layout">
+
       <aside class="filters card segment-filter-card">
         <h3>Filter used listings</h3>
-        <div class="field"><label>Brand</label><select id="usedBrandFilter"><option value="">All Brands</option></select></div>
-        <div class="field"><label>Condition</label><select id="usedConditionFilter"><option value="">All Conditions</option><option value="Very Good">Very Good</option><option value="Good">Good</option><option value="Fair">Fair</option></select></div>
-        <div class="field"><label>Location</label><input id="usedLocationFilter" placeholder="Example: Patiala"></div>
+        <div class="field">
+          <label for="usedBrandFilter">Brand</label>
+          <select id="usedBrandFilter"><option value="">All Brands</option></select>
+        </div>
+        <div class="field">
+          <label for="usedConditionFilter">Condition</label>
+          <select id="usedConditionFilter">
+            <option value="">All Conditions</option>
+            <option value="Very Good">Very Good</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="usedLocationFilter">Location</label>
+          <input id="usedLocationFilter" placeholder="Example: Patiala">
+        </div>
         <div class="filter-actions">
           <button class="primary-btn" type="button" onclick="renderUsedCombinesPage()">Apply Filters</button>
           <button class="ghost-btn" type="button" onclick="resetUsedCombinesFilters()">Reset</button>
         </div>
         <div class="helper">This segment can make money through listing fee, premium listing boost, seller verification fee, inspection service, and commission on successful sale.</div>
       </aside>
+
+      
 
       <section>
         <div class="section-title"><div><h3>Used combine listings</h3><p id="usedCombinesCount">0 listings found</p></div><a class="primary-btn" href="seller-center.html">Sell Your Combine</a></div>
