@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="marketplace-page">
+<body class="marketplace-page seller-page-clean">
 
   <div class="topbar">Premium combine harvester, cutter bar, and straw reaper spare parts support • Call <span data-phone-primary></span></div>
   <header class="header">
@@ -57,17 +57,22 @@
     </section>
     <section class="marketplace-layout marketplace-layout-single">
       <section class="card seller-form-card">
-        <div class="section-title"><div><h3>List your used combine</h3><p>Form logic ready for seller lead generation and verification workflow.</p></div></div>
+        <div class="section-title">
+          <div>
+            <h3>List your used combine</h3>
+            <p>Fill the seller details clearly so buyers can contact you faster and the sales team can verify your listing properly.</p>
+          </div>
+        </div>
         <div class="seller-form-grid">
-          <div class="field"><label>Seller Name</label><input id="sellerName" placeholder="Enter seller name"></div>
-          <div class="field"><label>Phone Number</label><input id="sellerPhone" placeholder="Enter phone number"></div>
-          <div class="field"><label>Brand</label><input id="sellerBrand" placeholder="Example: New Hira"></div>
-          <div class="field"><label>Model</label><input id="sellerModel" placeholder="Example: 985 Standard"></div>
-          <div class="field"><label>Year</label><input id="sellerYear" placeholder="Example: 2020"></div>
-          <div class="field"><label>Running Hours</label><input id="sellerHours" placeholder="Example: 1450 hours"></div>
-          <div class="field"><label>Location</label><input id="sellerLocation" placeholder="Example: Patiala"></div>
-          <div class="field"><label>Expected Price</label><input id="sellerPrice" placeholder="Example: 1500000"></div>
-          <div class="field field-full"><label>Machine Condition / Notes</label><textarea id="sellerNotes" placeholder="Mention condition, ownership, service history, attachments, and inspection details"></textarea></div>
+          <div class="field"><label for="sellerName">Seller Name</label><input id="sellerName" type="text" placeholder="Enter seller name"></div>
+          <div class="field"><label for="sellerPhone">Phone Number</label><input id="sellerPhone" type="tel" placeholder="Enter phone number"></div>
+          <div class="field"><label for="sellerBrand">Brand</label><input id="sellerBrand" type="text" placeholder="Example: New Hira"></div>
+          <div class="field"><label for="sellerModel">Model</label><input id="sellerModel" type="text" placeholder="Example: 985 Standard"></div>
+          <div class="field"><label for="sellerYear">Year</label><input id="sellerYear" type="text" placeholder="Example: 2020"></div>
+          <div class="field"><label for="sellerHours">Running Hours</label><input id="sellerHours" type="text" placeholder="Example: 1450 hours"></div>
+          <div class="field"><label for="sellerLocation">Location</label><input id="sellerLocation" type="text" placeholder="Example: Patiala"></div>
+          <div class="field"><label for="sellerPrice">Expected Price</label><input id="sellerPrice" type="text" placeholder="Example: 1500000"></div>
+          <div class="field field-full"><label for="sellerNotes">Machine Condition / Notes</label><textarea id="sellerNotes" placeholder="Mention condition, ownership, service history, attachments, and inspection details"></textarea></div>
         </div>
         <div class="seller-actions">
           <button class="primary-btn" type="button" id="sellerWhatsAppBtn">Submit Seller Lead</button>
