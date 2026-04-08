@@ -880,7 +880,7 @@ function enhanceHeader() {
     drawer.innerHTML = `
       <div class="drawer-head">
         <div class="drawer-brand">
-          <img src="agrotitan-logo.png" alt="${SHOP.name} logo">
+          <img src="logo.svg" alt="${SHOP.name} logo">
           <div>
             <strong>${SHOP.name}</strong>
             <span>${SHOP.tagline}</span>
@@ -900,12 +900,19 @@ function enhanceHeader() {
 
   const drawerLinks = document.getElementById("drawerLinks");
   if (drawerLinks && !drawerLinks.children.length) {
-    drawerLinks.innerHTML = "";
-    Array.from(menu.querySelectorAll("a")).forEach(link => {
-      const clone = link.cloneNode(true);
-      clone.classList.add("drawer-link");
-      clone.addEventListener("click", closeMobileDrawer);
-      drawerLinks.appendChild(clone);
+    drawerLinks.innerHTML = `
+      <a class="drawer-link" href="index.html">Home</a>
+      <a class="drawer-link" href="new-combines.html">New Combines</a>
+      <a class="drawer-link" href="used-combines.html">Used Combines</a>
+      <a class="drawer-link" href="products.html">Spare Parts</a>
+      <a class="drawer-link" href="seller-center.html">Sell Used</a>
+      <a class="drawer-link" href="rewards.html">Rewards</a>
+      <a class="drawer-link" href="ai-help.html">AI Help</a>
+      <a class="drawer-link" href="contact.html">Contact</a>
+      <a class="drawer-link" href="cart.html">Cart</a>
+    `;
+    drawerLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMobileDrawer);
     });
   }
 
@@ -1605,4 +1612,219 @@ document.addEventListener('DOMContentLoaded', function(){
   setTimeout(renderUsedCombinesPage, 80);
   setTimeout(renderRewardsPage, 80);
   setTimeout(initSellerCenter, 80);
+});
+
+
+/* ===== v56 local marketplace backend ===== */
+function getMarketplaceState(){
+  const defaults = { pendingSellerLeads: [], usedListingsExtra: [] };
+  try{
+    return Object.assign(defaults, JSON.parse(localStorage.getItem('hp_marketplace_state') || '{}'));
+  }catch(e){
+    return defaults;
+  }
+}
+function saveMarketplaceState(state){
+  localStorage.setItem('hp_marketplace_state', JSON.stringify(state));
+}
+function getAllUsedListings(){
+  const state = getMarketplaceState();
+  return [...(window.USED_COMBINES || []), ...(state.usedListingsExtra || [])];
+}
+function submitSellerLeadV56(lead){
+  const state = getMarketplaceState();
+  state.pendingSellerLeads.push({
+    id: 'lead-' + Date.now(),
+    createdAt: new Date().toISOString(),
+    status: 'pending',
+    ...lead
+  });
+  saveMarketplaceState(state);
+}
+function approveSellerLead(leadId){
+  const state = getMarketplaceState();
+  const lead = state.pendingSellerLeads.find(x => x.id === leadId);
+  if(!lead) return;
+  state.pendingSellerLeads = state.pendingSellerLeads.filter(x => x.id !== leadId);
+  state.usedListingsExtra.push({
+    id: 'ucl-' + Date.now(),
+    brand: lead.brand || 'Used Combine',
+    model: lead.model || 'Seller Listing',
+    year: lead.year || '',
+    hours: lead.hours || '',
+    location: lead.location || '',
+    ownership: 'Seller submitted',
+    condition: 'Verified',
+    askingPrice: Number(lead.price || 0),
+    negotiable: true,
+    age: lead.year ? ((new Date().getFullYear() - Number(lead.year)) + ' years') : '',
+    badge: 'Verified Seller',
+    image: 'https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1200&q=80',
+    description: lead.notes || 'Seller-submitted used combine listing approved from dashboard.'
+  });
+  addRewardPoints(40);
+  saveMarketplaceState(state);
+  renderAdminDashboard();
+  renderUsedCombinesPage();
+}
+function rejectSellerLead(leadId){
+  const state = getMarketplaceState();
+  state.pendingSellerLeads = state.pendingSellerLeads.filter(x => x.id !== leadId);
+  saveMarketplaceState(state);
+  renderAdminDashboard();
+}
+function toggleFeaturedUsedListing(listingId){
+  const state = getMarketplaceState();
+  state.usedListingsExtra = (state.usedListingsExtra || []).map(item => item.id === listingId ? {...item, badge: item.badge === 'Featured Seller' ? 'Verified Seller' : 'Featured Seller'} : item);
+  saveMarketplaceState(state);
+  renderAdminDashboard();
+  renderUsedCombinesPage();
+}
+
+const HP_AI_BOTS = {
+  buyer: {
+    title: 'Buyer Bot',
+    subtitle: 'Ask budget, brand, or combine questions.',
+    reply: (q) => {
+      const text = q.toLowerCase();
+      if(text.includes('under 15') || text.includes('15 lakh')) return 'For around 15 lakh, a cleaner used combine listing is usually the better fit. Check the Used Market page and filter by condition and location.';
+      if(text.includes('new hira')) return 'If you prefer New Hira, compare 985 Standard and 985 Deluxe on the New Combines page. Deluxe is better for buyers wanting premium output and comfort.';
+      return 'For buying guidance, compare new combines by finance and booking amount, or used combines by year, hours, and condition.';
+    }
+  },
+  parts: {
+    title: 'Parts Bot',
+    subtitle: 'Ask model, fitment, or spare parts questions.',
+    reply: (q) => {
+      const text = q.toLowerCase();
+      if(text.includes('985')) return 'For New Hira 985 models, common parts include knife section, guards, belts, bearings, auger parts, filters, and work lights. Check the Spares page and use the selector.';
+      if(text.includes('belt') || text.includes('bearing')) return 'Belts and bearings are repeat-purchase parts, so the site can upsell these with combine leads and maintenance flow.';
+      return 'Use the spare parts selector by brand, machine type, and model for the best matching result.';
+    }
+  },
+  seller: {
+    title: 'Seller Bot',
+    subtitle: 'Ask about listing your old combine.',
+    reply: (q) => {
+      const text = q.toLowerCase();
+      if(text.includes('sell') || text.includes('list')) return 'To sell faster, enter brand, model, year, hours, location, expected amount, and machine condition. Premium or verified badges can improve enquiries.';
+      if(text.includes('featured')) return 'Featured listing can be a paid upgrade so your combine appears first and gets more serious buyer leads.';
+      return 'Go to Seller Center, submit your used combine details, then the admin side can approve or feature your listing.';
+    }
+  }
+};
+
+function renderAdminDashboard(){
+  const pendingGrid = document.getElementById('pendingLeadsGrid');
+  const liveGrid = document.getElementById('adminUsedListingsGrid');
+  if(!pendingGrid && !liveGrid) return;
+  const state = getMarketplaceState();
+  const reward = getRewardProfile();
+  const pendingCount = document.getElementById('pendingLeadsCount');
+  const liveCount = document.getElementById('liveUsedCount');
+  const rewardCount = document.getElementById('rewardPointsCount');
+  if(pendingCount) pendingCount.textContent = String((state.pendingSellerLeads || []).length);
+  if(liveCount) liveCount.textContent = String(getAllUsedListings().length);
+  if(rewardCount) rewardCount.textContent = String(reward.points || 0);
+
+  if(pendingGrid){
+    pendingGrid.innerHTML = (state.pendingSellerLeads || []).map(lead => `
+      <article class="card market-card">
+        <div class="badge-ribbon">Pending Lead</div>
+        <h4>${lead.brand || 'Used Combine'} ${lead.model || ''}</h4>
+        <div class="meta">
+          <span>${lead.year || 'Year N/A'}</span>
+          <span>${lead.hours || 'Hours N/A'}</span>
+          <span>${lead.location || 'Location N/A'}</span>
+        </div>
+        <p>${lead.notes || 'Seller lead waiting for admin review.'}</p>
+        <div class="price-row"><strong>${lead.price ? formatMoney(lead.price) : 'Price N/A'}</strong><small>${lead.name || ''}</small></div>
+        <div class="action-row">
+          <button class="primary-btn" type="button" onclick="approveSellerLead('${lead.id}')">Approve</button>
+          <button class="ghost-btn" type="button" onclick="rejectSellerLead('${lead.id}')">Reject</button>
+        </div>
+      </article>
+    `).join('') || '<div class="card" style="padding:24px">No pending seller leads.</div>';
+  }
+
+  if(liveGrid){
+    liveGrid.innerHTML = getAllUsedListings().map(item => `
+      <article class="card market-card">
+        <div class="badge-ribbon">${item.badge || 'Used Listing'}</div>
+        <h4>${item.brand} ${item.model}</h4>
+        <div class="meta"><span>${item.year || ''}</span><span>${item.location || ''}</span><span>${item.condition || ''}</span></div>
+        <p>${item.description || ''}</p>
+        <div class="price-row"><strong>${formatMoney(item.askingPrice || 0)}</strong><small>${item.hours || ''}</small></div>
+        <div class="action-row">
+          <button class="primary-btn" type="button" onclick="toggleFeaturedUsedListing('${item.id}')">Toggle Featured</button>
+          <button class="ghost-btn" type="button" onclick="openMarketQuickView('used','${item.id}')">Quick View</button>
+        </div>
+      </article>
+    `).join('');
+  }
+}
+
+function initSellerCenterV56(){
+  const btn = document.getElementById('sellerWhatsAppBtn');
+  if(!btn || btn.dataset.v56bound) return;
+  btn.dataset.v56bound = '1';
+  btn.addEventListener('click', function(){
+    const lead = {
+      name: document.getElementById('sellerName')?.value || '',
+      phone: document.getElementById('sellerPhone')?.value || '',
+      brand: document.getElementById('sellerBrand')?.value || '',
+      model: document.getElementById('sellerModel')?.value || '',
+      year: document.getElementById('sellerYear')?.value || '',
+      hours: document.getElementById('sellerHours')?.value || '',
+      location: document.getElementById('sellerLocation')?.value || '',
+      price: document.getElementById('sellerPrice')?.value || '',
+      notes: document.getElementById('sellerNotes')?.value || ''
+    };
+    submitSellerLeadV56(lead);
+    addRewardPoints(30);
+  });
+}
+
+function initAIBotsPage(){
+  const shell = document.getElementById('aiBotMessages');
+  const form = document.getElementById('aiBotForm');
+  const input = document.getElementById('aiBotInput');
+  if(!shell || !form || !input) return;
+  let currentBot = 'buyer';
+  const title = document.getElementById('aiBotTitle');
+  const subtitle = document.getElementById('aiBotSubtitle');
+
+  function push(role, text){
+    const row = document.createElement('div');
+    row.className = 'chat-row ' + role;
+    row.innerHTML = '<div class="bubble">' + text + '</div>';
+    shell.appendChild(row);
+    shell.scrollTop = shell.scrollHeight;
+  }
+  function setBot(name){
+    currentBot = name;
+    title.textContent = HP_AI_BOTS[name].title;
+    subtitle.textContent = HP_AI_BOTS[name].subtitle;
+    shell.innerHTML = '';
+    push('bot', 'Hello, I am the ' + HP_AI_BOTS[name].title + '. ' + HP_AI_BOTS[name].subtitle);
+  }
+  document.querySelectorAll('.ai-bot-card').forEach(card => {
+    card.addEventListener('click', ()=>setBot(card.dataset.bot || 'buyer'));
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if(!q) return;
+    push('user', q);
+    const answer = HP_AI_BOTS[currentBot].reply(q);
+    setTimeout(()=>push('bot', answer), 250);
+    input.value = '';
+  });
+  setBot('buyer');
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(renderAdminDashboard, 100);
+  setTimeout(initSellerCenterV56, 100);
+  setTimeout(initAIBotsPage, 100);
 });

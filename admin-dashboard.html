@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Harvester Parts</title>
+  <meta name="description" content="Admin dashboard for approving seller listings, featured boosts, and marketplace lead management.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="marketplace-page admin-page">
+  <div class="topbar">Admin dashboard for marketplace approval, featured listings, and lead management.</div>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-text-only">
+          <h1>Harvester Parts</h1>
+          <p>Marketplace Admin</p>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="new-combines.html">New Combines</a>
+        <a href="used-combines.html">Used Combines</a>
+        <a href="products.html">Spare Parts</a>
+        <a href="seller-center.html">Sell Used</a>
+        <a href="rewards.html">Rewards</a>
+        <a href="ai-help.html">AI Help</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="badge-btn" href="admin-dashboard.html">Admin</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="card marketplace-hero-card">
+      <div class="section-title">
+        <div>
+          <h3>Marketplace admin dashboard</h3>
+          <p>Approve seller leads, convert them into live used listings, mark featured, and track enquiry revenue.</p>
+        </div>
+      </div>
+      <div class="marketplace-summary-grid">
+        <div class="summary-mini card"><strong>Pending leads</strong><span id="pendingLeadsCount">0</span></div>
+        <div class="summary-mini card"><strong>Live used listings</strong><span id="liveUsedCount">0</span></div>
+        <div class="summary-mini card"><strong>Rewards tracked</strong><span id="rewardPointsCount">0</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h3>Pending seller leads</h3>
+          <p>Approve, reject, or convert seller submissions into marketplace listings.</p>
+        </div>
+      </div>
+      <div id="pendingLeadsGrid" class="cards-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h3>Live used listings</h3>
+          <p>Manage featured badges and listing visibility.</p>
+        </div>
+      </div>
+      <div id="adminUsedListingsGrid" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script src="products-data.js"></script>
+  <script src="market-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

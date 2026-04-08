@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Help Bots | Harvester Parts</title>
+  <meta name="description" content="AI helper bots for combine recommendations, spare part matching, seller help, and support questions.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="marketplace-page ai-bots-page">
+  <div class="topbar">AI helper bots for buyers, sellers, and spare parts support.</div>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-text-only">
+          <h1>Harvester Parts</h1>
+          <p>AI Marketplace Help</p>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="new-combines.html">New Combines</a>
+        <a href="used-combines.html">Used Combines</a>
+        <a href="products.html">Spare Parts</a>
+        <a href="seller-center.html">Sell Used</a>
+        <a href="rewards.html">Rewards</a>
+        <a href="ai-help.html">AI Help</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="badge-btn" href="ai-help.html">AI Help</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="card marketplace-hero-card">
+      <div class="section-title">
+        <div>
+          <h3>AI help bots</h3>
+          <p>Different bots for buyers, sellers, combine guidance, and spare parts support.</p>
+        </div>
+      </div>
+      <div class="segments-grid ai-bot-grid">
+        <article class="segment-card card ai-bot-card" data-bot="buyer">
+          <span class="segment-badge">Buyer Bot</span>
+          <h4>Which combine should I buy?</h4>
+          <p>Helps recommend a new or used combine based on budget, brand preference, and condition needs.</p>
+        </article>
+        <article class="segment-card card ai-bot-card" data-bot="parts">
+          <span class="segment-badge">Parts Bot</span>
+          <h4>Find matching spare parts</h4>
+          <p>Suggests parts based on model, machine type, and common maintenance needs.</p>
+        </article>
+        <article class="segment-card card ai-bot-card" data-bot="seller">
+          <span class="segment-badge">Seller Bot</span>
+          <h4>Help me list my used combine</h4>
+          <p>Guides sellers on what details to enter to get more enquiries and higher trust.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card ai-bot-shell">
+      <div class="section-title">
+        <div>
+          <h3 id="aiBotTitle">Buyer Bot</h3>
+          <p id="aiBotSubtitle">Ask budget, brand, or combine questions.</p>
+        </div>
+      </div>
+      <div id="aiBotMessages" class="chat-messages hp-chat"></div>
+      <form id="aiBotForm" class="chat-form">
+        <input id="aiBotInput" type="text" placeholder="Ask: best used combine under 15 lakh">
+        <button type="submit" class="primary-btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="products-data.js"></script>
+  <script src="market-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
