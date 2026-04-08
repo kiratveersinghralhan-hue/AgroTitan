@@ -101,3 +101,19 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Safe local fallback remains available if Firebase config is missing or Firestore is unavailable.
 - Added `FIREBASE_SETUP.md` with setup steps.
 - This version is live-backend capable, but still requires your real Firebase project keys.
+
+
+## v69 supabase-connected live backend
+- Added `supabase-client.js` to initialize Supabase with CDN import.
+- `backend.js` now performs real Supabase CRUD when valid project URL and anon key are present.
+- Safe local fallback remains available if Supabase config is missing or the tables are unavailable.
+- Added `SUPABASE_SETUP.md` with table schema and setup steps.
+- This version is live-backend capable, but still needs your real Supabase project values and tables.
+
+
+## v71 secure RLS + role system
+- `auth.js` now checks the `profiles` table for `role = 'admin'`.
+- Added `SUPABASE_RLS.sql` with secure Row Level Security policies.
+- Added `SUPABASE_AUTH_SETUP.md` with admin role setup instructions.
+- Admin dashboard now blocks non-admin authenticated users.
+- Added logout button on admin dashboard.

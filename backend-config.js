@@ -1,11 +1,7 @@
 window.HP_BACKEND_CONFIG = {
-  provider: "firebase", // "firebase" or "local"
-  firebase: {
-    apiKey: "PASTE_FIREBASE_API_KEY",
-    authDomain: "PASTE_FIREBASE_AUTH_DOMAIN",
-    projectId: "PASTE_FIREBASE_PROJECT_ID",
-    storageBucket: "PASTE_FIREBASE_STORAGE_BUCKET",
-    messagingSenderId: "PASTE_FIREBASE_MESSAGING_SENDER_ID",
-    appId: "PASTE_FIREBASE_APP_ID"
+  provider: "supabase", // "supabase" or "local"
+  supabase: {
+    url: "https://rpsiddurmwtwvpnwzclo.supabase.co",
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJwc2lkZHVybXd0d3Zwbnd6Y2xvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2ODc5NjMsImV4cCI6MjA5MTI2Mzk2M30.ROGegxjw-HOCkml-5vU19Fd5Bjwn64XpbGIagu8_DMc"
   }
 };

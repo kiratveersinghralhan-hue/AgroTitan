@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="marketplace-page">
+<main class="container section">
+  <section class="card"><p class="helper" style="margin-bottom:14px">Only users with an admin role in the <strong>profiles</strong> table can access the admin dashboard.</p>
+    <h3>Admin Login</h3>
+    <div class="field"><label>Email</label><input id="adminEmail"></div>
+    <div class="field"><label>Password</label><input id="adminPassword" type="password"></div>
+    <button class="primary-btn" onclick="adminLogin()">Login</button>
+  </section>
+</main>
+
+<script src="backend-config.js"></script>
+<script src="supabase-client.js"></script>
+<script src="auth.js"></script>
+<script>
+async function adminLogin(){
+  const email = document.getElementById('adminEmail').value;
+  const password = document.getElementById('adminPassword').value;
+  const res = await HPAuth.login(email,password);
+  if(res.error){ alert('Login failed'); return;}
+  window.location.href='admin-dashboard.html';
+}
+</script>
+</body>
+</html>

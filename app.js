@@ -2157,18 +2157,20 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-/* ===== v68 firebase status ===== */
-function showBackendStatusV68(){
+
+
+/* ===== v69 supabase status ===== */
+function showBackendStatusV69(){
   const note = document.getElementById('backendStatusNote');
   if(!note) return;
-  const configured = window.HPBackend && window.HPBackend.isFirebaseConfigured && window.HPBackend.isFirebaseConfigured();
+  const configured = window.HPBackend && window.HPBackend.isSupabaseConfigured && window.HPBackend.isSupabaseConfigured();
   if(configured){
-    note.textContent = 'Firebase mode is enabled. Leads will sync to Firestore when your Firebase project keys are valid and Firestore rules allow writes.';
+    note.textContent = 'Supabase mode is enabled. Leads will sync to your Supabase tables when the project URL, anon key, and table schema are valid.';
   } else {
-    note.textContent = 'Firebase mode is selected, but config placeholders are still present. Replace backend-config.js keys to make the backend live. Until then, local fallback storage is used.';
+    note.textContent = 'Supabase mode is selected, but config placeholders are still present. Replace backend-config.js values to make the backend live. Until then, local fallback storage is used.';
   }
 }
 document.addEventListener('DOMContentLoaded', function(){
-  setTimeout(showBackendStatusV68, 150);
-  document.addEventListener('hp-firebase-ready', showBackendStatusV68);
+  setTimeout(showBackendStatusV69, 150);
+  document.addEventListener('hp-supabase-ready', showBackendStatusV69);
 });

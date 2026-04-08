@@ -7,7 +7,7 @@
   <meta name="description" content="Admin dashboard for leads, seller submissions, contact enquiries, and callback management.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="marketplace-page admin-page">
+<body class="marketplace-page admin-page" onload="checkAuth()">
   <div class="topbar">Harvester Parts admin dashboard • lead management • seller approvals • callback requests</div>
   <header class="header">
     <div class="container nav">
@@ -43,7 +43,7 @@
         <div class="summary-mini card"><strong>Seller Leads</strong><span id="adminSellerCount">0</span></div>
         <div class="summary-mini card"><strong>Callback Requests</strong><span id="adminCallbackCount">0</span></div>
       </div>
-      <div class="helper" id="backendStatusNote">Current build is Firebase-connected when valid Firebase config is added. If config is missing or Firestore is unavailable, it safely falls back to local storage.</div>
+      <div class="helper" id="backendStatusNote">Current build is Supabase-connected when valid Supabase project credentials are added. If config is missing or Supabase is unavailable, it safely falls back to local storage.</div>
     </section>
 
     <section class="section">
@@ -65,8 +65,43 @@
   <script src="products-data.js"></script>
   <script src="market-data.js"></script>
   <script src="backend-config.js"></script>
-  <script src="firebase-client.js"></script>
+<script src="supabase-client.js"></script>
+<script src="auth.js"></script>
+  <script src="supabase-client.js"></script>
   <script src="backend.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+
+<script>
+async function checkAuth(){
+  const status = document.getElementById('backendStatusNote');
+  if(status) status.textContent = 'Checking admin access...';
+  if(!window.HPAuth){
+    setTimeout(checkAuth, 300);
+    return;
+  }
+  const result = await HPAuth.requireAdmin();
+  if(!result.ok){
+    if(result.reason === 'not_logged_in'){
+      window.location.href = 'admin-login.html';
+      return;
+    }
+    document.body.innerHTML = '<main class="container section"><section class="card"><h3>Access denied</h3><p class="helper">You are logged in, but your account does not have the admin role in the profiles table.</p><a class="primary-btn" href="index.html">Go Home</a></section></main>';
+    return;
+  }
+  const navActions = document.querySelector('.nav-actions');
+  if(navActions && !document.getElementById('adminLogoutBtn')){
+    const btn = document.createElement('button');
+    btn.id = 'adminLogoutBtn';
+    btn.className = 'badge-btn';
+    btn.type = 'button';
+    btn.textContent = 'Logout';
+    btn.addEventListener('click', async () => {
+      await HPAuth.logout();
+      window.location.href = 'admin-login.html';
+    });
+    navActions.appendChild(btn);
+  }
+}
+</script>
