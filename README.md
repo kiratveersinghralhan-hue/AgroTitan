@@ -93,3 +93,11 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Seller center now stores seller submissions and callback requests.
 - Added admin dashboard page to review saved leads.
 - Firebase-ready scaffold added, but real Firebase SDK wiring and project keys still need to be plugged in for cross-device live backend.
+
+
+## v68 firebase-connected live backend
+- Added `firebase-client.js` to initialize Firebase App + Firestore using CDN modules.
+- `backend.js` now performs real Firestore CRUD when valid Firebase config is present.
+- Safe local fallback remains available if Firebase config is missing or Firestore is unavailable.
+- Added `FIREBASE_SETUP.md` with setup steps.
+- This version is live-backend capable, but still requires your real Firebase project keys.

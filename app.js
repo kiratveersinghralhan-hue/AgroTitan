@@ -2155,3 +2155,20 @@ document.addEventListener('DOMContentLoaded', function(){
   setTimeout(bindSellerLeadButtons, 120);
   setTimeout(renderAdminDashboardV67, 120);
 });
+
+
+/* ===== v68 firebase status ===== */
+function showBackendStatusV68(){
+  const note = document.getElementById('backendStatusNote');
+  if(!note) return;
+  const configured = window.HPBackend && window.HPBackend.isFirebaseConfigured && window.HPBackend.isFirebaseConfigured();
+  if(configured){
+    note.textContent = 'Firebase mode is enabled. Leads will sync to Firestore when your Firebase project keys are valid and Firestore rules allow writes.';
+  } else {
+    note.textContent = 'Firebase mode is selected, but config placeholders are still present. Replace backend-config.js keys to make the backend live. Until then, local fallback storage is used.';
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(showBackendStatusV68, 150);
+  document.addEventListener('hp-firebase-ready', showBackendStatusV68);
+});

@@ -1,11 +1,11 @@
 window.HP_BACKEND_CONFIG = {
-  provider: "local", // change to "firebase" after adding real Firebase config
+  provider: "firebase", // "firebase" or "local"
   firebase: {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "PASTE_FIREBASE_API_KEY",
+    authDomain: "PASTE_FIREBASE_AUTH_DOMAIN",
+    projectId: "PASTE_FIREBASE_PROJECT_ID",
+    storageBucket: "PASTE_FIREBASE_STORAGE_BUCKET",
+    messagingSenderId: "PASTE_FIREBASE_MESSAGING_SENDER_ID",
+    appId: "PASTE_FIREBASE_APP_ID"
   }
 };

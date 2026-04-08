@@ -43,7 +43,7 @@
         <div class="summary-mini card"><strong>Seller Leads</strong><span id="adminSellerCount">0</span></div>
         <div class="summary-mini card"><strong>Callback Requests</strong><span id="adminCallbackCount">0</span></div>
       </div>
-      <div class="helper">Current build uses a backend-ready storage layer with local mode enabled. Firebase config placeholder is included for next step.</div>
+      <div class="helper" id="backendStatusNote">Current build is Firebase-connected when valid Firebase config is added. If config is missing or Firestore is unavailable, it safely falls back to local storage.</div>
     </section>
 
     <section class="section">
@@ -65,6 +65,7 @@
   <script src="products-data.js"></script>
   <script src="market-data.js"></script>
   <script src="backend-config.js"></script>
+  <script src="firebase-client.js"></script>
   <script src="backend.js"></script>
   <script src="app.js"></script>
 </body>
