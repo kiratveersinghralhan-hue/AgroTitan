@@ -1,4 +1,3 @@
-
 # Harvester Parts - Final Pro Flat Website
 
 This website is built as a GitHub-compatible static ecommerce-style site for combine harvester spare parts.
@@ -84,3 +83,13 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Added seller center and rewards pages.
 - Added monetization logic messaging for new combines, used combines, and spare parts.
 - Added buyer/seller badge and points system using localStorage.
+
+
+## v67 backend-ready
+- Added `backend-config.js` with provider config placeholder.
+- Added `backend.js` storage abstraction.
+- Current default mode is `local` for static hosting and demos.
+- Contact page now stores enquiry leads and callback requests.
+- Seller center now stores seller submissions and callback requests.
+- Added admin dashboard page to review saved leads.
+- Firebase-ready scaffold added, but real Firebase SDK wiring and project keys still need to be plugged in for cross-device live backend.

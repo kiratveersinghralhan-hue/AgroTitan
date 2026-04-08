@@ -1968,3 +1968,190 @@ function initContactEnquiryV65(){
   });
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(initContactEnquiryV65, 100); });
+
+
+/* ===== v67 backend-ready lead capture ===== */
+async function saveContactLead(payload){
+  if (!window.HPBackend) return null;
+  return HPBackend.insert('contactLeads', payload);
+}
+async function saveSellerLead(payload){
+  if (!window.HPBackend) return null;
+  return HPBackend.insert('sellerLeads', payload);
+}
+async function saveCallbackLead(payload){
+  if (!window.HPBackend) return null;
+  return HPBackend.insert('callbacks', payload);
+}
+
+function bindContactLeadButtons(){
+  const waBtn = document.getElementById('contactWhatsAppBtn');
+  const cbBtn = document.getElementById('contactCallbackBtn');
+
+  if (waBtn && waBtn.dataset.v67bound !== '1'){
+    waBtn.dataset.v67bound = '1';
+    waBtn.addEventListener('click', async function(){
+      const name = (document.getElementById('contactName')?.value || '').trim();
+      const phone = (document.getElementById('contactPhone')?.value || '').trim();
+      const requirement = (document.getElementById('contactRequirement')?.value || '').trim();
+
+      await saveContactLead({
+        source: 'contact-page',
+        name,
+        phone,
+        requirement,
+        channel: 'whatsapp'
+      });
+
+      const lines = [
+        'Hello Harvester Parts,',
+        name ? 'Name: ' + name : '',
+        phone ? 'Phone: ' + phone : '',
+        requirement ? 'Requirement: ' + requirement : ''
+      ].filter(Boolean);
+
+      window.open('https://wa.me/' + SHOP.whatsapp + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+    });
+  }
+
+  if (cbBtn && cbBtn.dataset.v67bound !== '1'){
+    cbBtn.dataset.v67bound = '1';
+    cbBtn.addEventListener('click', async function(){
+      const name = (document.getElementById('contactName')?.value || '').trim();
+      const phone = (document.getElementById('contactPhone')?.value || '').trim();
+      const requirement = (document.getElementById('contactRequirement')?.value || '').trim();
+
+      await saveCallbackLead({
+        source: 'contact-page',
+        name,
+        phone,
+        requirement,
+        status: 'callback-requested'
+      });
+
+      alert('Callback request saved in admin dashboard.');
+    });
+  }
+}
+
+function bindSellerLeadButtons(){
+  const sellerBtn = document.getElementById('sellerWhatsAppBtn');
+  const callbackBtn = document.getElementById('sellerCallbackBtn');
+
+  if (sellerBtn && sellerBtn.dataset.v67bound !== '1'){
+    sellerBtn.dataset.v67bound = '1';
+    sellerBtn.addEventListener('click', async function(){
+      const lead = {
+        source: 'seller-center',
+        name: document.getElementById('sellerName')?.value || '',
+        phone: document.getElementById('sellerPhone')?.value || '',
+        brand: document.getElementById('sellerBrand')?.value || '',
+        model: document.getElementById('sellerModel')?.value || '',
+        year: document.getElementById('sellerYear')?.value || '',
+        hours: document.getElementById('sellerHours')?.value || '',
+        location: document.getElementById('sellerLocation')?.value || '',
+        price: document.getElementById('sellerPrice')?.value || '',
+        notes: document.getElementById('sellerNotes')?.value || '',
+        channel: 'seller-whatsapp'
+      };
+
+      await saveSellerLead(lead);
+
+      const lines = [
+        'Hello Harvester Parts, I want to list my used combine.',
+        lead.name ? 'Seller: ' + lead.name : '',
+        lead.phone ? 'Phone: ' + lead.phone : '',
+        lead.brand ? 'Brand: ' + lead.brand : '',
+        lead.model ? 'Model: ' + lead.model : '',
+        lead.year ? 'Year: ' + lead.year : '',
+        lead.hours ? 'Hours: ' + lead.hours : '',
+        lead.location ? 'Location: ' + lead.location : '',
+        lead.price ? 'Expected Price: ' + lead.price : '',
+        lead.notes ? 'Condition / Notes: ' + lead.notes : ''
+      ].filter(Boolean);
+
+      window.open('https://wa.me/' + SHOP.whatsapp + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+    });
+  }
+
+  if (callbackBtn && callbackBtn.dataset.v67bound !== '1'){
+    callbackBtn.dataset.v67bound = '1';
+    callbackBtn.addEventListener('click', async function(){
+      await saveCallbackLead({
+        source: 'seller-center',
+        name: document.getElementById('sellerName')?.value || '',
+        phone: document.getElementById('sellerPhone')?.value || '',
+        requirement: (document.getElementById('sellerBrand')?.value || '') + ' ' + (document.getElementById('sellerModel')?.value || ''),
+        status: 'seller-sales-call'
+      });
+      alert('Sales callback request saved in admin dashboard.');
+    });
+  }
+}
+
+async function renderAdminDashboardV67(){
+  const contactGrid = document.getElementById('adminContactGrid');
+  const sellerGrid = document.getElementById('adminSellerGrid');
+  const callbackGrid = document.getElementById('adminCallbackGrid');
+  if (!contactGrid && !sellerGrid && !callbackGrid) return;
+  if (!window.HPBackend) return;
+
+  const [contactLeads, sellerLeads, callbacks] = await Promise.all([
+    HPBackend.list('contactLeads'),
+    HPBackend.list('sellerLeads'),
+    HPBackend.list('callbacks')
+  ]);
+
+  const contactCount = document.getElementById('adminContactCount');
+  const sellerCount = document.getElementById('adminSellerCount');
+  const callbackCount = document.getElementById('adminCallbackCount');
+  if (contactCount) contactCount.textContent = String(contactLeads.length);
+  if (sellerCount) sellerCount.textContent = String(sellerLeads.length);
+  if (callbackCount) callbackCount.textContent = String(callbacks.length);
+
+  function cardHTML(item, collection){
+    return `
+      <article class="card admin-lead-card">
+        <h4>${item.name || item.brand || 'Lead'}</h4>
+        <div class="admin-lead-meta">
+          ${item.phone ? `<span>${item.phone}</span>` : ''}
+          ${item.source ? `<span>${item.source}</span>` : ''}
+          ${item.status ? `<span>${item.status}</span>` : ''}
+        </div>
+        <p>${item.requirement || item.notes || item.model || 'No extra details provided.'}</p>
+        <div class="helper">${item.createdAt ? new Date(item.createdAt).toLocaleString() : ''}</div>
+        <div class="admin-lead-actions">
+          <button class="primary-btn" type="button" onclick="markLeadDoneV67('${collection}','${item.id}')">Mark Done</button>
+          <button class="ghost-btn" type="button" onclick="deleteLeadV67('${collection}','${item.id}')">Delete</button>
+        </div>
+      </article>
+    `;
+  }
+
+  if (contactGrid){
+    contactGrid.innerHTML = contactLeads.length ? contactLeads.map(item => cardHTML(item, 'contactLeads')).join('') : '<div class="card admin-empty">No contact enquiries yet.</div>';
+  }
+  if (sellerGrid){
+    sellerGrid.innerHTML = sellerLeads.length ? sellerLeads.map(item => cardHTML(item, 'sellerLeads')).join('') : '<div class="card admin-empty">No seller submissions yet.</div>';
+  }
+  if (callbackGrid){
+    callbackGrid.innerHTML = callbacks.length ? callbacks.map(item => cardHTML(item, 'callbacks')).join('') : '<div class="card admin-empty">No callback requests yet.</div>';
+  }
+}
+
+async function markLeadDoneV67(collection, id){
+  if (!window.HPBackend) return;
+  await HPBackend.update(collection, id, { status: 'done' });
+  renderAdminDashboardV67();
+}
+async function deleteLeadV67(collection, id){
+  if (!window.HPBackend) return;
+  await HPBackend.remove(collection, id);
+  renderAdminDashboardV67();
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(bindContactLeadButtons, 120);
+  setTimeout(bindSellerLeadButtons, 120);
+  setTimeout(renderAdminDashboardV67, 120);
+});
