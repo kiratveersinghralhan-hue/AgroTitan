@@ -1,34 +1,20 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page auth-page"><div class="topbar">Login to manage your Harvester Parts account.</div><header class="header hp-unified-header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page auth-page"><div class="topbar">Login to manage your Harvester Parts account.</div><header class="header hp-fixed-header">
+  <div class="container hp-topnav">
+    <a class="brand hp-brand" href="index.html">
       <div class="brand-text-only">
         <h1>Harvester Parts</h1>
         <p>Premium Farm Marketplace</p>
       </div>
     </a>
 
-    <button class="hp-menu-toggle badge-btn" type="button" aria-label="Open menu" onclick="toggleUnifiedMenuV77()">☰</button>
-
-    <nav class="menu hp-desktop-menu">
-      <a href="index.html">Home</a>
-      <a href="new-combines.html">New Combines</a>
-      <a href="used-combines.html">Used Combines</a>
-      <a href="products.html">Spare Parts</a>
-      <a href="seller-center.html">Sell Used</a>
-      <a href="rewards.html">Rewards</a>
-      <a href="ai-help.html">AI Help</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="nav-actions auth-nav-actions hp-header-auth"></div>
+    <div class="hp-topnav-actions">
+      <div class="hp-auth-slot" id="hpAuthSlot"></div>
+      <button class="hp-icon-btn hp-menu-btn" type="button" aria-label="Open menu" onclick="window.HPFix && window.HPFix.toggleMenu()">☰</button>
+    </div>
   </div>
 
-  <div class="hp-mobile-drawer" id="hpMobileDrawer">
-    <div class="hp-mobile-drawer-head">
-      <strong>Menu</strong>
-      <button class="badge-btn" type="button" onclick="toggleUnifiedMenuV77()">✕</button>
-    </div>
-    <div class="hp-mobile-links">
+  <div class="hp-drawer" id="hpDrawer">
+    <nav class="hp-drawer-links">
       <a href="index.html">Home</a>
       <a href="new-combines.html">New Combines</a>
       <a href="used-combines.html">Used Combines</a>
@@ -38,21 +24,39 @@
       <a href="rewards.html">Rewards</a>
       <a href="ai-help.html">AI Help</a>
       <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="account.html">My Account</a>
+      <a href="account.html">Account</a>
       <a href="admin-login.html">Admin</a>
-    </div>
+    </nav>
   </div>
-</header><main class="container section auth-shell">
-  <section class="card auth-card auth-card-v78">
-    <div class="section-title">
-      <div>
-        <h3>Welcome back</h3>
-        <p>Login to access your account, seller dashboard, and admin tools.</p>
+</header>
+<main class="container section auth-shell-v79">
+  <section class="card auth-card-v79-pro">
+    <div class="auth-hero-v79">
+      <span class="auth-kicker-v79">Harvester Parts Account</span>
+      <h2>Welcome back</h2>
+      <p>Login to manage your account, seller dashboard, buyer enquiries, and admin access.</p>
+    </div>
+
+    <div class="auth-form-wrap-v79">
+      <div id="authLoginMessage" class="helper auth-message"></div>
+      <div class="field auth-field-v79">
+        <label for="loginEmail">Email address</label>
+        <input id="loginEmail" type="email" placeholder="Enter your email">
+      </div>
+      <div class="field auth-field-v79">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="Enter your password">
+      </div>
+      <div class="auth-actions-v79">
+        <button class="primary-btn" id="loginSubmitBtn" type="button">Login</button>
+        <button class="ghost-btn" id="resetPasswordBtn" type="button">Forgot Password</button>
+      </div>
+      <div class="auth-bottom-links-v79">
+        <a href="signup.html">Create new account</a>
+        <a href="index.html">Back to home</a>
       </div>
     </div>
-    <div id="authLoginMessage" class="helper auth-message"></div>
-    <div class='auth-form-grid'><div class='field'><label for='loginEmail'>Email address</label><input id='loginEmail' type='email' placeholder='Enter your email'></div><div class='field'><label for='loginPassword'>Password</label><input id='loginPassword' type='password' placeholder='Enter your password'></div></div><div class='auth-actions'><button class='primary-btn' id='loginSubmitBtn' type='button'>Login</button><button class='ghost-btn' id='resetPasswordBtn' type='button'>Forgot Password</button></div><div class='auth-bottom-links'><a href='signup.html'>Create new account</a><a href='index.html'>Back to home</a></div>
   </section>
-</main><script src="backend-config.js"></script><script src="supabase-client.js"></script><script src="auth.js"></script><script src="app.js"></script></body></html>
+</main>
+<script src="backend-config.js"></script><script src="supabase-client.js"></script><script src="auth.js"></script><script src="app.js"></script><script src="fix-v79.js"></script>
+</body></html>

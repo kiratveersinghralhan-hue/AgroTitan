@@ -1,34 +1,20 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Account | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page account-page"><div class="topbar">Your Harvester Parts account overview.</div><header class="header hp-unified-header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Account | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page account-page"><div class="topbar">Your Harvester Parts account overview.</div><header class="header hp-fixed-header">
+  <div class="container hp-topnav">
+    <a class="brand hp-brand" href="index.html">
       <div class="brand-text-only">
         <h1>Harvester Parts</h1>
         <p>Premium Farm Marketplace</p>
       </div>
     </a>
 
-    <button class="hp-menu-toggle badge-btn" type="button" aria-label="Open menu" onclick="toggleUnifiedMenuV77()">☰</button>
-
-    <nav class="menu hp-desktop-menu">
-      <a href="index.html">Home</a>
-      <a href="new-combines.html">New Combines</a>
-      <a href="used-combines.html">Used Combines</a>
-      <a href="products.html">Spare Parts</a>
-      <a href="seller-center.html">Sell Used</a>
-      <a href="rewards.html">Rewards</a>
-      <a href="ai-help.html">AI Help</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="nav-actions auth-nav-actions hp-header-auth"></div>
+    <div class="hp-topnav-actions">
+      <div class="hp-auth-slot" id="hpAuthSlot"></div>
+      <button class="hp-icon-btn hp-menu-btn" type="button" aria-label="Open menu" onclick="window.HPFix && window.HPFix.toggleMenu()">☰</button>
+    </div>
   </div>
 
-  <div class="hp-mobile-drawer" id="hpMobileDrawer">
-    <div class="hp-mobile-drawer-head">
-      <strong>Menu</strong>
-      <button class="badge-btn" type="button" onclick="toggleUnifiedMenuV77()">✕</button>
-    </div>
-    <div class="hp-mobile-links">
+  <div class="hp-drawer" id="hpDrawer">
+    <nav class="hp-drawer-links">
       <a href="index.html">Home</a>
       <a href="new-combines.html">New Combines</a>
       <a href="used-combines.html">Used Combines</a>
@@ -38,10 +24,9 @@
       <a href="rewards.html">Rewards</a>
       <a href="ai-help.html">AI Help</a>
       <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="account.html">My Account</a>
+      <a href="account.html">Account</a>
       <a href="admin-login.html">Admin</a>
-    </div>
+    </nav>
   </div>
-</header><main class="container section auth-shell"><section class="card auth-card"><div class="section-title"><div><h3>Your account</h3><p>Signed-in users can view account details here.</p></div></div><div id="accountMessage" class="helper auth-message"></div><div class="account-grid"><div class="account-item"><strong>Name</strong><span id="accountName">—</span></div><div class="account-item"><strong>Email</strong><span id="accountEmail">—</span></div><div class="account-item"><strong>Role</strong><span id="accountRole">—</span></div><div class="account-item"><strong>User ID</strong><span id="accountId">—</span></div></div><div class="auth-actions"><a class="primary-btn" href="index.html">Go Home</a><a class="ghost-btn" href="seller-dashboard.html">Seller Dashboard</a><a class="ghost-btn" href="admin-dashboard.html">Admin Dashboard</a></div></section><section class="card auth-card public-seller-settings-card" id="publicSellerSettingsCard"><div class="section-title"><div><h3>Public seller profile</h3><p>Make your seller profile public and show approved listings to buyers.</p></div></div><div id="sellerProfileMessage" class="helper auth-message"></div><div class="seller-form-grid"><div class="field"><label for="profilePublicName">Public Name</label><input id="profilePublicName" type="text"></div><div class="field"><label for="profilePhone">Phone</label><input id="profilePhone" type="text"></div><div class="field"><label for="profileDistrict">District</label><input id="profileDistrict" type="text"></div><div class="field"><label for="profileAvatarUrl">Avatar URL</label><input id="profileAvatarUrl" type="text"></div><div class="field field-full"><label for="profileBio">Seller Bio</label><textarea id="profileBio"></textarea></div></div><div class="field"><label><input id="profileIsPublicSeller" type="checkbox" style="width:auto;min-height:auto;margin-right:8px"> Enable public seller profile</label></div><div class="auth-actions"><button class="primary-btn" id="saveSellerProfileBtn" type="button">Save Seller Profile</button><a class="ghost-btn" id="viewPublicSellerProfileBtn" href="seller-profile.html">View Public Profile</a></div></section></main><script src="backend-config.js"></script><script src="supabase-client.js"></script><script src="auth.js"></script><script src="app.js"></script></body></html>
+</header><main class="container section auth-shell"><section class="card auth-card"><div class="section-title"><div><h3>Your account</h3><p>Signed-in users can view account details here.</p></div></div><div id="accountMessage" class="helper auth-message"></div><div class="account-grid"><div class="account-item"><strong>Name</strong><span id="accountName">—</span></div><div class="account-item"><strong>Email</strong><span id="accountEmail">—</span></div><div class="account-item"><strong>Role</strong><span id="accountRole">—</span></div><div class="account-item"><strong>User ID</strong><span id="accountId">—</span></div></div><div class="auth-actions"><a class="primary-btn" href="index.html">Go Home</a><a class="ghost-btn" href="seller-dashboard.html">Seller Dashboard</a><a class="ghost-btn" href="admin-dashboard.html">Admin Dashboard</a></div></section><section class="card auth-card public-seller-settings-card" id="publicSellerSettingsCard"><div class="section-title"><div><h3>Public seller profile</h3><p>Make your seller profile public and show approved listings to buyers.</p></div></div><div id="sellerProfileMessage" class="helper auth-message"></div><div class="seller-form-grid"><div class="field"><label for="profilePublicName">Public Name</label><input id="profilePublicName" type="text"></div><div class="field"><label for="profilePhone">Phone</label><input id="profilePhone" type="text"></div><div class="field"><label for="profileDistrict">District</label><input id="profileDistrict" type="text"></div><div class="field"><label for="profileAvatarUrl">Avatar URL</label><input id="profileAvatarUrl" type="text"></div><div class="field field-full"><label for="profileBio">Seller Bio</label><textarea id="profileBio"></textarea></div></div><div class="field"><label><input id="profileIsPublicSeller" type="checkbox" style="width:auto;min-height:auto;margin-right:8px"> Enable public seller profile</label></div><div class="auth-actions"><button class="primary-btn" id="saveSellerProfileBtn" type="button">Save Seller Profile</button><a class="ghost-btn" id="viewPublicSellerProfileBtn" href="seller-profile.html">View Public Profile</a></div></section></main><script src="backend-config.js"></script><script src="supabase-client.js"></script><script src="auth.js"></script><script src="app.js"></script><script src="fix-v79.js"></script>
+</body></html>
