@@ -1,0 +1,5 @@
+Fixes:
+- homepage no longer shows Login/Sign Up after login
+- homepage shows My Account + Logout after login
+- drawer hides Login and Sign Up after login
+- drawer keeps only Logout for logged-in users

@@ -14,58 +14,85 @@
     }
   }
 
-  async function renderAuthHeader(){
-    const slot = q('#hpHeaderAuthSlot');
-    if(!slot) return;
+  function wireLogout(el){
+    if(!el) return;
+    el.onclick = async function(e){
+      e.preventDefault();
+      if(window.HPAuth) await window.HPAuth.logout();
+      window.location.href = 'index.html';
+    };
+  }
 
+  async function syncAuthUI(){
     const { user, profile } = await getUserProfile();
     const firstName = (profile?.full_name || user?.user_metadata?.full_name || user?.email || 'User').split(' ')[0];
 
-    if(user){
-      slot.innerHTML = `
-        <a class="hp-v82-chip" href="account.html">${firstName}</a>
-        <a class="hp-v82-btn" href="account.html">Account</a>
-        <button class="hp-v82-logout" id="hpHeaderLogoutBtn" type="button">Logout</button>
-      `;
-      const logoutBtn = q('#hpHeaderLogoutBtn');
-      if(logoutBtn){
-        logoutBtn.onclick = async function(){
-          await window.HPAuth.logout();
-          window.location.href = 'index.html';
-        };
+    // header
+    const slot = q('#hpHeaderAuthSlot');
+    if(slot){
+      if(user){
+        slot.innerHTML = `
+          <span class="hp-v82-chip">${firstName}</span>
+          <a class="hp-v82-btn" href="account.html">Account</a>
+          <button class="hp-v82-logout" id="hpHeaderLogoutBtn" type="button">Logout</button>
+        `;
+        wireLogout(q('#hpHeaderLogoutBtn'));
+      } else {
+        slot.innerHTML = `
+          <a class="hp-v82-btn" href="login.html">Login</a>
+          <a class="hp-v82-btn" href="signup.html">Sign Up</a>
+        `;
       }
-    } else {
-      slot.innerHTML = `
-        <a class="hp-v82-btn" href="login.html">Login</a>
-        <a class="hp-v82-btn" href="signup.html">Sign Up</a>
-      `;
     }
 
-    qa('[data-auth-state="guest"]').forEach(el => {
-      el.style.display = user ? 'none' : '';
-    });
+    // drawer hide/show
+    qa('[data-auth-state="guest"]').forEach(el => el.style.display = user ? 'none' : '');
     qa('[data-auth-state="user"]').forEach(el => {
       el.style.display = user ? '' : 'none';
+      if(el.id === 'hpDrawerLogoutLink') wireLogout(el);
     });
 
-    const drawerLogout = q('#hpDrawerLogoutLink');
-    if(drawerLogout){
-      drawerLogout.onclick = async function(e){
-        e.preventDefault();
-        if(window.HPAuth){
-          await window.HPAuth.logout();
-        }
-        window.location.href = 'index.html';
-      };
+    // remove duplicate guest auth links in drawer when logged in
+    const drawer = q('#hpDrawerLinks');
+    if(drawer){
+      qa('a', drawer).forEach(a => {
+        const label = (a.textContent || '').trim().toLowerCase();
+        if(user && (label === 'login' || label === 'sign up')) a.style.display = 'none';
+        if(!user && label === 'logout') a.style.display = 'none';
+      });
+    }
+
+    // homepage quick auth buttons
+    const homeActions = q('#hpHomeAuthActions');
+    if(homeActions){
+      if(user){
+        homeActions.innerHTML = `
+          <a class="ghost-btn" href="account.html">My Account</a>
+          <button class="primary-btn" id="hpHomeLogoutBtn" type="button">Logout</button>
+        `;
+        wireLogout(q('#hpHomeLogoutBtn'));
+      } else {
+        homeActions.innerHTML = `
+          <a class="ghost-btn" href="login.html">Login</a>
+          <a class="primary-btn" href="signup.html">Sign Up</a>
+        `;
+      }
     }
   }
 
+  function toggleMenu(){
+    const drawer = q('#hpV80Drawer');
+    if(drawer) drawer.classList.toggle('open');
+  }
+
+  window.HPV80 = window.HPV80 || {};
+  window.HPV80.toggleMenu = toggleMenu;
+  window.HPV82 = { syncAuthUI };
+
   document.addEventListener('DOMContentLoaded', function(){
-    setTimeout(renderAuthHeader, 80);
+    setTimeout(syncAuthUI, 100);
   });
   document.addEventListener('hp-auth-ready', function(){
-    setTimeout(renderAuthHeader, 80);
+    setTimeout(syncAuthUI, 100);
   });
-
-  window.HPV82 = { renderAuthHeader };
 })();
