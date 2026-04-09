@@ -19,6 +19,7 @@
       <a href="used-combines.html">Used Combines</a>
       <a href="products.html">Spare Parts</a>
       <a href="seller-center.html">Sell Used</a>
+      <a href="subscriptions.html">Plans</a>
       <a href="seller-dashboard.html">Seller Dashboard</a>
       <a href="rewards.html">Rewards</a>
       <a href="ai-help.html">AI Help</a>
@@ -46,6 +47,7 @@
     </div>
 
     <div class="hp-v80-btn-grid hp-v80-account-actions">
+      <a class="ghost-btn" href="subscriptions.html">View Plans & Verification</a>
       <a class="primary-btn" href="index.html">Go Home</a>
       <a class="ghost-btn" href="seller-dashboard.html">Seller Dashboard</a>
       <a class="ghost-btn" href="admin-dashboard.html">Admin Dashboard</a>
@@ -55,24 +57,61 @@
   <section class="card hp-v80-account-card">
     <div class="section-title">
       <div>
-        <h3>Public seller profile</h3>
-        <p>Make your seller profile public and show approved listings to buyers.</p>
+        <h3>Profile settings, plans, and badges</h3>
+        <p>Manage your public seller profile, personal settings, badges, subscription plan, and verification status.</p>
       </div>
     </div>
     <div id="sellerProfileMessage" class="helper auth-message"></div>
 
-    <div class="seller-form-grid hp-v80-seller-grid">
+    
+        <div class="hp-v81-profile-top">
+          <div class="hp-v81-photo-preview" id="profilePhotoPreview">👤</div>
+          <div>
+            <div class="hp-v81-badge-strip">
+              <span class="hp-v81-badge-pill" id="accountBadgePill">Member</span>
+              <span class="hp-v81-badge-pill" id="accountPlanPill">Free Plan</span>
+              <span class="hp-v81-badge-pill" id="accountVerifiedPill">Not Verified</span>
+            </div>
+            <div class="helper">Upgrade your badge and plan from the Plans page.</div>
+          </div>
+        </div>
+
+        <div class="hp-v81-status-grid">
+          <div class="hp-v81-status-box"><strong>Plan</strong><span id="accountPlanStatus">Free</span></div>
+          <div class="hp-v81-status-box"><strong>Status</strong><span id="accountSubscriptionStatus">Inactive</span></div>
+          <div class="hp-v81-status-box"><strong>Points</strong><span id="accountPoints">0</span></div>
+          <div class="hp-v81-status-box"><strong>Verification</strong><span id="accountVerificationStatus">No</span></div>
+        </div>
+
+        <div class="seller-form-grid hp-v80-seller-grid">
+                  
       <div class="field hp-v80-field">
         <label for="profilePublicName">Public Name</label>
         <input id="profilePublicName" type="text" placeholder="Example: Singh Farm Machinery">
+      </div>
+      <div class="field hp-v80-field">
+        <label for="profileGender">Gender</label>
+        <input id="profileGender" type="text" placeholder="Example: Male / Female / Other">
       </div>
       <div class="field hp-v80-field">
         <label for="profilePhone">Phone</label>
         <input id="profilePhone" type="text" placeholder="Enter phone">
       </div>
       <div class="field hp-v80-field">
+        <label for="profileCity">City</label>
+        <input id="profileCity" type="text" placeholder="Example: Patiala">
+      </div>
+      <div class="field hp-v80-field">
         <label for="profileDistrict">District</label>
         <input id="profileDistrict" type="text" placeholder="Example: Patiala">
+      </div>
+      <div class="field hp-v80-field">
+        <label for="profileState">State</label>
+        <input id="profileState" type="text" placeholder="Example: Punjab">
+      </div>
+      <div class="field hp-v80-field">
+        <label for="profileCountry">Country</label>
+        <input id="profileCountry" type="text" placeholder="Example: India">
       </div>
       <div class="field hp-v80-field">
         <label for="profileAvatarUrl">Avatar URL</label>
@@ -84,12 +123,18 @@
       </div>
     </div>
 
+    <div class="field hp-v80-field">
+        <label for="profilePhotoUrl">Profile Photo URL</label>
+        <input id="profilePhotoUrl" type="text" placeholder="Optional public profile photo URL">
+      </div>
+
     <label class="hp-v80-checkbox-row">
       <input id="profileIsPublicSeller" type="checkbox">
       <span>Enable public seller profile</span>
     </label>
 
     <div class="hp-v80-btn-grid hp-v80-account-actions">
+      <a class="ghost-btn" href="subscriptions.html">View Plans & Verification</a>
       <button class="primary-btn" id="saveSellerProfileBtn" type="button">Save Seller Profile</button>
       <a class="ghost-btn" id="viewPublicSellerProfileBtn" href="seller-profile.html">View Public Profile</a>
     </div>

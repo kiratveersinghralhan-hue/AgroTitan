@@ -71,7 +71,27 @@
       <div class="section-title"><div><h3>Callback requests</h3><p>Quick call intent from the website.</p></div></div>
       <div id="adminCallbackGrid" class="cards-grid"></div>
     </section>
-  </main>
+  
+        <section class="section">
+          <div class="section-title">
+            <div>
+              <h3>Subscription requests</h3>
+              <p>Manage paid plan requests and upgrade seller accounts.</p>
+            </div>
+          </div>
+          <div id="adminSubscriptionGrid" class="cards-grid"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <div>
+              <h3>Verification requests</h3>
+              <p>Approve trusted sellers and assign verified badge.</p>
+            </div>
+          </div>
+          <div id="adminVerificationGrid" class="cards-grid"></div>
+        </section>
+      </main>
 
   <script src="products-data.js"></script>
   <script src="market-data.js"></script>
@@ -100,7 +120,27 @@ async function checkAuth(){
       window.location.href = 'admin-login.html';
       return;
     }
-    document.body.innerHTML = '<main class="container section"><section class="card"><h3>Access denied</h3><p class="helper">You are logged in, but your account does not have the admin role in the profiles table.</p><a class="primary-btn" href="index.html">Go Home</a></section></main>';
+    document.body.innerHTML = '<main class="container section"><section class="card"><h3>Access denied</h3><p class="helper">You are logged in, but your account does not have the admin role in the profiles table.</p><a class="primary-btn" href="index.html">Go Home</a></section>
+        <section class="section">
+          <div class="section-title">
+            <div>
+              <h3>Subscription requests</h3>
+              <p>Manage paid plan requests and upgrade seller accounts.</p>
+            </div>
+          </div>
+          <div id="adminSubscriptionGrid" class="cards-grid"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <div>
+              <h3>Verification requests</h3>
+              <p>Approve trusted sellers and assign verified badge.</p>
+            </div>
+          </div>
+          <div id="adminVerificationGrid" class="cards-grid"></div>
+        </section>
+      </main>';
     return;
   }
   const navActions = document.querySelector('.nav-actions');

@@ -1,6 +1,8 @@
 (function(){
   const STORAGE_KEY = "hp_v76_backend_store";
-  const defaults = { contactLeads: [], sellerLeads: [], callbacks: [], buyerEnquiries: [] };
+  const defaults = { contactLeads: [], sellerLeads: [], callbacks: [], buyerEnquiries: [],
+    subscriptionOrders: [],
+    verificationRequests: [] };
   const clone = (obj)=>JSON.parse(JSON.stringify(obj));
   function loadLocal(){ try{ const data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}"); return Object.assign(clone(defaults), data);}catch(e){ return clone(defaults);} }
   function saveLocal(data){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }

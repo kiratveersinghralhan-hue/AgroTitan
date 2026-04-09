@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans & Verification | Harvester Parts</title>
+  <meta name="description" content="Subscription plans, seller verification, premium boosts, and business growth tools for Harvester Parts.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="marketplace-page subscriptions-page">
+  <div class="topbar">Choose premium plans, verification, and seller growth tools.</div>
+
+  <header class="header hp-v80-header">
+    <div class="container hp-v80-nav">
+      <a class="hp-v80-brand" href="index.html">
+        <div class="hp-v80-brand-title">Harvester Parts</div>
+        <div class="hp-v80-brand-sub">Premium Farm Marketplace</div>
+      </a>
+      <div class="hp-v80-actions">
+        <a class="hp-v80-account-btn" href="account.html">Account</a>
+        <a class="hp-v80-avatar" href="account.html" aria-label="Account">👤</a>
+        <button class="hp-v80-menu-btn" type="button" aria-label="Open menu" onclick="window.HPV80 && window.HPV80.toggleMenu()">☰</button>
+      </div>
+    </div>
+    <div class="hp-v80-drawer" id="hpV80Drawer">
+      <nav class="hp-v80-drawer-links">
+        <a href="index.html">Home</a>
+        <a href="subscriptions.html">Plans & Verification</a>
+        <a href="seller-center.html">Sell Used</a>
+        <a href="seller-dashboard.html">Seller Dashboard</a>
+        <a href="account.html">Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="card hp-v81-hero">
+      <div class="section-title">
+        <div>
+          <h3>Earn more with premium seller tools</h3>
+          <p>Sell faster with featured badges, verified trust marks, priority support, and premium listing boosts.</p>
+        </div>
+      </div>
+      <div class="hp-v81-plan-grid">
+        <article class="card hp-v81-plan-card">
+          <span class="hp-v81-plan-tag">Starter</span>
+          <h4>Free Member</h4>
+          <div class="hp-v81-price">₹0</div>
+          <ul class="hp-v81-plan-list">
+            <li>Standard listing submission</li>
+            <li>Basic seller dashboard</li>
+            <li>Buyer enquiry access</li>
+          </ul>
+          <button class="ghost-btn" type="button" onclick="window.HPV81 && window.HPV81.requestPlan('free','Free Member','Monthly','0')">Current Base Plan</button>
+        </article>
+
+        <article class="card hp-v81-plan-card hp-v81-plan-featured">
+          <span class="hp-v81-plan-tag">Best Value</span>
+          <h4>Pro Seller</h4>
+          <div class="hp-v81-price">₹999<span>/month</span></div>
+          <ul class="hp-v81-plan-list">
+            <li>Featured listing badge</li>
+            <li>Priority enquiry visibility</li>
+            <li>Boosted seller profile section</li>
+            <li>Monthly points bonus</li>
+          </ul>
+          <button class="primary-btn" type="button" onclick="window.HPV81 && window.HPV81.requestPlan('pro','Pro Seller','Monthly','999')">Choose Pro</button>
+        </article>
+
+        <article class="card hp-v81-plan-card">
+          <span class="hp-v81-plan-tag">Premium</span>
+          <h4>Elite Dealer</h4>
+          <div class="hp-v81-price">₹2499<span>/month</span></div>
+          <ul class="hp-v81-plan-list">
+            <li>Verified dealer preference</li>
+            <li>Homepage featured placement</li>
+            <li>Dedicated support follow-up</li>
+            <li>Premium badge + trust strip</li>
+          </ul>
+          <button class="primary-btn" type="button" onclick="window.HPV81 && window.HPV81.requestPlan('elite','Elite Dealer','Monthly','2499')">Choose Elite</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section hp-v81-two-col">
+      <section class="card hp-v81-verify-card">
+        <div class="section-title">
+          <div>
+            <h3>Apply for verified seller badge</h3>
+            <p>Verified sellers build trust, rank better, and convert more buyers.</p>
+          </div>
+        </div>
+        <div id="verificationRequestMessage" class="helper auth-message"></div>
+        <div class="seller-form-grid hp-v80-seller-grid">
+          <div class="field hp-v80-field">
+            <label for="verifyFullName">Full Name</label>
+            <input id="verifyFullName" type="text" placeholder="Enter full name">
+          </div>
+          <div class="field hp-v80-field">
+            <label for="verifyPhone">Phone</label>
+            <input id="verifyPhone" type="text" placeholder="Enter phone">
+          </div>
+          <div class="field hp-v80-field">
+            <label for="verifyBusinessName">Business / Shop Name</label>
+            <input id="verifyBusinessName" type="text" placeholder="Enter business name">
+          </div>
+          <div class="field field-full hp-v80-field">
+            <label for="verifyNotes">Verification Notes</label>
+            <textarea id="verifyNotes" placeholder="GST, dealership proof, years in business, or other trust details"></textarea>
+          </div>
+        </div>
+        <div class="hp-v80-btn-grid">
+          <button class="primary-btn" id="submitVerificationRequestBtn" type="button">Apply for Verification</button>
+          <a class="ghost-btn" href="contact.html">Talk to Sales</a>
+        </div>
+      </section>
+
+      <section class="card hp-v81-money-card">
+        <div class="section-title">
+          <div>
+            <h3>Ways you can earn from the website</h3>
+            <p>These monetization layers help turn the marketplace into a real business.</p>
+          </div>
+        </div>
+        <div class="hp-v81-money-list">
+          <div class="hp-v81-money-item"><strong>Subscription plans</strong><span>Monthly recurring seller revenue</span></div>
+          <div class="hp-v81-money-item"><strong>Verification fee</strong><span>Paid trust badge applications</span></div>
+          <div class="hp-v81-money-item"><strong>Featured listing boost</strong><span>Premium visibility on homepage and category pages</span></div>
+          <div class="hp-v81-money-item"><strong>Lead handling service</strong><span>Priority callback and negotiation support</span></div>
+          <div class="hp-v81-money-item"><strong>Banner placements</strong><span>Brand ad slots for dealers and parts suppliers</span></div>
+          <div class="hp-v81-money-item"><strong>Rewarded upgrades</strong><span>Points system that encourages repeat spend</span></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="backend-config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="auth.js"></script>
+  <script src="backend.js"></script>
+  <script src="app.js"></script>
+  <script src="fix-v80.js"></script>
+  <script src="fix-v81.js"></script>
+</body>
+</html>
