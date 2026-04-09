@@ -117,3 +117,11 @@ This website is built as a GitHub-compatible static ecommerce-style site for com
 - Added `SUPABASE_AUTH_SETUP.md` with admin role setup instructions.
 - Admin dashboard now blocks non-admin authenticated users.
 - Added logout button on admin dashboard.
+
+
+## v72-v76 aggregate build
+- Added login, signup, account pages
+- Added seller dashboard and edit workflow
+- Added Supabase Storage image upload path
+- Added public seller profiles and seller-profile page
+- Added buyer enquiry workflow and seller public profile links in used listings
