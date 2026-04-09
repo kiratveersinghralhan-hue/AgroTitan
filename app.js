@@ -2217,3 +2217,127 @@ async function renderUsedCombinesPageV76(){ const grid=document.getElementById('
 const allItems=[...USED_COMBINES,...extra]; if(typeof fillSelectOptions==='function') fillSelectOptions('usedBrandFilter',allItems,'brand'); const items=allItems.filter(item=>{ const okSearch=!search||[item.brand,item.model,item.description,item.location,item.year].join(' ').toLowerCase().includes(search); const okBrand=!brand||item.brand===brand; const okCondition=!condition||item.condition===condition; const okLocation=!location||(item.location||'').toLowerCase().includes(location); return okSearch&&okBrand&&okCondition&&okLocation; }); const count=document.getElementById('usedCombinesCount'); if(count) count.textContent=items.length+' listings found'; function card(item){ const base = typeof marketplaceCardHTML==='function' ? marketplaceCardHTML(item,'used') : `<article class="card seller-listing-card"><h4>${item.brand} ${item.model}</h4><p>${item.description||''}</p></article>`; const sellerLink=item.seller_user_id?`<a class="ghost-btn seller-public-link" href="seller-profile.html?id=${encodeURIComponent(item.seller_user_id)}">View Seller Profile</a>`:''; const safeSeller=String(item.sellerName||'').replace(/'/g,'&#39;'); const safeTitle=String((item.brand||'')+' '+(item.model||'')).replace(/'/g,'&#39;'); const enquireBtn=item.seller_user_id?`<button class="ghost-btn" type="button" onclick="openBuyerEnquiryModalV76('${item.id}','${item.seller_user_id}','${safeSeller}','${safeTitle}')">Send Enquiry</button>`:''; return base.replace('</article>', `${(sellerLink||enquireBtn)?`<div class="used-listing-extra-actions">${sellerLink}${enquireBtn}</div>`:''}</article>`); }
 grid.innerHTML=items.map(card).join('')||'<div class="card" style="padding:24px">No used combine listings found.</div>'; }
 document.addEventListener('DOMContentLoaded', function(){ const boot=()=>{ setTimeout(initLoginPageV72,100); setTimeout(initSignupPageV72,100); setTimeout(initAccountPageV72,100); setTimeout(enhanceHeaderAuthStateV72,120); setTimeout(bindContactLeadButtons,120); setTimeout(showBackendStatusV69,150); setTimeout(initSellerImageUploadV74,100); setTimeout(bindSellerLeadButtonsV76,130); setTimeout(renderSellerDashboardV74,160); setTimeout(renderAdminDashboardV76,180); setTimeout(renderUsedCombinesPageV76,190); setTimeout(initSellerProfileSettingsV75,140); setTimeout(renderPublicSellerProfileV75,150); setTimeout(renderSellerBuyerEnquiriesV76,170); }; if(window.HPAuth) boot(); document.addEventListener('hp-auth-ready', boot, {once:true}); document.addEventListener('hp-supabase-ready', ()=>{ setTimeout(showBackendStatusV69,100); }, {once:true}); });
+
+
+/* ===== v77 unified header + live homepage counters + visible auth nav ===== */
+function toggleUnifiedMenuV77(){
+  const drawer = document.getElementById('hpMobileDrawer');
+  if(!drawer) return;
+  drawer.classList.toggle('open');
+}
+
+async function enhanceVisibleAuthNavV77(){
+  if(!window.HPAuth) return;
+  const user = await HPAuth.getUser();
+  const profile = user && window.HPAuth.getProfile ? await HPAuth.getProfile() : null;
+
+  document.querySelectorAll('.hp-header-auth, .auth-nav-actions').forEach(box => {
+    if(!box) return;
+    box.innerHTML = '';
+    if(user){
+      const account = document.createElement('a');
+      account.className = 'badge-btn';
+      account.href = 'account.html';
+      account.textContent = 'My Account';
+      box.appendChild(account);
+
+      if(profile && profile.role === 'admin'){
+        const admin = document.createElement('a');
+        admin.className = 'badge-btn';
+        admin.href = 'admin-dashboard.html';
+        admin.textContent = 'Admin';
+        box.appendChild(admin);
+      }
+    } else {
+      const login = document.createElement('a');
+      login.className = 'badge-btn';
+      login.href = 'login.html';
+      login.textContent = 'Login';
+
+      const signup = document.createElement('a');
+      signup.className = 'badge-btn';
+      signup.href = 'signup.html';
+      signup.textContent = 'Sign Up';
+
+      box.appendChild(login);
+      box.appendChild(signup);
+    }
+  });
+}
+
+async function renderHomeCountersV77(){
+  const maybeCards = Array.from(document.querySelectorAll('.summary-card, .marketplace-metric-card, .stat-card, .stats-card, .summary-mini, .metric-card'));
+  const textNodes = Array.from(document.querySelectorAll('h2,h3,h4,p,strong,span'));
+  if(!window.HPBackend) return;
+
+  let parts = 0, stock = 0, brands = 0, cart = 0;
+  try{
+    if(window.PRODUCTS && Array.isArray(window.PRODUCTS)){
+      parts = window.PRODUCTS.length;
+      stock = window.PRODUCTS.reduce((sum, p) => sum + Number(p.stock || p.stockUnits || 0), 0);
+      brands = new Set(window.PRODUCTS.map(p => p.brand).filter(Boolean)).size;
+    }
+  }catch(e){}
+
+  try{
+    const sellerLeads = await HPBackend.list('sellerLeads');
+    const approved = (sellerLeads || []).filter(x => (x.listing_stage || '') === 'approved');
+    parts = parts || (window.PARTS_DATA?.length || 0);
+    brands = Math.max(brands, new Set(approved.map(x => x.brand).filter(Boolean)).size);
+  }catch(e){}
+
+  try{
+    const cartData = JSON.parse(localStorage.getItem('hp_cart') || '[]');
+    cart = Array.isArray(cartData) ? cartData.reduce((s, i) => s + Number(i.qty || 1), 0) : 0;
+  }catch(e){}
+
+  const mapping = {
+    'Parts Listed': parts,
+    'Total Stock Units': stock,
+    'Brands Covered': brands,
+    'Items In Cart': cart
+  };
+
+  // find cards by label text and replace first numeric big text inside
+  Object.entries(mapping).forEach(([label, value]) => {
+    const labelEl = textNodes.find(el => (el.textContent || '').trim() === label);
+    if(!labelEl) return;
+    const card = labelEl.closest('article,section,div');
+    if(!card) return;
+    const numEl = card.querySelector('h2,h3,strong,span,p');
+    // choose nearest previous numeric-looking element
+    const candidates = Array.from(card.querySelectorAll('h1,h2,h3,h4,strong,span,p')).filter(el => el !== labelEl);
+    let target = candidates.find(el => /^\d[\d,]*$/.test((el.textContent || '').trim()));
+    if(!target){
+      target = candidates[0];
+    }
+    if(target){
+      target.textContent = new Intl.NumberFormat().format(value);
+    }
+    if(!card.querySelector('.live-counter-note')){
+      const note = document.createElement('div');
+      note.className = 'live-counter-note helper';
+      note.textContent = 'Live counter';
+      labelEl.insertAdjacentElement('afterend', note);
+    }
+  });
+
+  // cart badges
+  document.querySelectorAll('.cart-count, .cartCount, [data-cart-count]').forEach(el => {
+    el.textContent = String(cart);
+  });
+  // header buttons text Cart0 -> CartN
+  document.querySelectorAll('a,button,div').forEach(el => {
+    const t = (el.textContent || '').trim();
+    if(/^Cart\d+$/i.test(t)) el.textContent = 'Cart' + cart;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const bootV77 = () => {
+    setTimeout(enhanceVisibleAuthNavV77, 80);
+    setTimeout(renderHomeCountersV77, 200);
+  };
+  bootV77();
+  document.addEventListener('hp-auth-ready', bootV77, { once:true });
+});
