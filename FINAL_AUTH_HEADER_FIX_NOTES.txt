@@ -1,0 +1,6 @@
+Final auth header fix:
+- When logged out, header shows Login and Sign Up
+- When logged in, header shows first name, Account, and Logout
+- Drawer hides guest links after login
+- Drawer shows Logout after login
+- Logout returns to index.html entry screen

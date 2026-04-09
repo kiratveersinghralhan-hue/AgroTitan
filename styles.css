@@ -9245,3 +9245,49 @@ html, body{
     grid-template-columns:1fr;
   }
 }
+
+
+/* ===== final auth header fix ===== */
+.hp-v82-auth-slot{
+  display:flex !important;
+  align-items:center !important;
+  gap:8px !important;
+}
+.hp-v82-auth-slot .hp-v82-chip,
+.hp-v82-auth-slot .hp-v82-btn,
+.hp-v82-auth-slot .hp-v82-logout{
+  min-height:42px !important;
+  padding:10px 14px !important;
+  border-radius:14px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-decoration:none !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+.hp-v82-chip{
+  background:rgba(255,210,74,.08) !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  color:#fff7e6 !important;
+}
+.hp-v82-btn{
+  background:#f7edd0 !important;
+  color:#241d10 !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+}
+.hp-v82-logout{
+  background:transparent !important;
+  color:#ffd24a !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  cursor:pointer !important;
+}
+@media (max-width:640px){
+  .hp-v82-auth-slot .hp-v82-chip,
+  .hp-v82-auth-slot .hp-v82-btn,
+  .hp-v82-auth-slot .hp-v82-logout{
+    min-height:38px !important;
+    padding:8px 10px !important;
+    font-size:12px !important;
+  }
+}

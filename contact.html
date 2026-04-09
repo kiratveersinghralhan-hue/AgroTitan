@@ -62,20 +62,19 @@
 ter, cutter bar, and straw reaper spare parts support • Call <span data-phone-primary></span></div>
   <header class="header hp-v80-header">
   <div class="container hp-v80-nav">
-    <a class="hp-v80-brand" href="index.html">
+    <a class="hp-v80-brand" href="guest-view.html">
       <div class="hp-v80-brand-title">Harvester Parts</div>
       <div class="hp-v80-brand-sub">Premium Farm Marketplace</div>
     </a>
 
     <div class="hp-v80-actions">
-      <a class="hp-v80-account-btn" href="account.html">Account</a>
-      <a class="hp-v80-avatar" href="account.html" aria-label="Account">👤</a>
+      <div id="hpHeaderAuthSlot" class="hp-v82-auth-slot"></div>
       <button class="hp-v80-menu-btn" type="button" aria-label="Open menu" onclick="window.HPV80 && window.HPV80.toggleMenu()">☰</button>
     </div>
   </div>
 
   <div class="hp-v80-drawer" id="hpV80Drawer">
-    <nav class="hp-v80-drawer-links">
+    <nav class="hp-v80-drawer-links" id="hpDrawerLinks">
       <a href="guest-view.html">Home</a>
       <a href="new-combines.html">New Combines</a>
       <a href="used-combines.html">Used Combines</a>
@@ -86,9 +85,11 @@ ter, cutter bar, and straw reaper spare parts support • Call <span data-phone-
       <a href="rewards.html">Rewards</a>
       <a href="ai-help.html">AI Help</a>
       <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
+      <a href="account.html">My Account</a>
       <a href="admin-login.html">Admin</a>
+      <a href="login.html" data-auth-state="guest">Login</a>
+      <a href="signup.html" data-auth-state="guest">Sign Up</a>
+      <a href="#" id="hpDrawerLogoutLink" data-auth-state="user">Logout</a>
     </nav>
   </div>
 </header>
@@ -209,5 +210,6 @@ ter, cutter bar, and straw reaper spare parts support • Call <span data-phone-
   
 <script src="fix-v79.js"></script>
 <script src="fix-v80.js"></script>
+<script src="fix-v82.js"></script>
 </body>
 </html>
