@@ -1,0 +1,4 @@
+Final build:
+- index.html is now the entry page with Login / Sign Up / Guest View
+- original homepage is available as guest-view.html
+- all major pages now point Home links to guest-view.html

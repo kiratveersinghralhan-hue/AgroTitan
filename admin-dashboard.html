@@ -25,7 +25,7 @@
 
   <div class="hp-v80-drawer" id="hpV80Drawer">
     <nav class="hp-v80-drawer-links">
-      <a href="index.html">Home</a>
+      <a href="guest-view.html">Home</a>
       <a href="new-combines.html">New Combines</a>
       <a href="used-combines.html">Used Combines</a>
       <a href="products.html">Spare Parts</a>
@@ -120,7 +120,7 @@ async function checkAuth(){
       window.location.href = 'admin-login.html';
       return;
     }
-    document.body.innerHTML = '<main class="container section"><section class="card"><h3>Access denied</h3><p class="helper">You are logged in, but your account does not have the admin role in the profiles table.</p><a class="primary-btn" href="index.html">Go Home</a></section>
+    document.body.innerHTML = '<main class="container section"><section class="card"><h3>Access denied</h3><p class="helper">You are logged in, but your account does not have the admin role in the profiles table.</p><a class="primary-btn" href="guest-view.html">Go Home</a></section>
         <section class="section">
           <div class="section-title">
             <div>
