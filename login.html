@@ -1,20 +1,19 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page auth-page"><div class="topbar">Login to manage your Harvester Parts account.</div><header class="header hp-fixed-header">
-  <div class="container hp-topnav">
-    <a class="brand hp-brand" href="index.html">
-      <div class="brand-text-only">
-        <h1>Harvester Parts</h1>
-        <p>Premium Farm Marketplace</p>
-      </div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page auth-page"><div class="topbar">Login to manage your Harvester Parts account.</div><header class="header hp-v80-header">
+  <div class="container hp-v80-nav">
+    <a class="hp-v80-brand" href="index.html">
+      <div class="hp-v80-brand-title">Harvester Parts</div>
+      <div class="hp-v80-brand-sub">Premium Farm Marketplace</div>
     </a>
 
-    <div class="hp-topnav-actions">
-      <div class="hp-auth-slot" id="hpAuthSlot"></div>
-      <button class="hp-icon-btn hp-menu-btn" type="button" aria-label="Open menu" onclick="window.HPFix && window.HPFix.toggleMenu()">☰</button>
+    <div class="hp-v80-actions">
+      <a class="hp-v80-account-btn" href="account.html">Account</a>
+      <a class="hp-v80-avatar" href="account.html" aria-label="Account">👤</a>
+      <button class="hp-v80-menu-btn" type="button" aria-label="Open menu" onclick="window.HPV80 && window.HPV80.toggleMenu()">☰</button>
     </div>
   </div>
 
-  <div class="hp-drawer" id="hpDrawer">
-    <nav class="hp-drawer-links">
+  <div class="hp-v80-drawer" id="hpV80Drawer">
+    <nav class="hp-v80-drawer-links">
       <a href="index.html">Home</a>
       <a href="new-combines.html">New Combines</a>
       <a href="used-combines.html">Used Combines</a>
@@ -24,34 +23,39 @@
       <a href="rewards.html">Rewards</a>
       <a href="ai-help.html">AI Help</a>
       <a href="contact.html">Contact</a>
-      <a href="account.html">Account</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
       <a href="admin-login.html">Admin</a>
     </nav>
   </div>
 </header>
-<main class="container section auth-shell-v79">
-  <section class="card auth-card-v79-pro">
-    <div class="auth-hero-v79">
-      <span class="auth-kicker-v79">Harvester Parts Account</span>
+<main class="container section hp-v80-auth-shell">
+  <section class="card hp-v80-auth-card">
+    <div class="hp-v80-auth-copy">
+      <span class="hp-v80-kicker">Harvester Parts Login</span>
       <h2>Welcome back</h2>
-      <p>Login to manage your account, seller dashboard, buyer enquiries, and admin access.</p>
+      <p>Login to manage your account, seller listings, buyer enquiries, and admin tools.</p>
     </div>
 
-    <div class="auth-form-wrap-v79">
+    <div class="hp-v80-form">
       <div id="authLoginMessage" class="helper auth-message"></div>
-      <div class="field auth-field-v79">
+
+      <div class="field hp-v80-field">
         <label for="loginEmail">Email address</label>
         <input id="loginEmail" type="email" placeholder="Enter your email">
       </div>
-      <div class="field auth-field-v79">
+
+      <div class="field hp-v80-field">
         <label for="loginPassword">Password</label>
         <input id="loginPassword" type="password" placeholder="Enter your password">
       </div>
-      <div class="auth-actions-v79">
+
+      <div class="hp-v80-btn-grid">
         <button class="primary-btn" id="loginSubmitBtn" type="button">Login</button>
         <button class="ghost-btn" id="resetPasswordBtn" type="button">Forgot Password</button>
       </div>
-      <div class="auth-bottom-links-v79">
+
+      <div class="hp-v80-links">
         <a href="signup.html">Create new account</a>
         <a href="index.html">Back to home</a>
       </div>
@@ -59,4 +63,5 @@
   </section>
 </main>
 <script src="backend-config.js"></script><script src="supabase-client.js"></script><script src="auth.js"></script><script src="app.js"></script><script src="fix-v79.js"></script>
+<script src="fix-v80.js"></script>
 </body></html>

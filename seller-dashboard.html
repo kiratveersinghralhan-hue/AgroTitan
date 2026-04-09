@@ -1,20 +1,19 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Seller Dashboard | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page seller-dashboard-page"><div class="topbar">Seller dashboard for listing management, submission tracking, and lead handling.</div><header class="header hp-fixed-header">
-  <div class="container hp-topnav">
-    <a class="brand hp-brand" href="index.html">
-      <div class="brand-text-only">
-        <h1>Harvester Parts</h1>
-        <p>Premium Farm Marketplace</p>
-      </div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Seller Dashboard | Harvester Parts</title><link rel="stylesheet" href="styles.css"></head><body class="marketplace-page seller-dashboard-page"><div class="topbar">Seller dashboard for listing management, submission tracking, and lead handling.</div><header class="header hp-v80-header">
+  <div class="container hp-v80-nav">
+    <a class="hp-v80-brand" href="index.html">
+      <div class="hp-v80-brand-title">Harvester Parts</div>
+      <div class="hp-v80-brand-sub">Premium Farm Marketplace</div>
     </a>
 
-    <div class="hp-topnav-actions">
-      <div class="hp-auth-slot" id="hpAuthSlot"></div>
-      <button class="hp-icon-btn hp-menu-btn" type="button" aria-label="Open menu" onclick="window.HPFix && window.HPFix.toggleMenu()">☰</button>
+    <div class="hp-v80-actions">
+      <a class="hp-v80-account-btn" href="account.html">Account</a>
+      <a class="hp-v80-avatar" href="account.html" aria-label="Account">👤</a>
+      <button class="hp-v80-menu-btn" type="button" aria-label="Open menu" onclick="window.HPV80 && window.HPV80.toggleMenu()">☰</button>
     </div>
   </div>
 
-  <div class="hp-drawer" id="hpDrawer">
-    <nav class="hp-drawer-links">
+  <div class="hp-v80-drawer" id="hpV80Drawer">
+    <nav class="hp-v80-drawer-links">
       <a href="index.html">Home</a>
       <a href="new-combines.html">New Combines</a>
       <a href="used-combines.html">Used Combines</a>
@@ -24,9 +23,11 @@
       <a href="rewards.html">Rewards</a>
       <a href="ai-help.html">AI Help</a>
       <a href="contact.html">Contact</a>
-      <a href="account.html">Account</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
       <a href="admin-login.html">Admin</a>
     </nav>
   </div>
 </header><main class="container section"><section class="card seller-dashboard-hero"><div class="section-title"><div><h3>Seller control center</h3><p>Manage your used combine submissions, see listing status, and create new listing requests from one dashboard.</p></div></div><div class="marketplace-summary-grid seller-summary-grid"><div class="summary-mini card"><strong>My Listings</strong><span id="sellerListingsCount">0</span></div><div class="summary-mini card"><strong>Pending</strong><span id="sellerPendingCount">0</span></div><div class="summary-mini card"><strong>Approved</strong><span id="sellerApprovedCount">0</span></div></div><div class="seller-dashboard-actions"><a class="primary-btn" href="seller-center.html">Create New Listing</a><a class="ghost-btn" href="used-combines.html">View Used Market</a></div></section><section class="section"><div class="section-title"><div><h3>My listing requests</h3><p>These are the seller submissions attached to your account email.</p></div></div><div id="sellerDashboardGrid" class="cards-grid"></div></section><section class="section"><div class="section-title"><div><h3>Buyer enquiries on my listings</h3><p>Track buyers who sent messages for your approved listings.</p></div></div><div id="sellerBuyerEnquiriesGrid" class="cards-grid"></div></section><div class="modal-shell" id="sellerEditModal" aria-hidden="true"><div class="modal-backdrop" onclick="closeSellerEditModalV74()"></div><div class="modal-card"><div class="section-title"><div><h3>Edit listing request</h3><p>Update your used combine submission before admin approval.</p></div></div><input type="hidden" id="editSellerId"><div class="seller-form-grid"><div class="field"><label for="editSellerBrand">Brand</label><input id="editSellerBrand" type="text"></div><div class="field"><label for="editSellerModel">Model</label><input id="editSellerModel" type="text"></div><div class="field"><label for="editSellerYear">Year</label><input id="editSellerYear" type="text"></div><div class="field"><label for="editSellerLocation">Location</label><input id="editSellerLocation" type="text"></div><div class="field"><label for="editSellerPrice">Expected Price</label><input id="editSellerPrice" type="text"></div><div class="field"><label for="editSellerHours">Running Hours</label><input id="editSellerHours" type="text"></div><div class="field field-full"><label for="editSellerNotes">Condition / Notes</label><textarea id="editSellerNotes"></textarea></div></div><div class="seller-listing-actions"><button class="primary-btn" type="button" onclick="saveSellerEditV74()">Save Changes</button><button class="ghost-btn" type="button" onclick="closeSellerEditModalV74()">Cancel</button></div></div></div><div class="modal-shell" id="buyerEnquiryModal" aria-hidden="true"><div class="modal-backdrop" onclick="closeBuyerEnquiryModalV76()"></div><div class="modal-card"><div class="section-title"><div><h3>Send buyer enquiry</h3><p>Ask about this used combine directly from the listing.</p></div></div><input type="hidden" id="buyerEnquiryListingId"><input type="hidden" id="buyerEnquirySellerUserId"><input type="hidden" id="buyerEnquirySellerName"><div class="field"><label for="buyerEnquiryName">Your name</label><input id="buyerEnquiryName" type="text"></div><div class="field"><label for="buyerEnquiryPhone">Phone</label><input id="buyerEnquiryPhone" type="text"></div><div class="field"><label for="buyerEnquiryEmail">Email</label><input id="buyerEnquiryEmail" type="email"></div><div class="field"><label for="buyerEnquiryMessage">Message</label><textarea id="buyerEnquiryMessage"></textarea></div><div class="seller-listing-actions"><button class="primary-btn" type="button" onclick="submitBuyerEnquiryV76()">Send Enquiry</button><button class="ghost-btn" type="button" onclick="closeBuyerEnquiryModalV76()">Cancel</button></div></div></div></main><script src="backend-config.js"></script><script src="supabase-client.js"></script><script src="auth.js"></script><script src="backend.js"></script><script src="app.js"></script><script src="fix-v79.js"></script>
+<script src="fix-v80.js"></script>
 </body></html>
