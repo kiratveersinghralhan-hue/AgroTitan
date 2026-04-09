@@ -8019,3 +8019,275 @@ html, body{
     grid-template-columns:1fr auto auto;
   }
 }
+
+
+/* ===== v78 cleanup patch ===== */
+/* Fix rogue decorative .field style collisions */
+.auth-page .field,
+.account-page .field,
+.seller-dashboard-page .field,
+.public-seller-page .field,
+.auth-card .field,
+.auth-form-grid .field,
+.seller-form-grid .field,
+.modal-card .field,
+.card .field{
+  position:relative !important;
+  left:auto !important;
+  width:100% !important;
+  border-radius:0 !important;
+  display:block !important;
+  bottom:auto !important;
+  height:auto !important;
+  background:none !important;
+  overflow:visible !important;
+}
+.auth-page .field label,
+.account-page .field label,
+.seller-dashboard-page .field label,
+.public-seller-page .field label,
+.auth-card .field label,
+.auth-form-grid .field label,
+.seller-form-grid .field label,
+.modal-card .field label{
+  display:block !important;
+  margin:0 0 8px !important;
+  color:#dccaa1 !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+}
+.auth-page .field input,
+.auth-page .field textarea,
+.account-page .field input,
+.account-page .field textarea,
+.seller-dashboard-page .field input,
+.seller-dashboard-page .field textarea,
+.public-seller-page .field input,
+.public-seller-page .field textarea,
+.auth-card .field input,
+.auth-card .field textarea,
+.auth-form-grid .field input,
+.auth-form-grid .field textarea,
+.seller-form-grid .field input,
+.seller-form-grid .field textarea,
+.modal-card .field input,
+.modal-card .field textarea{
+  width:100% !important;
+  min-height:56px !important;
+  padding:16px 18px !important;
+  border-radius:18px !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+  background:#0b1630 !important;
+  color:#fff7e6 !important;
+  box-sizing:border-box !important;
+  display:block !important;
+}
+.auth-page .field textarea,
+.account-page .field textarea,
+.seller-dashboard-page .field textarea,
+.public-seller-page .field textarea,
+.auth-card .field textarea,
+.auth-form-grid .field textarea,
+.seller-form-grid .field textarea,
+.modal-card .field textarea{
+  min-height:130px !important;
+}
+
+.auth-form-grid{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:14px !important;
+  margin-top:8px !important;
+}
+.auth-card-v78{
+  padding:28px !important;
+  max-width:760px !important;
+}
+.auth-card-v78 .section-title h3{
+  font-size:clamp(34px,8vw,64px) !important;
+  line-height:0.98 !important;
+}
+.auth-card-v78 .section-title p{
+  font-size:clamp(18px,4vw,26px) !important;
+  color:#dccaa1 !important;
+  margin-top:8px !important;
+}
+.auth-card-v78 .auth-actions{
+  margin-top:18px !important;
+}
+.auth-card-v78 .primary-btn,
+.auth-card-v78 .ghost-btn{
+  min-height:60px !important;
+  border-radius:999px !important;
+  font-size:18px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-decoration:none !important;
+}
+.auth-card-v78 .ghost-btn{
+  background:#f7edd0 !important;
+  color:#241d10 !important;
+  border:none !important;
+}
+.auth-bottom-links{
+  display:flex !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  margin-top:14px !important;
+  flex-wrap:wrap !important;
+}
+.auth-bottom-links a{
+  color:#ffd24a !important;
+  text-decoration:none !important;
+  font-weight:700 !important;
+}
+
+/* Header cleanup */
+.hp-unified-header{
+  position:sticky !important;
+  top:0 !important;
+  z-index:80 !important;
+  background:rgba(8,7,4,.94) !important;
+  border-bottom:1px solid rgba(255,210,74,.12) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.hp-unified-header .nav{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  padding:12px 0 !important;
+}
+.hp-unified-header .brand{
+  min-width:0 !important;
+  flex:1 1 auto !important;
+}
+.hp-unified-header .brand-text-only{
+  min-width:0 !important;
+}
+.hp-unified-header .brand h1{
+  font-size:clamp(18px,5vw,42px) !important;
+  color:#f7e3a2 !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+}
+.hp-unified-header .brand p{
+  display:block !important;
+  color:#dccaa1 !important;
+  font-size:12px !important;
+  margin-top:4px !important;
+}
+.hp-desktop-menu{
+  display:flex !important;
+  gap:8px !important;
+  align-items:center !important;
+  flex-wrap:wrap !important;
+}
+.hp-desktop-menu a{
+  padding:10px 12px !important;
+  border-radius:14px !important;
+  background:rgba(255,210,74,.04) !important;
+  border:1px solid transparent !important;
+}
+.hp-desktop-menu a:hover{
+  border-color:rgba(255,210,74,.14) !important;
+}
+.hp-header-auth{
+  display:flex !important;
+  gap:8px !important;
+  align-items:center !important;
+  flex-shrink:0 !important;
+}
+.hp-header-auth .badge-btn,
+.auth-nav-actions .badge-btn{
+  min-height:44px !important;
+  padding:10px 14px !important;
+  border-radius:14px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  text-decoration:none !important;
+}
+.hp-menu-toggle,
+.hp-menu-icon{
+  width:46px !important;
+  height:46px !important;
+  min-width:46px !important;
+  min-height:46px !important;
+  padding:0 !important;
+  border-radius:14px !important;
+  display:none !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-size:24px !important;
+  line-height:1 !important;
+  background:#f7edd0 !important;
+  color:#241d10 !important;
+  border:1px solid rgba(255,210,74,.14) !important;
+}
+.hp-mobile-drawer{
+  display:none !important;
+  padding:14px 16px 18px !important;
+  background:#0d0a05 !important;
+  border-top:1px solid rgba(255,210,74,.12) !important;
+}
+.hp-mobile-drawer.open{
+  display:block !important;
+}
+.hp-mobile-links{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:10px !important;
+}
+.hp-mobile-links a{
+  color:#fff7e6 !important;
+  background:rgba(255,210,74,.06) !important;
+  border:1px solid rgba(255,210,74,.12) !important;
+  border-radius:16px !important;
+  padding:14px 16px !important;
+  text-decoration:none !important;
+  font-weight:800 !important;
+}
+@media (max-width:1024px){
+  .hp-desktop-menu{
+    display:none !important;
+  }
+  .hp-menu-toggle,
+  .hp-menu-icon{
+    display:inline-flex !important;
+  }
+}
+@media (max-width:720px){
+  .hp-unified-header .nav{
+    padding:10px 0 !important;
+  }
+  .hp-header-auth{
+    display:none !important;
+  }
+  .auth-card-v78{
+    padding:20px !important;
+    border-radius:24px !important;
+  }
+  .auth-bottom-links{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+}
+
+/* Counter cards */
+.stats .stat .num,
+.stat .num{
+  font-size:clamp(40px,12vw,72px) !important;
+  font-weight:900 !important;
+  color:#fff7e6 !important;
+}
+.stats .stat .label,
+.stat .label{
+  color:#ffd24a !important;
+  font-size:clamp(16px,4.2vw,22px) !important;
+  font-weight:800 !important;
+}

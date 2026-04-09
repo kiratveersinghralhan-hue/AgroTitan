@@ -2341,3 +2341,151 @@ document.addEventListener('DOMContentLoaded', function(){
   bootV77();
   document.addEventListener('hp-auth-ready', bootV77, { once:true });
 });
+
+
+/* ===== v78 cleanup patch ===== */
+async function enhanceVisibleAuthNavV78(){
+  const targets = document.querySelectorAll('.hp-header-auth, .auth-nav-actions');
+  const mobileLinks = document.querySelector('.hp-mobile-links');
+  let user = null, profile = null;
+  try{
+    if(window.HPAuth){
+      user = await HPAuth.getUser();
+      profile = user && HPAuth.getProfile ? await HPAuth.getProfile() : null;
+    }
+  }catch(e){}
+
+  targets.forEach(box => {
+    if(!box) return;
+    box.innerHTML = '';
+    if(user){
+      const account = document.createElement('a');
+      account.className = 'badge-btn';
+      account.href = 'account.html';
+      account.textContent = 'My Account';
+      box.appendChild(account);
+
+      const logout = document.createElement('button');
+      logout.className = 'badge-btn';
+      logout.type = 'button';
+      logout.textContent = 'Logout';
+      logout.onclick = async function(){
+        if(window.HPAuth) await HPAuth.logout();
+        window.location.href = 'login.html';
+      };
+      box.appendChild(logout);
+
+      if(profile && profile.role === 'admin'){
+        const admin = document.createElement('a');
+        admin.className = 'badge-btn';
+        admin.href = 'admin-dashboard.html';
+        admin.textContent = 'Admin';
+        box.appendChild(admin);
+      }
+    } else {
+      const login = document.createElement('a');
+      login.className = 'badge-btn';
+      login.href = 'login.html';
+      login.textContent = 'Login';
+      box.appendChild(login);
+
+      const signup = document.createElement('a');
+      signup.className = 'badge-btn';
+      signup.href = 'signup.html';
+      signup.textContent = 'Sign Up';
+      box.appendChild(signup);
+    }
+  });
+
+  if(mobileLinks){
+    const authLinks = mobileLinks.querySelectorAll('[data-auth-link]');
+    authLinks.forEach(el => el.remove());
+    if(user){
+      mobileLinks.insertAdjacentHTML('beforeend',
+        '<a data-auth-link href="account.html">My Account</a><a data-auth-link href="admin-dashboard.html">Admin</a>');
+    } else {
+      mobileLinks.insertAdjacentHTML('beforeend',
+        '<a data-auth-link href="login.html">Login</a><a data-auth-link href="signup.html">Sign Up</a>');
+    }
+  }
+}
+
+function renderHomeCountersV78(){
+  const map = {
+    parts: Array.isArray(window.PRODUCTS) ? window.PRODUCTS.length : 0,
+    stock: Array.isArray(window.PRODUCTS) ? window.PRODUCTS.reduce((s,p)=>s + Number(p.stock || p.stockUnits || 0), 0) : 0,
+    brands: Array.isArray(window.PRODUCTS) ? new Set(window.PRODUCTS.map(p=>p.brand).filter(Boolean)).size : 0,
+    cart: (()=>{ try{ const c=JSON.parse(localStorage.getItem('hp_cart')||'[]'); return Array.isArray(c)?c.reduce((s,i)=>s+Number(i.qty||1),0):0; }catch(e){ return 0; } })()
+  };
+  document.querySelectorAll('[data-count-key]').forEach(el => {
+    const key = el.getAttribute('data-count-key');
+    const val = Number(map[key] || 0);
+    el.setAttribute('data-count-to', String(val));
+    el.setAttribute('data-prev', String(val));
+    el.textContent = new Intl.NumberFormat().format(val);
+    el.dataset.done = '1';
+  });
+  document.querySelectorAll('.cart-count,[data-cart-count]').forEach(el => el.textContent = String(map.cart));
+  document.querySelectorAll('a,button,div').forEach(el => {
+    const t = (el.textContent || '').trim();
+    if(/^Cart\d+$/i.test(t)) el.textContent = 'Cart' + map.cart;
+  });
+}
+
+function bindAuthButtonsV78(){
+  const loginBtn = document.getElementById('loginSubmitBtn');
+  const resetBtn = document.getElementById('resetPasswordBtn');
+  const signupBtn = document.getElementById('signupSubmitBtn');
+
+  if(loginBtn && loginBtn.dataset.v78 !== '1'){
+    loginBtn.dataset.v78 = '1';
+    loginBtn.onclick = async function(){
+      const email = (document.getElementById('loginEmail')?.value || '').trim();
+      const password = (document.getElementById('loginPassword')?.value || '').trim();
+      const msg = document.getElementById('authLoginMessage');
+      if(msg) msg.textContent = 'Logging in...';
+      if(!window.HPAuth){ if(msg) msg.textContent='Auth not ready yet.'; return; }
+      const res = await HPAuth.login(email,password);
+      if(res.error){ if(msg) msg.textContent = res.error.message || 'Login failed.'; return; }
+      window.location.href = 'account.html';
+    };
+  }
+
+  if(resetBtn && resetBtn.dataset.v78 !== '1'){
+    resetBtn.dataset.v78='1';
+    resetBtn.onclick = async function(){
+      const email = (document.getElementById('loginEmail')?.value || '').trim();
+      const msg = document.getElementById('authLoginMessage');
+      if(!email){ if(msg) msg.textContent = 'Enter your email first.'; return; }
+      const res = await HPAuth.resetPassword(email);
+      if(msg) msg.textContent = res.error ? (res.error.message || 'Reset failed.') : 'Password reset email sent.';
+    };
+  }
+
+  if(signupBtn && signupBtn.dataset.v78 !== '1'){
+    signupBtn.dataset.v78 = '1';
+    signupBtn.onclick = async function(){
+      const name = (document.getElementById('signupName')?.value || '').trim();
+      const email = (document.getElementById('signupEmail')?.value || '').trim();
+      const password = (document.getElementById('signupPassword')?.value || '').trim();
+      const msg = document.getElementById('authSignupMessage');
+      if(msg) msg.textContent = 'Creating account...';
+      if(!window.HPAuth){ if(msg) msg.textContent='Auth not ready yet.'; return; }
+      const res = await HPAuth.signup(email,password,name);
+      if(res.error){ if(msg) msg.textContent = res.error.message || 'Signup failed.'; return; }
+      if(msg) msg.textContent = 'Account created. You can now login.';
+      setTimeout(()=>{ window.location.href = 'login.html'; }, 1200);
+    };
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const bootV78 = () => {
+    renderHomeCountersV78();
+    bindAuthButtonsV78();
+    enhanceVisibleAuthNavV78();
+  };
+  setTimeout(bootV78, 120);
+  document.addEventListener('hp-auth-ready', bootV78, { once:true });
+  document.addEventListener('hp-supabase-ready', bootV78, { once:true });
+});
