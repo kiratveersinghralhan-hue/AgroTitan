@@ -5,16 +5,16 @@
 
   async function waitForAuth(){
     let tries = 0;
-    while (!window.HPAuthReady && tries < 40) {
+    while ((!window.HPAuthReady || !window.HPAuth) && tries < 50) {
       await new Promise(r => setTimeout(r, 150));
       tries++;
     }
-    return !!window.HPAuthReady;
+    return !!window.HPAuth;
   }
 
   async function getState(){
-    await waitForAuth();
-    if(!window.HPAuth) return { user:null, profile:null };
+    const ok = await waitForAuth();
+    if(!ok) return { user:null, profile:null };
     try{
       const user = await window.HPAuth.getUser();
       const profile = user && window.HPAuth.getProfile ? await window.HPAuth.getProfile() : null;
@@ -28,51 +28,16 @@
   async function logoutNow(e){
     if(e) e.preventDefault();
     try{
-      if(window.HPAuth && window.HPAuth.logout) await window.HPAuth.logout();
-    }catch(err){
+      if(window.HPAuth?.logout) await window.HPAuth.logout();
+    } catch(err){
       console.error(err);
     }
     window.location.href = 'index.html';
   }
 
-  function ensureDrawerState(user){
-    const drawer = q('#hpDrawerLinks');
-    if(!drawer) return;
-
-    qa('a', drawer).forEach(a => {
-      const label = (a.textContent || '').trim().toLowerCase();
-      if(label === 'login' || label === 'sign up'){
-        a.style.display = user ? 'none' : '';
-      }
-      if(label === 'logout'){
-        a.style.display = user ? '' : 'none';
-        a.onclick = logoutNow;
-      }
-    });
-
-    qa('[data-auth-state="guest"]', drawer).forEach(el => el.style.display = user ? 'none' : '');
-    qa('[data-auth-state="user"]', drawer).forEach(el => {
-      el.style.display = user ? '' : 'none';
-      if((el.textContent || '').trim().toLowerCase() === 'logout') el.onclick = logoutNow;
-    });
-  }
-
-  function renderHomeActions(user){
-    const box = q('#hpHomeAuthActions');
-    if(!box) return;
-    if(user){
-      box.innerHTML = `
-        <a class="ghost-btn" href="account.html">My Account</a>
-        <button class="primary-btn" id="hpHomeLogoutBtn" type="button">Logout</button>
-      `;
-      const b = q('#hpHomeLogoutBtn');
-      if(b) b.onclick = logoutNow;
-    } else {
-      box.innerHTML = `
-        <a class="ghost-btn" href="login.html">Login</a>
-        <a class="primary-btn" href="signup.html">Sign Up</a>
-      `;
-    }
+  function toggleMenu(){
+    const drawer = q('#hpV80Drawer') || q('#hpDrawer') || q('#hpMobileDrawer');
+    if(drawer) drawer.classList.toggle('open');
   }
 
   function renderHeader(user, profile){
@@ -96,16 +61,49 @@
     }
   }
 
+  function renderHomeActions(user){
+    const box = q('#hpHomeAuthActions');
+    if(!box) return;
+    if(user){
+      box.innerHTML = `
+        <a class="ghost-btn" href="account.html">My Account</a>
+        <button class="primary-btn" id="hpHomeLogoutBtn" type="button">Logout</button>
+      `;
+      const btn = q('#hpHomeLogoutBtn');
+      if(btn) btn.onclick = logoutNow;
+    } else {
+      box.innerHTML = `
+        <a class="ghost-btn" href="login.html">Login</a>
+        <a class="primary-btn" href="signup.html">Sign Up</a>
+      `;
+    }
+  }
+
+  function renderDrawer(user){
+    const drawer = q('#hpDrawerLinks');
+    if(!drawer) return;
+    qa('a', drawer).forEach(a => {
+      const label = (a.textContent || '').trim().toLowerCase();
+      if(label === 'login' || label === 'sign up'){
+        a.style.display = user ? 'none' : '';
+      }
+      if(label === 'logout'){
+        a.style.display = user ? '' : 'none';
+        a.onclick = logoutNow;
+      }
+    });
+    qa('[data-auth-state="guest"]', drawer).forEach(el => el.style.display = user ? 'none' : '');
+    qa('[data-auth-state="user"]', drawer).forEach(el => {
+      el.style.display = user ? '' : 'none';
+      if((el.textContent || '').trim().toLowerCase() === 'logout') el.onclick = logoutNow;
+    });
+  }
+
   async function syncAuthUI(){
     const { user, profile } = await getState();
     renderHeader(user, profile);
     renderHomeActions(user);
-    ensureDrawerState(user);
-  }
-
-  function toggleMenu(){
-    const drawer = q('#hpV80Drawer') || q('#hpDrawer') || q('#hpMobileDrawer');
-    if(drawer) drawer.classList.toggle('open');
+    renderDrawer(user);
   }
 
   window.HPV80 = window.HPV80 || {};

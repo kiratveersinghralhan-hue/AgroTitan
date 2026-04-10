@@ -1,0 +1,7 @@
+Final real auth fix:
+- added auth.js to guest-view and any page missing it
+- removed old conflicting fix-v79/fix-v80/fix-v81 scripts from HTML
+- kept only fix-v82 for auth visibility
+- homepage now reads real login state
+- drawer now hides login/signup when logged in
+- header now switches correctly based on auth state
