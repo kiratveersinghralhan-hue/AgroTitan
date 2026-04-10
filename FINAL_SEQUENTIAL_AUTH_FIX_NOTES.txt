@@ -1,0 +1,6 @@
+Sequential auth fix:
+- removed static Login/Account + Sign Up block from guest-view homepage
+- homepage auth block is now fully dynamic
+- menu now shows Login/Sign Up only when logged out
+- menu now shows Logout only when logged in
+- header stays Account/Logout after login
