@@ -7,3 +7,18 @@
   window.HPAuth = { client:supabase, signup:(email,password,full_name)=>supabase.auth.signUp({email,password,options:{data:{full_name}}}), login:(email,password)=>supabase.auth.signInWithPassword({email,password}), logout:()=>supabase.auth.signOut(), resetPassword:(email)=>supabase.auth.resetPasswordForEmail(email,{redirectTo: window.location.origin + window.location.pathname.replace(/[^/]*$/, 'login.html')}), getUser,getSession,getProfile,requireAdmin, onAuthChange:(cb)=>supabase.auth.onAuthStateChange((_e,s)=>cb(s)) };
   document.dispatchEvent(new CustomEvent('hp-auth-ready')); }catch(err){ console.error('Auth init failed:', err); }
 })();
+
+
+window.HPAuthReady = false;
+
+(async () => {
+  try {
+    if (window.HPAuth && typeof window.HPAuth.init === 'function') {
+      await window.HPAuth.init();
+    }
+    window.HPAuthReady = true;
+    document.dispatchEvent(new Event('hp-auth-ready'));
+  } catch (e) {
+    console.error('Auth init failed', e);
+  }
+})();

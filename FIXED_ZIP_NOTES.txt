@@ -1,0 +1,8 @@
+Fixed auth/menu zip:
+- waits for auth before rendering UI
+- removes visible 'Auth not ready' state from pages
+- header shows Login/Sign Up only when logged out
+- header shows Account/Logout only when logged in
+- drawer hides Login/Sign Up after login
+- drawer shows Logout only after login
+- homepage guest buttons switch to My Account/Logout after login
